@@ -23,14 +23,14 @@ body{
     overflow-x: hidden;
     background: var(--white);
 }
-.cont1{
+.container1{
     position: relative;
     width: 100%;
 }
 /* ################################### Navigation ####################################### */
 .navigation{
     position: fixed;
-    width: 400px;
+    width: 300px;
     height: 100%;
     background: var(--light_black);
     border-left: 10px solid var(--light_black);
@@ -39,15 +39,13 @@ body{
 }
 .navigation.active{
     width: 80px;
-    /* padding-right: 50px; */
 }
-.navigation .navlist{
+.navigation ul{
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
-    list-style: none;
-    padding-left:0;
+    padding-left: 0;
 }
 
 .navigation ul li {
@@ -60,8 +58,6 @@ body{
 .navigation ul li:hover,
 .navigation ul li.hovered {
     background-color: var(--white);
-    width: 280px;
-    
 }
 .navigation ul li:nth-child(1) {
     margin-bottom: 40px;
@@ -119,43 +115,17 @@ body{
     white-space: nowrap;
     top: 55px;
 }
-#Lgbtn{
-    background:transparent ;
-  color:var(--dark_red);
-  border: 1px solid var(--white);
-  text-decoration: none;
-  display: block;
-  border-radius: 10%;
-  padding: 0 10px;
-  height: 50px;
-  line-height: 20px;
-  text-align: start;
-  white-space: nowrap;
-  margin-top: 6px;
-  width: 100%;
-  font-size: 1rem;
-  margin-left: 10px;
-  text-align: center;
-}
-#lgBtn{
-    background:transparent ;
-    color:var(--white);
-    border: 1px solid transparent;
+/* #LgBtn{
+    padding: 5px 10px;
+    background: var(--dark_black);
+    color: var(--white);
     text-decoration: none;
-    display: block;
-    border-radius: 10%;
-    padding: 0 10px;
-    height: 50px;
-    line-height: 20px;
-    text-align: start;
-    white-space: nowrap;
-    margin-top: 6px;
-    width: 100%;
-    font-size: 15px;
-    margin-left: 2px;
-    text-align: center;
+    border-radius: 6px;
 }
-
+.navigation #LgBtn:hover button,
+.navigation #LgBtn.hovered button{
+    color: var(--dark_red);
+} */
 /* ################################ curve outside ##################################### */
 
 .navigation ul li:hover a::before,
@@ -257,7 +227,6 @@ body{
     border-radius: 50%;
     overflow: hidden;
     cursor: pointer;
-    
 }
 .admin img {
     position: absolute;
@@ -319,9 +288,9 @@ body{
 /* ################################### User Detail ################################### */
 .details{
     position: relative;
-    width: 100%;
+    width: 150%;
     padding: 20px;
-    display:grid;
+    display: grid;
     grid-template-columns: 2fr 1fr;
     grid-gap:30px;
     margin-top: 10px;
@@ -330,9 +299,10 @@ body{
     position: relative;
     display: grid;
     min-height: 500px;
-    background: rgb(45, 45, 45);
+    background:rgb(48, 48, 48);
+    /* color: var(--white); */
     padding: 20px;
-    box-shadow: 0 7px 20px rgba(0, 0, 0, 0.8);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.8);
     border-radius: 20px;
 }
 .details .cardHeader {
@@ -342,13 +312,14 @@ body{
 }
 .cardHeader .userHd {
     font-weight: 600;
+    font-size:26px;
     color: var(--white);
 }
 .cardHeader .Addbtn {
     position: relative;
     padding: 5px 10px;
     background: var(--dark_red);
-    color: var(--white); 
+    color: var(--white);
     text-decoration: none;
     border-radius: 6px;
     border: 1px solid var(--dark_red);
@@ -359,19 +330,22 @@ body{
     /* margin-top: 1px; */
 }
 .details table thead td {
-    font-weight: 600;
+    font-weight: 100;
+}
+.details table tbody td {
+    font-size: 16px;
 }
 .details .userData table tr {
     color: var(--white);
-    border-bottom: 1px solid var(--white);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
 .details .userData table tbody tr:hover {
     background: var(--dark_red);
     color: var(--white);
 }
 .details .userData table tbody tr .pic{
-    width: 40px;
-    height: 40px;
+    width: 55px;
+    height: 55px;
     border-radius: 50%;
     cursor: pointer;
     overflow: hidden;
@@ -381,4 +355,8 @@ body{
     height: 100%;
     object-fit: cover;
 }
-
+/* .details .userData table tbody tr .pic img.active{
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+} */

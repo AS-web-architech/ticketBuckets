@@ -5,10 +5,10 @@ if(isset($_POST['Login'])){
 $adminEmail = $_POST['adminEmail'];
 $Apassword = $_POST['Apassword'];
 
-$select = "SELECT * FROM registration WHERE email = '$adminEmail' AND  admin_password= '$Apassword' ";
+$select = "SELECT * FROM registration WHERE email = '$adminEmail' AND  Apassword= '$Apassword' ";
 $data = mysqli_query($conn, $select);
 $row = mysqli_fetch_assoc($data);
-$AdminName = $row['admin_name'];
+$AdminName = $row['full_name'];
 session_start();
 if ($row == 0) {
     echo "<script>alert(' Login failed !')</script>";
@@ -16,7 +16,7 @@ if ($row == 0) {
 
 } else
 {
-    $_SESSION['adminName'] = $AdminName;
+    $_SESSION['full_name'] = $AdminName;
     echo "<script>alert('Login Successfully!')</script>";
     echo "<script>window.location.href ='http://localhost/ticketBuckets/AdminPanel/#';</script>"; 
  

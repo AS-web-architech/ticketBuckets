@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 02, 2023 at 11:30 PM
+-- Generation Time: Mar 03, 2023 at 10:32 PM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.2.0
 
@@ -29,7 +29,7 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `booking` (
   `booking-id` int(11) NOT NULL,
-  `customer-id` int(11) NOT NULL,
+  `customer-name` varchar(255) NOT NULL,
   `movie-id` int(11) NOT NULL,
   `movieTitle` varchar(255) NOT NULL,
   `genre-type` varchar(255) NOT NULL,
@@ -46,9 +46,9 @@ CREATE TABLE `booking` (
 -- Dumping data for table `booking`
 --
 
-INSERT INTO `booking` (`booking-id`, `customer-id`, `movie-id`, `movieTitle`, `genre-type`, `theater-name`, `ticket-type`, `seat-type`, `Total-seat`, `show-time`, `show-date`, `status`) VALUES
-(1, 1, 3, 'Knives Out\r\n', 'comedy', 'Atrium Cinemas', 'Platinum ', 'Adult', '4', '50:20:40', '2023-03-03', 'Pending'),
-(2, 2, 5, 'The Boss Baby', 'kids animation', 'Atrium Cinemas', 'Silver', 'Child', '3', '50:10:25', '2023-03-02', 'Confirmed');
+INSERT INTO `booking` (`booking-id`, `customer-name`, `movie-id`, `movieTitle`, `genre-type`, `theater-name`, `ticket-type`, `seat-type`, `Total-seat`, `show-time`, `show-date`, `status`) VALUES
+(1, 'Sana', 3, 'Knives Out\r\n', 'comedy', 'Atrium Cinemas', 'Platinum ', 'Adult', '4', '50:20:40', '2023-03-03', 'Pending'),
+(2, 'Ali', 5, 'The Boss Baby', 'kids animation', 'Atrium Cinemas', 'Silver', 'Child', '3', '50:10:25', '2023-03-02', 'Confirmed');
 
 -- --------------------------------------------------------
 
@@ -177,7 +177,7 @@ CREATE TABLE `registration` (
   `register-id` int(11) NOT NULL,
   `full_name` varchar(255) NOT NULL,
   `email` varchar(255) NOT NULL,
-  `password` varchar(255) NOT NULL,
+  `Apassword` varchar(255) NOT NULL,
   `picture` varchar(250) NOT NULL,
   `role` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
@@ -186,7 +186,7 @@ CREATE TABLE `registration` (
 -- Dumping data for table `registration`
 --
 
-INSERT INTO `registration` (`register-id`, `full_name`, `email`, `password`, `picture`, `role`) VALUES
+INSERT INTO `registration` (`register-id`, `full_name`, `email`, `Apassword`, `picture`, `role`) VALUES
 (1, 'Aqsa Ashfaq', 'aqsa510@gmail.com', 'Ashfaq', 'f-adminicon.jpg', 'Admin'),
 (2, 'Areeba Shafi', 'ariba2001.dev@gmail.com', 'Areeba', 'userdp.png', 'Admin'),
 (3, 'Sana Tariq', 'sanatariq@gmail.com', 'Sana', 'UserPic2.png', 'User'),
@@ -328,7 +328,7 @@ INSERT INTO `ticket` (`T-id`, `booking-id`, `ticket-type`, `price`) VALUES
 ALTER TABLE `booking`
   ADD PRIMARY KEY (`booking-id`),
   ADD KEY `moviet` (`movieTitle`),
-  ADD KEY `c-id` (`customer-id`),
+  ADD KEY `c-id` (`customer-name`),
   ADD KEY `movie-id` (`movie-id`),
   ADD KEY `genre-id` (`genre-type`),
   ADD KEY `seat` (`seat-type`);
@@ -376,7 +376,7 @@ ALTER TABLE `payment`
 ALTER TABLE `registration`
   ADD PRIMARY KEY (`register-id`),
   ADD UNIQUE KEY `email` (`email`),
-  ADD UNIQUE KEY `user-password` (`password`);
+  ADD UNIQUE KEY `user-password` (`Apassword`);
 
 --
 -- Indexes for table `reviews`
@@ -514,7 +514,6 @@ ALTER TABLE `ticket`
 --
 ALTER TABLE `booking`
   ADD CONSTRAINT `booking_ibfk_1` FOREIGN KEY (`movie-id`) REFERENCES `movie` (`movie-id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `c-id` FOREIGN KEY (`customer-id`) REFERENCES `customer` (`customer-id`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `gener` FOREIGN KEY (`genre-type`) REFERENCES `genre` (`type`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `seat` FOREIGN KEY (`seat-type`) REFERENCES `seat` (`seat-type`) ON DELETE CASCADE ON UPDATE CASCADE;
 

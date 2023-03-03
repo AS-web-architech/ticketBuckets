@@ -115,6 +115,17 @@ body{
     white-space: nowrap;
     top: 55px;
 }
+/* #LgBtn{
+    padding: 5px 10px;
+    background: var(--dark_black);
+    color: var(--white);
+    text-decoration: none;
+    border-radius: 6px;
+}
+.navigation #LgBtn:hover button,
+.navigation #LgBtn.hovered button{
+    color: var(--dark_red);
+} */
 /* ################################ curve outside ##################################### */
 
 .navigation ul li:hover a::before,
@@ -277,7 +288,7 @@ body{
 /* ################################### User Detail ################################### */
 .details{
     position: relative;
-    width: 100%;
+    width: 150%;
     padding: 20px;
     display: grid;
     grid-template-columns: 2fr 1fr;
@@ -288,9 +299,10 @@ body{
     position: relative;
     display: grid;
     min-height: 500px;
-    background: var(--light);
+    background:rgb(48, 48, 48);
+    /* color: var(--white); */
     padding: 20px;
-    box-shadow: 0 70px 25px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.8);
     border-radius: 20px;
 }
 .details .cardHeader {
@@ -300,15 +312,17 @@ body{
 }
 .cardHeader .userHd {
     font-weight: 600;
-    color: var(--dark_black);
+    font-size:26px;
+    color: var(--white);
 }
 .cardHeader .Addbtn {
     position: relative;
     padding: 5px 10px;
-    background: var(--dark_black);
+    background: var(--dark_red);
     color: var(--white);
     text-decoration: none;
     border-radius: 6px;
+    border: 1px solid var(--dark_red);
 }
 .details table {
     width: 100%;
@@ -316,10 +330,13 @@ body{
     /* margin-top: 1px; */
 }
 .details table thead td {
-    font-weight: 600;
+    font-weight: 100;
+}
+.details table tbody td {
+    font-size: 16px;
 }
 .details .userData table tr {
-    color: var(--dark_black);
+    color: var(--white);
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
 .details .userData table tbody tr:hover {
@@ -327,9 +344,9 @@ body{
     color: var(--white);
 }
 .details .userData table tbody tr .pic{
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    border-radius: 10%;
     cursor: pointer;
     overflow: hidden;
 }

@@ -1,5 +1,5 @@
 // add hovered class to selected list item
-let list = document.querySelectorAll(".navigation li");
+let list = document.querySelectorAll(".navigation li #LgBtn");
 
 function activeLink(){
     list.forEach((item) =>{
