@@ -13,7 +13,7 @@ session_start();
     <link rel="stylesheet" href="../assets/css/bootstrap-5.0.2-dist/css/bootstrap.min.css">
     <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"> -->
     <!-- style_css -->
-    <link rel="stylesheet" href="../assets/css/movie.css">
+    <link rel="stylesheet" href="../assets/css/main.css">
     <!-- Font_Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
     <title>Admin | Tickets Bucket</title>
@@ -127,11 +127,17 @@ session_start();
                 </label>
             </div>
             
-               <div>
-                   <h6 style="color:white;"><?php echo $_SESSION['full_name']; ?> &nbsp;&nbsp;<img 
-                   class="admin" src="../assets/images/admin.dp.png" alt=""></h6>
-                   
-               </div>
+            <div class="AD_Info">
+               <div class="admin" style="float:right;margin-top:7px;">
+                    <img src="../assets/images/<?php echo $_SESSION['picture']; ?>" alt="">
+                </div>
+               <div class="AD_Name" style="margin-right:56px;margin-top:5px;">
+                   <h6 class="text-white"><?php echo $_SESSION['full_name']; ?></h6>
+                </div>
+                <div class="AD_Role" style="margin-right:56px;">
+                    <h6 class="text-sm text-center" style="color:var(--dark_red);font-size:13px;">( <?php echo $_SESSION['role']; ?> )</h6>
+                </div>
+            </div>
         </div><br>
             </div>
         </div>
@@ -147,9 +153,10 @@ session_start();
                        <button type="submit" class="Addbtn" name="fetch">Add Booking</button>
                   <!-- <button type="add" class="Addbtn" >Add Users</a> -->
               </div><br>
-             <table class="table">
-                <thead>
-                    <tr>
+              <div class="table-responsive-sm">
+             <table class="table table-bordered-bottom align-middle border-d table-sm table-responsive-md table-striped text-center">
+                <thead class="text-center align-middle">
+                    <tr class="text-dark" style="background: var(--dark_red);">
                         <th>ID</th>
                         <th>Customer Name</th>
                         <th>Movie Name</th>
@@ -175,7 +182,7 @@ session_start();
             ?>
 
             <tr>
-              <th><?php echo $booking_data["booking-id"] ?></th>
+              <th><?php echo $booking_data["booking_id"] ?></th>
               <td><?php echo $booking_data["customer-name"] ?></td>
               <td><?php echo $booking_data["movieTitle"] ?></td>
               <td><?php echo $booking_data["genre-type"] ?></td>
@@ -186,14 +193,17 @@ session_start();
               <td><?php echo $booking_data["show-time"] ?></td>
               <td><?php echo $booking_data["show-date"] ?></td>
               <td><?php echo $booking_data["status"] ?></td>
-              <td><button class="btn btn-primary"><a href="update.php?id=<?php echo  $booking_data["booking-id"] ?>"
-               class="text-white text-decoration-none"> Update</a></button>&nbsp;
-               <button class="btn btn-danger"><a href="delete.php?id=<?php echo  $booking_data["booking-id"] ?>" 
-               class="text-white text-decoration-none"> Delete</a></button></td>
+              <td>
+                <!-- <button class="btn btn-primary btn-sm"><a href="update.php?id=<?php echo  $booking_data["booking_id"] ?>"
+               class="text-white text-decoration-none"> Update</a></button>&nbsp;<br> -->
+               <button class="btn btn-danger btn-sm"><a href="delete.php?Bid=<?php echo  $booking_data["booking_id"] ?>" 
+               class="text-white text-decoration-none"> Delete</a></button>
+             </td>
             </tr>
         <?php  } ?>
                 </tbody>
              </table>
+              </div>
           </div>
        </div>
             </div>

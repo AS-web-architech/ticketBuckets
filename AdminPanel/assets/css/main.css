@@ -215,7 +215,7 @@ body{
 }
 .search label ion-icon {
     position: absolute;
-    top: 0;
+    margin-top: 10px;
     left: 10px;
     font-size: 1.2rem;
 }
@@ -288,7 +288,8 @@ body{
 /* ################################### User Detail ################################### */
 .details{
     position: relative;
-    width: 150%;
+    width: 155%;
+    right: 12px;
     padding: 20px;
     display: grid;
     grid-template-columns: 2fr 1fr;
@@ -312,7 +313,7 @@ body{
 }
 .cardHeader .userHd {
     font-weight: 600;
-    font-size:26px;
+    font-size:20px;
     color: var(--white);
 }
 .cardHeader .Addbtn {
@@ -324,6 +325,10 @@ body{
     border-radius: 6px;
     border: 1px solid var(--dark_red);
 }
+.cardHeader .Addbtn:hover{
+    background: var(--light_black);
+    color: var(--light_red);
+}
 .details table {
     width: 100%;
     border-collapse:collapse;
@@ -333,19 +338,19 @@ body{
     font-weight: 100;
 }
 .details table tbody td {
-    font-size: 16px;
+    font-size: 15px;
 }
 .details .userData table tr {
     color: var(--white);
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
 .details .userData table tbody tr:hover {
-    background: var(--dark_red);
-    color: var(--white);
+    background: var(--light_black);
+    color: var(--dark_red);
 }
 .details .userData table tbody tr .pic{
-    width: 55px;
-    height: 55px;
+    width: 45px;
+    height: 45px;
     border-radius: 50%;
     cursor: pointer;
     overflow: hidden;

@@ -127,11 +127,17 @@ session_start();
                 </label>
             </div>
             
-               <div>
-                   <h6 style="color:white;"><?php echo $_SESSION['full_name']; ?> &nbsp;&nbsp;<img 
-                   class="admin" src="../assets/images/admin.dp.png" alt=""></h6>
-                   
-               </div>
+            <div class="AD_Info">
+               <div class="admin" style="float:right;margin-top:7px;">
+                    <img src="../assets/images/<?php echo $_SESSION['picture']; ?>" alt="">
+                </div>
+               <div class="AD_Name" style="margin-right:56px;margin-top:5px;">
+                   <h6 class="text-white"><?php echo $_SESSION['full_name']; ?></h6>
+                </div>
+                <div class="AD_Role" style="margin-right:56px;">
+                    <h6 class="text-sm text-center" style="color:var(--dark_red);font-size:13px;">( <?php echo $_SESSION['role']; ?> )</h6>
+                </div>
+            </div>
         </div><br>
             </div>
         </div>
@@ -142,22 +148,23 @@ session_start();
             <div class="col-sm-12">
             <div class="details">
           <div class="userData">
-              <div class="cardHeader">
-                  <h3 class="userHd">Movie Details</h3>
+              <div class="cardHeader pt-2">
+                  <h3 class="userHd ps-2">Movie Details</h3>
                        <button type="submit" class="Addbtn" name="fetch">Add Movie</button>
                   <!-- <button type="add" class="Addbtn" >Add Users</a> -->
               </div><br>
-             <table class="table">
-                <thead>
-                    <tr>
+              <div class="table-responsive-sm">
+             <table class="table table-bordered-bottom align-middle border-d table-sm table-responsive-md table-striped ">
+                <thead class="align-middle">
+                    <tr class="text-dark" style="background: var(--dark_red);">
                         <th>ID</th>
-                        <th>Image</th>
-                        <th>Movie Name</th>
-                        <th>Genre</th>
-                        <th>Release Year</th>
-                        <th>Duration</th>
-                        <th>Movie Reviews</th>
-                        <th>Action</th>
+                        <th>IMAGE</th>
+                        <th>MOVIE NAME</th>
+                        <th>GENRE</th>
+                        <th>YEAR</th>
+                        <th>DURATION</th>
+                        <!-- <th>COMMENTS</th> -->
+                        <th>ACTION</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -171,21 +178,21 @@ session_start();
             ?>
 
             <tr>
-              <th><?php echo $movie_data["movie-id"] ?></th>
+              <th><?php echo $movie_data["movie_id"] ?></th>
               <td><img width="100px" class="pic" height="100px" src="../assets/images/<?php echo $movie_data["movie_pic"] ?>" alt=""></td>
               <td><?php echo $movie_data["movieTitle"] ?></td>
               <td><?php echo $movie_data["genre_type"] ?></td>
               <td><?php echo $movie_data["year"] ?></td>
               <td><?php echo $movie_data["duration"] ?></td>
-              <td><?php echo $movie_data["reviews"] ?></td>
-              <td><button class="btn btn-primary"><a href="update.php?id=<?php echo  $movie_data["movie-id"] ?>"
-               class="text-white text-decoration-none"> Update</a></button>&nbsp;<br>
-               <button class="btn btn-danger"><a href="delete.php?id=<?php echo  $movie_data["movie-id"] ?>" 
+              <td><button class="btn btn-primary btn-sm"><a href="update.php?Mid=<?php echo  $movie_data["movie_id"] ?>"
+               class="text-white text-decoration-none"> Update</a></button>&nbsp;
+               <button class="btn btn-danger btn-sm"><a href="delete.php?Mid=<?php echo  $movie_data["movie_id"] ?>" 
                class="text-white text-decoration-none"> Delete</a></button></td>
             </tr>
         <?php  } ?>
                 </tbody>
              </table>
+             </div>
           </div>
        </div>
             </div>

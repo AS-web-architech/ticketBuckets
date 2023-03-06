@@ -1,5 +1,5 @@
 // add hovered class to selected list item
-let list = document.querySelectorAll(".navigation li #LgBtn");
+let list = document.querySelectorAll(".navigation li");
 
 function activeLink(){
     list.forEach((item) =>{
@@ -14,11 +14,11 @@ let toggel = document.querySelector(".toggle");
 let navigation = document.querySelector(".navigation");
 let main = document.querySelector(".main");
 let userData = document.querySelector(".navigation ul li a .icon .ion-icon");
-let hover = document.querySelector(".navigation ul li");
+// let hover = document.querySelector(".navigation ul li");
 
 toggel.onclick = function(){
     navigation.classList.toggle("active");
     main.classList.toggle("active");
     userData.classList.toggle("active");
-    hover.classList.toggle("active");
+    // hover.classList.toggle("active");
 }

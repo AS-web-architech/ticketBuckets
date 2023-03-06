@@ -112,9 +112,8 @@ address {
   line-height: inherit;
 }
 
-/* ol,
-ul {
-  padding-left: 1rem;
+/* .navigation ul{
+  padding-left: 0;
 } */
 
 ol,

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 03, 2023 at 10:32 PM
+-- Generation Time: Mar 06, 2023 at 11:14 PM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.2.0
 
@@ -28,7 +28,7 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `booking` (
-  `booking-id` int(11) NOT NULL,
+  `booking_id` int(11) NOT NULL,
   `customer-name` varchar(255) NOT NULL,
   `movie-id` int(11) NOT NULL,
   `movieTitle` varchar(255) NOT NULL,
@@ -46,7 +46,7 @@ CREATE TABLE `booking` (
 -- Dumping data for table `booking`
 --
 
-INSERT INTO `booking` (`booking-id`, `customer-name`, `movie-id`, `movieTitle`, `genre-type`, `theater-name`, `ticket-type`, `seat-type`, `Total-seat`, `show-time`, `show-date`, `status`) VALUES
+INSERT INTO `booking` (`booking_id`, `customer-name`, `movie-id`, `movieTitle`, `genre-type`, `theater-name`, `ticket-type`, `seat-type`, `Total-seat`, `show-time`, `show-date`, `status`) VALUES
 (1, 'Sana', 3, 'Knives Out\r\n', 'comedy', 'Atrium Cinemas', 'Platinum ', 'Adult', '4', '50:20:40', '2023-03-03', 'Pending'),
 (2, 'Ali', 5, 'The Boss Baby', 'kids animation', 'Atrium Cinemas', 'Silver', 'Child', '3', '50:10:25', '2023-03-02', 'Confirmed');
 
@@ -121,7 +121,7 @@ INSERT INTO `genre` (`genere-id`, `type`) VALUES
 --
 
 CREATE TABLE `movie` (
-  `movie-id` int(11) NOT NULL,
+  `movie_id` int(11) NOT NULL,
   `movieTitle` varchar(255) NOT NULL,
   `movie_pic` varchar(255) NOT NULL,
   `genre_type` varchar(255) NOT NULL,
@@ -135,7 +135,7 @@ CREATE TABLE `movie` (
 -- Dumping data for table `movie`
 --
 
-INSERT INTO `movie` (`movie-id`, `movieTitle`, `movie_pic`, `genre_type`, `genre-id`, `year`, `duration`, `reviews`) VALUES
+INSERT INTO `movie` (`movie_id`, `movieTitle`, `movie_pic`, `genre_type`, `genre-id`, `year`, `duration`, `reviews`) VALUES
 (1, 'Kingsman: The Secret Service', 'kingsman.PNG', 'action', 4, 2015, '02:10:00', 'great Action Movie... '),
 (2, 'Enola Holmes', 'EnolaHolmes.PNG', 'mystry', 5, 2020, '02:03:00', ''),
 (3, 'Knives Out\r\n', 'knivesOut.PNG', 'comedy', 2, 2020, '02:10:00', ''),
@@ -146,10 +146,10 @@ INSERT INTO `movie` (`movie-id`, `movieTitle`, `movie_pic`, `genre_type`, `genre
 (8, 'Resident Evil: Welcome to Raccoon City\r\n', 'ResidentEvil.PNG', 'horror', 1, 2021, '01:21:34', ''),
 (9, 'Spider-Man: Homecoming\r\n', 'spiderman.jpeg', 'action', 4, 2021, '02:03:00', ''),
 (10, 'Zombieland', 'zombieLand.PNG', 'horror', 1, 2009, '01:21:34', ''),
-(12, 'Pixels', 'pixels.PNG', 'comedy', 2, 2015, '01:13:34', ''),
-(13, 'Free Guy', 'Free_Guy.PNG', 'action', 4, 2020, '01:21:34', ''),
-(14, 'Love and Monsters', 'L&M.PNG', 'comedy', 2, 2020, '01:13:34', ''),
-(15, 'Orphan', 'Orphan.PNG', 'horror', 1, 2016, '01:39:56', '');
+(11, 'Pixels', 'pixels.PNG', 'comedy', 2, 2015, '01:13:34', ''),
+(12, 'Free Guy', 'Free_Guy.PNG', 'action', 4, 2020, '01:21:34', ''),
+(13, 'Love And Monsters', 'L&M.PNG', 'comedy', 2, 2020, '01:13:38', ''),
+(14, 'Orphan', 'Orphan.PNG', 'horror', 1, 2016, '01:45:56', '');
 
 -- --------------------------------------------------------
 
@@ -174,25 +174,25 @@ CREATE TABLE `payment` (
 --
 
 CREATE TABLE `registration` (
-  `register-id` int(11) NOT NULL,
+  `register_id` int(11) NOT NULL,
   `full_name` varchar(255) NOT NULL,
   `email` varchar(255) NOT NULL,
   `Apassword` varchar(255) NOT NULL,
   `picture` varchar(250) NOT NULL,
-  `role` varchar(50) NOT NULL
+  `Urole` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `registration`
 --
 
-INSERT INTO `registration` (`register-id`, `full_name`, `email`, `Apassword`, `picture`, `role`) VALUES
-(1, 'Aqsa Ashfaq', 'aqsa510@gmail.com', 'Ashfaq', 'f-adminicon.jpg', 'Admin'),
+INSERT INTO `registration` (`register_id`, `full_name`, `email`, `Apassword`, `picture`, `Urole`) VALUES
+(1, 'Aqsa Ashfaq', 'aqsa510@gmail.com', 'Ashfaq', 'admin.png', 'Admin'),
 (2, 'Areeba Shafi', 'ariba2001.dev@gmail.com', 'Areeba', 'userdp.png', 'Admin'),
 (3, 'Sana Tariq', 'sanatariq@gmail.com', 'Sana', 'UserPic2.png', 'User'),
 (4, 'Ali Ahmed', 'aliahmed@gmail.com', 'AliAhmed', 'user3.png', 'User'),
 (5, 'Taha Ashraf ', 'taha10@gmail.com', 'Taha', 'user5.jpg', 'User'),
-(6, 'Ammar Khan', 'ammar@gmail.com', 'Ammar', 'user4.png', 'User');
+(6, 'Ammar Khan', 'khan@gmail.com', 'Ammar', 'user4.png', 'User');
 
 -- --------------------------------------------------------
 
@@ -279,7 +279,7 @@ INSERT INTO `seat_categories` (`id`, `categories`) VALUES
 --
 
 CREATE TABLE `theatre` (
-  `theater-id` int(11) NOT NULL,
+  `theater_id` int(11) NOT NULL,
   `theater-title` varchar(255) NOT NULL,
   `country` varchar(255) NOT NULL,
   `Hall-1` time NOT NULL,
@@ -293,8 +293,12 @@ CREATE TABLE `theatre` (
 -- Dumping data for table `theatre`
 --
 
-INSERT INTO `theatre` (`theater-id`, `theater-title`, `country`, `Hall-1`, `Hall-2`, `Hall-3`, `capacity`, `Location`) VALUES
-(1, 'Atrium Cinemas', 'Pakistan', '27:12:00', '50:45:15', '30:20:05', '74 seats', 'V24J+C24, MBL Panorama Karachi Cantonment, Karachi, Karachi City, Sindh');
+INSERT INTO `theatre` (`theater_id`, `theater-title`, `country`, `Hall-1`, `Hall-2`, `Hall-3`, `capacity`, `Location`) VALUES
+(1, 'Atrium Cinemas', 'Pakistan', '27:12:00', '50:45:15', '30:20:05', '74 seats', 'V24J+C24, MBL Panorama Karachi Cantonment.'),
+(2, 'Capri Cinema', 'Pakistan', '14:58:21', '41:58:21', '15:58:21', '74 seat', 'M.A Jinnah Rd, Central Jacob Lines Karachi.'),
+(3, 'The Arena Karachi', 'Pakistan', '01:20:15', '28:36:13', '10:40:00', '70 seat', 'Bahria Town Tower, Tariq Rd, P.E.C.H.S Block 2 Karachi.'),
+(4, 'Mega Multiplex Cinema\r\n', 'Pakistan', '05:07:54', '40:25:08', '46:20:13', '74 Seat', 'Millennium Mall, Rashid Minhas Rd, Gulistan-e-Johar, Karachi.'),
+(5, 'Universal Cinemas', 'Pakistan', '05:07:54', '01:20:08', '50:03:29', '80 Seat', ' Abdul Haque Rd، International Expo Centre, Trade Centre Commercial Area Phase 2 Johar Town, Lahore.');
 
 -- --------------------------------------------------------
 
@@ -326,7 +330,7 @@ INSERT INTO `ticket` (`T-id`, `booking-id`, `ticket-type`, `price`) VALUES
 -- Indexes for table `booking`
 --
 ALTER TABLE `booking`
-  ADD PRIMARY KEY (`booking-id`),
+  ADD PRIMARY KEY (`booking_id`),
   ADD KEY `moviet` (`movieTitle`),
   ADD KEY `c-id` (`customer-name`),
   ADD KEY `movie-id` (`movie-id`),
@@ -359,7 +363,7 @@ ALTER TABLE `genre`
 -- Indexes for table `movie`
 --
 ALTER TABLE `movie`
-  ADD PRIMARY KEY (`movie-id`),
+  ADD PRIMARY KEY (`movie_id`),
   ADD UNIQUE KEY `movieTitle` (`movieTitle`);
 
 --
@@ -374,7 +378,7 @@ ALTER TABLE `payment`
 -- Indexes for table `registration`
 --
 ALTER TABLE `registration`
-  ADD PRIMARY KEY (`register-id`),
+  ADD PRIMARY KEY (`register_id`),
   ADD UNIQUE KEY `email` (`email`),
   ADD UNIQUE KEY `user-password` (`Apassword`);
 
@@ -412,7 +416,7 @@ ALTER TABLE `seat_categories`
 -- Indexes for table `theatre`
 --
 ALTER TABLE `theatre`
-  ADD PRIMARY KEY (`theater-id`),
+  ADD PRIMARY KEY (`theater_id`),
   ADD UNIQUE KEY `theater-title` (`theater-title`);
 
 --
@@ -431,7 +435,7 @@ ALTER TABLE `ticket`
 -- AUTO_INCREMENT for table `booking`
 --
 ALTER TABLE `booking`
-  MODIFY `booking-id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `booking_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `book_status`
@@ -455,7 +459,7 @@ ALTER TABLE `genre`
 -- AUTO_INCREMENT for table `movie`
 --
 ALTER TABLE `movie`
-  MODIFY `movie-id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `movie_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT for table `payment`
@@ -467,7 +471,7 @@ ALTER TABLE `payment`
 -- AUTO_INCREMENT for table `registration`
 --
 ALTER TABLE `registration`
-  MODIFY `register-id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `register_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `reviews`
@@ -497,7 +501,7 @@ ALTER TABLE `seat_categories`
 -- AUTO_INCREMENT for table `theatre`
 --
 ALTER TABLE `theatre`
-  MODIFY `theater-id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `theater_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `ticket`
@@ -513,7 +517,7 @@ ALTER TABLE `ticket`
 -- Constraints for table `booking`
 --
 ALTER TABLE `booking`
-  ADD CONSTRAINT `booking_ibfk_1` FOREIGN KEY (`movie-id`) REFERENCES `movie` (`movie-id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `booking_ibfk_1` FOREIGN KEY (`movie-id`) REFERENCES `movie` (`movie_id`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `gener` FOREIGN KEY (`genre-type`) REFERENCES `genre` (`type`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `seat` FOREIGN KEY (`seat-type`) REFERENCES `seat` (`seat-type`) ON DELETE CASCADE ON UPDATE CASCADE;
 
@@ -521,13 +525,13 @@ ALTER TABLE `booking`
 -- Constraints for table `customer`
 --
 ALTER TABLE `customer`
-  ADD CONSTRAINT `customer_ibfk_1` FOREIGN KEY (`register-id`) REFERENCES `registration` (`register-id`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `customer_ibfk_1` FOREIGN KEY (`register-id`) REFERENCES `registration` (`register_id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `payment`
 --
 ALTER TABLE `payment`
-  ADD CONSTRAINT `book` FOREIGN KEY (`booking-id`) REFERENCES `booking` (`booking-id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `book` FOREIGN KEY (`booking-id`) REFERENCES `booking` (`booking_id`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `customer` FOREIGN KEY (`custome-id`) REFERENCES `customer` (`customer-id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
@@ -540,14 +544,14 @@ ALTER TABLE `reviews`
 -- Constraints for table `seat`
 --
 ALTER TABLE `seat`
-  ADD CONSTRAINT `test` FOREIGN KEY (`theater-no`) REFERENCES `theatre` (`theater-id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `test` FOREIGN KEY (`theater-no`) REFERENCES `theatre` (`theater_id`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `type` FOREIGN KEY (`seat-type`) REFERENCES `seat_categories` (`categories`);
 
 --
 -- Constraints for table `ticket`
 --
 ALTER TABLE `ticket`
-  ADD CONSTRAINT `booking` FOREIGN KEY (`booking-id`) REFERENCES `booking` (`booking-id`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `booking` FOREIGN KEY (`booking-id`) REFERENCES `booking` (`booking_id`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
