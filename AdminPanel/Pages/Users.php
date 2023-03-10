@@ -45,11 +45,22 @@ include("Config.php");
     <!-- sidenavbar ends -->
 <div class="height-100 bg-light main-container ">
 <div class="user-l d-flex ">
-<a href="#" class="user-head"> <i class="fa-solid fa-users"></i> <span class="nav_name">users lists</span> </a> 
-<form class="d-flex ms-auto">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success" type="submit">Search</button>
-      </form>
+<a href="#" class="user-head"> <i class="fa-solid fa-users"></i> <span class="nav_name">users lists</span> </a>
+<!-- action buttons -->
+<div class="ms-auto">
+            <form action="delete.php" method="POST"  >    
+              <!-- <form class="d-flex ms-auto">
+                      <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                      <button class="btn btn-outline-success" type="submit">Search</button>
+                    </form> -->
+            <button class="btn btn-success ">
+            <i class="fa-solid fa-circle-plus"></i>  new users</button>
+            <button class="btn btn-warning ">
+            <i class="fa-solid fa-pen-to-square"></i> modify</button>
+            <button type="submit" name="del_movie_data" class="btn btn-danger "><i class="fa-solid fa-trash"></i> </button>
+            </form>    
+       </div>
+       <!-- action buttons --> 
 </div>
 <hr>
 <div class="page-content page-container" id="page-content">
@@ -82,9 +93,7 @@ include("Config.php");
                           <th>
                             status
                           </th>
-                          <th>
-                            action
-                          </th>
+                          
                           
                         </tr>
                       </thead>
@@ -105,12 +114,7 @@ include("Config.php");
                           <td><?php echo $users_data["email"] ?></td>
                           <td><?php echo $users_data["role"] ?></td>
                           <td></td>
-                          <td>
-                          <button class="btn btn-primary"><a href="update.php?id=<?php echo  $users_data["register-id"] ?>"
-               class="text-white text-decoration-none"> Update</a></button>&nbsp;
-               <button class="btn btn-danger"><a href="delete.php?id=<?php echo  $users_data["register-id"] ?>" 
-               class="text-white text-decoration-none"> Delete</a></button>
-                          </td>
+
                          
                         </tr>
                         <?php  } ?>      

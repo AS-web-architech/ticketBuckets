@@ -21,7 +21,7 @@ session_start();
 
     <header class="header" id="header">
         <div class="header_toggle"> <i class='bx bx-menu' id="header-toggle"></i> </div>
-        <div class="header_img"> <img src="./assets/images/  <?php echo $_SESSION['picture']; ?>"    alt=""> </div>
+        <div class="header_img"> <img src="./assets/images/  "    alt=""> </div>
     </header>
     <div class="l-navbar" id="nav-bar">
         <nav class="nav">
@@ -47,77 +47,136 @@ session_start();
 <!-- sidenavbar ends -->
     <!--Container Main start-->
     <div class="height-100 bg-light main-container">
-       <h1 class="text-center main-heading">welcome  <?php echo $_SESSION['email'];?> </h1>
-        <div class="container">
-            <div class="row">
-          <!-- dashboard card one    -->
-      <div class="col-md-4  d-flex cards">
-   <div class="card flex" data-sr-id="10" style="visibility: visible; transform: none; opacity: 1; transition: none 0s ease 0s;">
-      <div class="card-body c-body1">
-         <div class="d-flex align-items-center text-hover-success">
-            <div class="avatar w-56 m-2 no-shadow gd-success">
-               <img src="./assets/images/Film_reel.svg.png" style="height:40px;width:40px;" alt="">
-            </div>
-            <div class="px-4 flex ">
-               <h4>movies</h4>
-               <div class="text-success mt-2">0</div>
-            </div>
-            <a href="#" class="text-muted" data-abc="true">
-               
-            </a>
-         </div>
-      </div>
-   </div>
-</div>  
-        
-    
-
-
-          <!-- dashboard card two   -->
-    
-      <div class="col-md-4 d-flex cards">
-   <div class="card flex" data-sr-id="10" style="visibility: visible; transform: none; opacity: 1; transition: none 0s ease 0s;">
-      <div class="card-body c-body2">
-         <div class="d-flex align-items-center text-hover-success ">
-            <div class="avatar w-56 m-2 no-shadow gd-success">
-            <img src="./assets/images/tvshow.svg" alt="">
-               
-            </div>
-            <div class="px-4 flex">
-               <h4>shows</h4>
-               <div class="text-success mt-2">0</div>
-            </div>
-            <a href="#" class="text-muted" data-abc="true">
-               
-            </a>
-         </div>
-      </div>
-   </div>
-</div>  
-                  <!-- dashboard card three    -->
-               <div class="col-md-4 d-flex cards">
-                  <div class="card flex" data-sr-id="10" style="visibility: visible; transform: none; opacity: 1; transition: none 0s ease 0s;">
-                     <div class="card-body c-body3">
-                        <div class="d-flex align-items-center text-hover-success">
-                           <div class="avatar w-56 m-2 no-shadow gd-success">
-                           <img src="./assets/images/users.svg" alt="">
-                           </div>
-                           <div class="px-4 flex">
-                              <h4>users</h4>
-                              <div class="text-success mt-2">0</div>
-                           </div>
-                           <a href="#" class="text-muted" data-abc="true">
-                              
-                           </a>
+       <!-- <h1 class="text-center main-heading">welcome  <?php echo $_SESSION['email'];?> </h1> -->
+      
+       <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous" /> -->
+<div class="container">
+<div class="col-md-10 ">
+    <div class="row ">
+        <div class="col-xl-3 col-lg-6">
+            <div class="card l-bg-cherry">
+                <div class="card-statistic-3 p-4">
+                    <div class="card-icon card-icon-large"><i class="fas fa-ticket-alt"></i></div>
+                    <div class="mb-4">
+                        <h5 class="card-title mb-0">total bookings </h5>
+                    </div>
+                    <div class="row align-items-center mb-2 d-flex">
+                        <div class="col-8">
+                            <h2 class="d-flex align-items-center mb-0">
+                            <?php
+                                  $dash_bookings="SELECT * FROM booking";
+                                  $dash_bookings_query=mysqli_query($conn,$dash_bookings);
+                                  if($toatal_bookings=mysqli_num_rows($dash_bookings_query)){
+                                    echo $toatal_bookings;
+                                  }
+                                
+                                ?>
+                            </h2>
                         </div>
-                     </div>
-                  </div >
-               </div>   
-    
-
+                        <!-- <div class="col-4 text-right">
+                            <span>12.5% <i class="fa fa-arrow-up"></i></span>
+                        </div> -->
+                    </div>
+                    <!-- <div class="progress mt-1 " data-height="8" style="height: 8px;">
+                        <div class="progress-bar l-bg-cyan" role="progressbar" data-width="25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" style="width: 25%;"></div>
+                    </div> -->
+                </div>
+            </div>
+        </div>
+        <div class="col-xl-3 col-lg-6">
+            <div class="card l-bg-blue-dark">
+                <div class="card-statistic-3 p-4">
+                    <div class="card-icon card-icon-large"><i class="fas fa-users"></i></div>
+                    <div class="mb-4">
+                        <h5 class="card-title mb-0">users registered</h5>
+                    </div>
+                    <div class="row align-items-center mb-2 d-flex">
+                        <div class="col-8">
+                            <h2 class="d-flex align-items-center mb-0">
+                            <?php
+                                  $dash_users="SELECT * FROM registration";
+                                  $dash_users_query=mysqli_query($conn,$dash_users);
+                                  if($toatal_users=mysqli_num_rows($dash_users_query)){
+                                    echo $toatal_users;
+                                  }
+                                
+                                ?>
+                            </h2>
+                        </div>
+                        <!-- <div class="col-4 text-right">
+                            <span>9.23% <i class="fa fa-arrow-up"></i></span>
+                        </div> -->
+                    </div>
+                    <!-- <div class="progress mt-1 " data-height="8" style="height: 8px;">
+                        <div class="progress-bar l-bg-green" role="progressbar" data-width="25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" style="width: 25%;"></div>
+                    </div> -->
+                </div>
+            </div>
+        </div>
+        <div class="col-xl-3 col-lg-6">
+            <div class="card l-bg-green-dark">
+                <div class="card-statistic-3 p-4">
+                    <div class="card-icon card-icon-large"><i class="fa-sharp fa-solid fa-film fas"></i> </div>
+                    <div class="mb-4">
+                        <h5 class="card-title mb-0">movies collections</h5>
+                    </div>
+                    <div class="row align-items-center mb-2 d-flex">
+                        <div class="col-8">
+                            <h2 class="d-flex align-items-center mb-0">
+                                <?php
+                                  $dash_movie="SELECT * FROM movie";
+                                  $dash_movie_query=mysqli_query($conn,$dash_movie);
+                                  if($toatal_movies=mysqli_num_rows($dash_movie_query)){
+                                    echo $toatal_movies;
+                                  }
+                                
+                                ?>
+                            </h2>
+                        </div>
+                        <!-- <div class="col-4 text-right">
+                            <span>10% <i class="fa fa-arrow-up"></i></span>
+                        </div> -->
+                    </div>
+                    <!-- <div class="progress mt-1 " data-height="8" style="height: 8px;">
+                        <div class="progress-bar l-bg-orange" role="progressbar" data-width="25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" style="width: 25%;"></div>
+                    </div> -->
+                </div>
+            </div>
+        </div>
+        <div class="col-xl-3 col-lg-6">
+            <div class="card l-bg-orange-dark">
+                <div class="card-statistic-3 p-4">
+                    <div class="card-icon card-icon-large"><i class="fas fa-dollar-sign"></i></div>
+                    <div class="mb-4">
+                        <h5 class="card-title mb-0">Revenue Today</h5>
+                    </div>
+                    <div class="row align-items-center mb-2 d-flex">
+                        <div class="col-8">
+                            <h2 class="d-flex align-items-center mb-0">
+                                $11.61k
+                            </h2>
+                        </div>
+                        <div class="col-4 text-right">
+                            <span>2.5% <i class="fa fa-arrow-up"></i></span>
+                        </div>
+                    </div>
+                    <!-- <div class="progress mt-1 " data-height="8" style="height: 8px;">
+                        <div class="progress-bar l-bg-cyan" role="progressbar" data-width="25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" style="width: 25%;"></div>
+                    </div> -->
+                </div>
             </div>
         </div>
     </div>
+</div>
+      
+</div>   
+      
+      
+      
+      
+      
+      
+      </div>
     <!--Container Main end-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="./assets/js/index2.js"></script>
