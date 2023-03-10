@@ -1,6 +1,10 @@
 <?php
+include("scripts.php");
+include("sidenav.php");
 include("Config.php");
+// include('delete.php');
 session_start();
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -8,109 +12,44 @@ session_start();
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/x-icon" href="../assets/images/logo (3).png">
-    <!-- bootstrap cdn -->
-    <link rel="stylesheet" href="../assets/css/bootstrap-5.0.2-dist/css/bootstrap.min.css">
-    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"> -->
-    <!-- style_css -->
-    <link rel="stylesheet" href="../assets/css/movie.css">
-    <!-- Font_Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
-    <title>Admin | Tickets Bucket</title>
-</head>
-<body>
-    <!-- ######################## Navigation ########################## -->
-<div class="container1">
-    <div class="row">
-        <div class="col-sm-12">
-        <div class="navigation">
-        <ul>
-        <li>
-            <a href="#">
-                <span class="icon">
-                    <!-- <ion-icon name="ticket-outline"></ion-icon> -->
-                    <img src="../assets/images/mylogo (2).png" alt="" class="ion-icon">
-                </span>
-                <!-- <span class="title" style="margin-top:20px;margin-left: 6px;">Tickets Bucket</span> -->
-            </a>
-        </li>
-        <li>
-           <a href="../index.php">
-                <span class="icon">
-                  <ion-icon name="home-outline"></ion-icon>
-                </span>
-                <span class="title" style="margin-top:20px;margin-left: 10px;">Dashboard</span>
-            </a>
-        </li>
-        <li>
-           <a href="Users.php">
-                <span class="icon">
-                <ion-icon name="people-outline"></ion-icon>
-                </span>
-                <span class="title" style="margin-top:20px;margin-left: 10px;">Users</span>
-            </a>
-        </li>
-        <li>
-           <a href="Movies.php">
-                <span class="icon">
-                     <ion-icon name="videocam-outline"></ion-icon>
-                </span>
-                <span class="title" style="margin-top:20px;margin-left: 10px;">Movies</span>
-            </a>
-        </li>
-        <li>
-           <a href="Theaters.php">
-                <span class="icon">
-                <ion-icon name="tv-outline"></ion-icon>
-                </span>
-                <span class="title" style="margin-top:20px;margin-left: 10px;">Theaters</span>
-            </a>
-        </li>
-        <li>
-           <a href="booking.php">
-                <span class="icon">
-                <ion-icon name="id-card-outline"></ion-icon>
-                </span>
-                <span class="title" style="margin-top:20px;margin-left: 10px;">Booking</span>
-            </a>
-        </li>
-        <li>
-           <a href="reviews.php">
-                <span class="icon">
-                <ion-icon name="star-half-outline"></ion-icon>
-                </span>
-                <span class="title" style="margin-top:20px;margin-left: 10px;">Reviews</span>
-            </a>
-        </li>
-        <li>
-           <a href="#">
-                <span class="icon" style="margin-top:8px;margin-left:3px;">
-                <ion-icon name="log-out-outline"></ion-icon>
-                </span>
-                <form action="" method="post" style="margin-top:20px;margin-left: 6px;">
-                   <button class="title "id="LgBtn" name="logout" type="submit" style=" padding: 5px 10px;
-                    background: transparent; color: var(--dark_red); text-decoration: none;
-                     border-radius: 6px;border:1px solid var(--dark_red);">Logout</button>
-                </form>
-                <?php
-                  if(isset($_POST['logout'])){
-                    session_start();
-                   session_unset();
-                   session_destroy();
- 
-                   echo "<script>window.location.href ='http://localhost/ticketBuckets/AdminPanel/pages/adminlogin.php';</script>"; 
- 
-                  }
-                ?>
- 
-            </a>
-        </li>
-        </ul>
-        </div>
-        </div>
-    </div>
-    
+    <title>Document</title>
+    <link rel="stylesheet" href="../assets/css/instyle.css">
 
+</head>
+  
+<body id="body-pd">
+    <!-- sidenavbar starts -->
+
+    <header class="header" id="header">
+        <div class="header_toggle"> <i class='bx bx-menu' id="header-toggle"></i> </div>
+        <div class="header_img"> <img src="https://i.imgur.com/hczKIze.jpg" alt=""> </div>
+    </header>
+    <div class="l-navbar" id="nav-bar">
+        <nav class="nav">
+            <div>
+                 <a href="#" class="nav_logo"> <img src="../assets/images/adminlogo.svg" alt="">  <span class="nav_logo-name">Admin &nbsp;Panel </span> </a>
+                <div class="nav_list"> 
+                    <a href="../index.php" class="nav_link  "> <i class="fa-solid fa-gauge"></i>
+                        <span class="nav_name">Dashboard</span>
+                     </a> 
+                     <a href="../Pages/Users.php" class="nav_link "> <i class='bx bx-user nav_icon'></i> 
+                    <span class="nav_name ">Users</span> </a>
+                    <a href="../Pages/booking.php" class="nav_link  " > <i class="fa-solid fa-ticket"></i> <span class="nav_name">bookings</span> </a> 
+                    <a href="../Pages/reviews.php" class="nav_link"> <i class="fa-solid fa-star"></i><span class="nav_name">reviews</span> </a> 
+                    <a href="../Pages/Movies.php" class="nav_link active" > <i class="fa-solid fa-video"></i> <span class="nav_name">movies</span> </a> 
+                     <a href="../Pages/Theaters.php" class="nav_link"><i class="fa-solid fa-masks-theater"></i> <span class="nav_name">theatre</span> </a>
+                     <!-- <a href="#" class="nav_link"> <i class='bx bx-bar-chart-alt-2 nav_icon'></i> <span class="nav_name"></span> </a> -->
+ 
+                    </div>
+            </div> 
+            <a href="#" class="nav_link"> <i class='bx bx-log-out nav_icon'></i> <span class="nav_name">SignOut</span> </a>
+        </nav>
+    </div>
+    <!-- sidenavbar ends -->
+    <!-- main container  -->
+    <div class="height-100 bg-light main-container">
+
+<<<<<<< Updated upstream
     <!-- ############################### Main ########################### -->
     <div class="main">
         <div class="row">
@@ -165,17 +104,87 @@ session_start();
                         <th>DURATION</th>
                         <!-- <th>COMMENTS</th> -->
                         <th>ACTION</th>
+=======
+    <div class="user-l d-flex mt-3">
+        <a href="#" class="user-head"><i class="fa-sharp fa-solid fa-film"></i> <span class="nav_name">My collections</span> </a> 
+        <!-- action buttons -->
+        <div class="ms-auto">
+            <form action="delete.php" method="POST"  >    
+            <button class="btn btn-success ">
+            <i class="fa-solid fa-circle-plus"></i>  new movies</button>
+            <button class="btn btn-warning ">
+            <i class="fa-solid fa-pen-to-square"></i> modify</button>
+            <button type="submit" name="del_movie_data" class="btn btn-danger "><i class="fa-solid fa-trash"></i> </button>
+            </form>    
+       </div>
+       <!-- action buttons -->
+        
+</div>
+<hr>
+<!-- movie data  -->
+<div class="container mt-3">
+<div class="container mt-5">
+        <div class="table-responsive">
+        <form action="delete.php" method="POST">
+            <table class="table table-striped table-dark text-white table-hover">
+                
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th>movie title</th>
+                        <th>MOVIE</th>
+                        <th>MOVIE ID</th>
+                        <th>GENRE</th>
+                        <th>YEAR</th>
+                        <th>DURATION</th>
+                        
+>>>>>>> Stashed changes
                     </tr>
                 </thead>
                 <tbody>
                 <?php
           
-        //   include("../AdminPanel/Pages/Config.php");
-          
-          $data = mysqli_query($conn,"SELECT * from movie");
-
-          while ($movie_data = mysqli_fetch_array($data)){
+            
+          $movie_data= "SELECT * from movie";
+            $data = mysqli_query($conn, $movie_data);
+            if(mysqli_num_rows($data) > 0){
+                foreach($data as $row){
+                    ?>
+                    <tr>
+                        <td>
+                            <form action="" method="post">
+                            <input type="checkbox" name="deleteMovie[]" value="<?php echo $row['movie-id'];?>">
+                            </form>
+                        </td>
+                        <td>
+                          <h6><?php echo $row["movieTitle"] ?></h6>
+                        </td>
+                        <td>
+                            <div class="d-flex align-items-center">
+                            <img width="100px" class="pic" height="100px" src="../assets/images/<?php echo $row["movie_pic"] ?>" alt="">
+                            </div>
+                        </td>
+                        <td >
+                        <?php echo $row["movie-id"] ?>
+                        </td>
+                        <td><?php echo $row["genre_type"] ?></td>
+                        <td  class="font-weight-bold"><?php echo $row["year"] ?></td>
+                         <td class="text-warning"><?php echo $row["duration"] ?></td>
+                        
+                    </tr>
+                    
+                    <?php   
+                }
+            }
+            else{
+                ?>
+                     <tr>
+                        <td>no record found</td>
+                     </tr>
+                <?php
+            }
             ?>
+<<<<<<< Updated upstream
 
             <tr>
               <th><?php echo $movie_data["movie_id"] ?></th>
@@ -196,21 +205,25 @@ session_start();
           </div>
        </div>
             </div>
+=======
+              
+                    
+            <?php   ?>       
+                </tbody>
+            </table>
+            </form>
+>>>>>>> Stashed changes
         </div>
-     </div>
-      
     </div>
-
-    
 </div>
 
-  <!-- javascript cdn  -->
-  <script src="../assets/css/bootstrap-5.0.2-dist/js/bootstrap.min.js"></script>
-  <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script> -->
-  <!-- main_js -->
-  <script src="../assets/js/main.js"></script>
-  <!-- ionicons -->
-   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-</body>
-</html>
+
+<!-- movie data ends  -->
+
+
+
+
+
+
+    </div>
+    <!-- main container ends  -->

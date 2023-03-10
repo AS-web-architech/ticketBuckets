@@ -1,5 +1,7 @@
 <?php
-include("../AdminPanel/Pages/Config.php");
+include("./Pages/sidenav.php");
+include("./Pages/scripts.php");
+include("./Pages/Config.php");
 session_start();
 ?>
 <!DOCTYPE html>
@@ -8,6 +10,7 @@ session_start();
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<<<<<<< Updated upstream
     <link rel="icon" type="image/x-icon" href="./assets/images/logo (3).png">
     <!-- bootstrap cdn -->
     <link rel="stylesheet" href="./assets/css/bootstrap-5.0.2-dist/css/bootstrap.min.css">
@@ -17,98 +20,43 @@ session_start();
     <!-- Font_Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
     <title>Admin | Tickets Bucket</title>
+=======
+    <title>ticketBuckets.com</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./assets/css/instyle.css">
+>>>>>>> Stashed changes
 </head>
-<body>
-    <!-- ######################## Navigation ########################## -->
-<div class="container1">
-    <div class="row">
-        <div class="col-sm-12">
-        <div class="navigation">
-        <ul>
-        <li>
-            <a href="#">
-                <span class="icon">
-                    <!-- <ion-icon name="ticket-outline"></ion-icon> -->
-                    <img src="./assets/images/mylogo (2).png" alt="" class="ion-icon">
-                </span>
-                <!-- <span class="title" style="margin-top:20px;margin-left: 6px;">Tickets Bucket</span> -->
-            </a>
-        </li>
-        <li>
-           <a href="index.php">
-                <span class="icon">
-                  <ion-icon name="home-outline"></ion-icon>
-                </span>
-                <span class="title" style="margin-top:20px;margin-left: 10px;">Dashboard</span>
-            </a>
-        </li>
-        <li>
-           <a href="./Pages/Users.php">
-                <span class="icon">
-                <ion-icon name="people-outline"></ion-icon>
-                </span>
-                <span class="title" style="margin-top:20px;margin-left: 10px;">Users</span>
-            </a>
-        </li>
-        <li>
-           <a href="./Pages/Movies.php">
-                <span class="icon">
-                     <ion-icon name="videocam-outline"></ion-icon>
-                </span>
-                <span class="title" style="margin-top:20px;margin-left: 10px;">Movies</span>
-            </a>
-        </li>
-        <li>
-           <a href="./Pages/Theaters.php">
-                <span class="icon">
-                <ion-icon name="tv-outline"></ion-icon>
-                </span>
-                <span class="title" style="margin-top:20px;margin-left: 10px;">Theaters</span>
-            </a>
-        </li>
-        <li>
-           <a href="./Pages/booking.php">
-                <span class="icon">
-                <ion-icon name="id-card-outline"></ion-icon>
-                </span>
-                <span class="title" style="margin-top:20px;margin-left: 10px;">Booking</span>
-            </a>
-        </li>
-        <li>
-           <a href="./Pages/reviews.php">
-                <span class="icon">
-                <ion-icon name="star-half-outline"></ion-icon>
-                </span>
-                <span class="title" style="margin-top:20px;margin-left: 10px;">Reviews</span>
-            </a>
-        </li>
-        <li>
-           <a href="#">
-                <span class="icon" style="margin-top:8px;margin-left:3px;">
-                <ion-icon name="log-out-outline"></ion-icon>
-                </span>
-                <form action="" method="post" style="margin-top:20px;margin-left: 6px;">
-                   <button class="title "id="LgBtn" name="logout" type="submit" style=" padding: 5px 10px;
-                    background: transparent; color: var(--dark_red); text-decoration: none;
-                     border-radius: 6px;border:1px solid var(--dark_red);">Logout</button>
-                </form>
-                <?php
-                  if(isset($_POST['logout'])){
-                    session_start();
-                   session_unset();
-                   session_destroy();
+<body id="body-pd">
+   <!-- sidenavbar starts -->
+
+    <header class="header" id="header">
+        <div class="header_toggle"> <i class='bx bx-menu' id="header-toggle"></i> </div>
+        <div class="header_img"> <img src="./assets/images/  <?php echo $_SESSION['picture']; ?>"    alt=""> </div>
+    </header>
+    <div class="l-navbar" id="nav-bar">
+        <nav class="nav">
+            <div>
+                 <a href="#" class="nav_logo"> <img src="./assets/images/adminlogo.svg" alt="">  <span class="nav_logo-name">Admin &nbsp;Panel </span> </a>
+                <div class="nav_list"> 
+                    <a href="./index.php" class="nav_link active "> <i class="fa-solid fa-gauge"></i>
+                        <span class="nav_name">Dashboard</span>
+                     </a> 
+                     <a href="./Pages/Users.php" class="nav_link "> <i class='bx bx-user nav_icon'></i> 
+                    <span class="nav_name ">Users</span> </a>
+                     <a href="./Pages/booking.php" class="nav_link " > <i class="fa-solid fa-ticket"></i> <span class="nav_name">bookings</span> </a> 
+                     <a href="./Pages/reviews.php" class="nav_link"> <i class="fa-solid fa-star"></i><span class="nav_name">reviews</span> </a> 
+                     <a href="./Pages/Movies.php" class="nav_link"> <i class="fa-solid fa-video"></i> <span class="nav_name">movies</span> </a> 
+                     <a href="./Pages/Theaters.php" class="nav_link"><i class="fa-solid fa-masks-theater"></i> <span class="nav_name">theatre</span> </a>
+                     <!-- <a href="#" class="nav_link"> <i class='bx bx-bar-chart-alt-2 nav_icon'></i> <span class="nav_name"></span> </a> -->
  
-                   echo "<script>window.location.href ='http://localhost/ticketBuckets/AdminPanel/pages/adminlogin.php';</script>"; 
- 
-                  }
-                ?>
- 
-            </a>
-        </li>
-        </ul>
-        </div>
-        </div>
+                    </div>
+            </div> 
+            <a href="#" class="nav_link"> <i class='bx bx-log-out nav_icon'></i> <span class="nav_name">SignOut</span> </a>
+        </nav>
     </div>
+<<<<<<< Updated upstream
     
 
     <!-- ############################### Main ########################### -->
@@ -145,123 +93,37 @@ session_start();
        
         <!-- ############################ cards ######################### -->
         <div class="container-fluid">
+=======
+<!-- sidenavbar ends -->
+    <!--Container Main start-->
+    <div class="height-100 bg-light main-container">
+       <h1 class="text-center main-heading">welcome  <?php echo $_SESSION['email'];?> </h1>
+        <div class="container">
+>>>>>>> Stashed changes
             <div class="row">
-                <div class="col-sm-12">
-                <div class="cardBox">
-        <div class="card">
-            <div>
-              <div class="iconBx">
-              <i class="fa-solid fa-masks-theater"></i>
-              </div>
-                <div class="number">100</div>
-                <div class="cardName">Theaters</div>
+          <!-- dashboard card one    -->
+      <div class="col-md-4  d-flex cards">
+   <div class="card flex" data-sr-id="10" style="visibility: visible; transform: none; opacity: 1; transition: none 0s ease 0s;">
+      <div class="card-body c-body1">
+         <div class="d-flex align-items-center text-hover-success">
+            <div class="avatar w-56 m-2 no-shadow gd-success">
+               <img src="./assets/images/Film_reel.svg.png" style="height:40px;width:40px;" alt="">
             </div>
-            
-        </div>
+            <div class="px-4 flex ">
+               <h4>movies</h4>
+               <div class="text-success mt-2">0</div>
+            </div>
+            <a href="#" class="text-muted" data-abc="true">
+               
+            </a>
+         </div>
+      </div>
+   </div>
+</div>  
         
-        <div class="card">
-            <div>
-              <div class="iconBx">
-                <i class="fa-solid fa-ticket"></i>
-              </div>
-                <div class="number">37,032</div>
-                <div class="cardName">Tickets Sold</div>
-            </div>
-        </div>
-
-        <div class="card">
-            <div>
-              <div class="iconBx">
-                 <i class="fa-solid fa-users"></i>
-              </div>
-                <div class="number">50,369</div>
-                <div class="cardName">Customers</div>
-            </div>
-        </div>
-        <div class="card">
-            <div>
-               <div class="iconBx">
-               <i class="fa-solid fa-film"></i>
-               </div>
-               <div class="number">1000</div>
-                <div class="cardName">New Movies</div>
-            </div>
-        </div>
-        <!-- <div class="card">
-            <div>
-                <div class="cardName">Theater</div>
-                <div class="number">400</div>
-            </div>
-            <div class="iconBx">
-            <i class="fa-solid fa-masks-theater"></i>
-            </div>
-        </div> -->
-
-     </div>
-
-                </div>
-            </div>
-        </div>
-     
-     <!-- ############################## User Data List ############################ -->
-     <!-- <div class="container">
-        <div class="row">
-            <div class="col-sm-12">
-            <div class="details">
-          <div class="userData">
-              <div class="cardHeader">
-                  <h2 class="userHd">User Details</h2>
-                       <button type="submit" class="Addbtn" name="fetch">Add Users</button>
-                  <button type="add" class="Addbtn" >Add Users</a>
-              </div>
-             <table class="table">
-                <thead>
-                    <tr>
-                        <th>ID</th>
-                        <th>Name</th>
-                        <th>Email</th>
-                        <th>Password</th>
-                        <th>Picture</th>
-                        <th>Role</th>
-                        <th>Action</th>
-                    </tr>
-                </thead>
-                <tbody>
-                <?php
-          
-          include("../AdminPanel/Pages/Config.php");
-          
-          $data = mysqli_query($conn,"SELECT * from registration");
-
-          while ($users_data = mysqli_fetch_array($data)){
-            ?>
-
-            <tr>
-              <th><?php echo $users_data["register-id"] ?></th>
-              <td><?php echo $users_data["full_name"] ?></td>
-              <td><?php echo $users_data["email"] ?></td>
-              <td><?php echo $users_data["Apassword"] ?></td>
-              <td><img width="100px" height="100px" src="./assets/images/<?php echo $users_data["picture"] ?>" alt=""></td>
-              <td><?php echo $users_data["role"] ?></td>
-              <td><button class="btn btn-primary"><a href="update.php?id=<?php echo  $users_data["register-id"] ?>"
-               class="text-white text-decoration-none"> Update</a></button>&nbsp;
-               <button class="btn btn-danger"><a href="delete.php?id=<?php echo  $users_data["register-id"] ?>" 
-               class="text-white text-decoration-none"> Delete</a></button></td>
-            </tr>
-        <?php  } ?>
-                </tbody>
-             </table>
-          </div>
-       </div>
-            </div>
-        </div>
-     </div> -->
-      
-    </div>
-
     
-</div>
 
+<<<<<<< Updated upstream
   <!-- javascript cdn  -->
   <script src="../assets/css/bootstrap-5.0.2-dist/js/bootstrap.min.js"></script>
   <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script> -->
@@ -270,5 +132,56 @@ session_start();
   <!-- ionicons -->
    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+=======
+
+          <!-- dashboard card two   -->
+    
+      <div class="col-md-4 d-flex cards">
+   <div class="card flex" data-sr-id="10" style="visibility: visible; transform: none; opacity: 1; transition: none 0s ease 0s;">
+      <div class="card-body c-body2">
+         <div class="d-flex align-items-center text-hover-success ">
+            <div class="avatar w-56 m-2 no-shadow gd-success">
+            <img src="./assets/images/tvshow.svg" alt="">
+               
+            </div>
+            <div class="px-4 flex">
+               <h4>shows</h4>
+               <div class="text-success mt-2">0</div>
+            </div>
+            <a href="#" class="text-muted" data-abc="true">
+               
+            </a>
+         </div>
+      </div>
+   </div>
+</div>  
+                  <!-- dashboard card three    -->
+               <div class="col-md-4 d-flex cards">
+                  <div class="card flex" data-sr-id="10" style="visibility: visible; transform: none; opacity: 1; transition: none 0s ease 0s;">
+                     <div class="card-body c-body3">
+                        <div class="d-flex align-items-center text-hover-success">
+                           <div class="avatar w-56 m-2 no-shadow gd-success">
+                           <img src="./assets/images/users.svg" alt="">
+                           </div>
+                           <div class="px-4 flex">
+                              <h4>users</h4>
+                              <div class="text-success mt-2">0</div>
+                           </div>
+                           <a href="#" class="text-muted" data-abc="true">
+                              
+                           </a>
+                        </div>
+                     </div>
+                  </div >
+               </div>   
+    
+
+            </div>
+        </div>
+    </div>
+    <!--Container Main end-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="./assets/js/index2.js"></script>
+>>>>>>> Stashed changes
 </body>
 </html>

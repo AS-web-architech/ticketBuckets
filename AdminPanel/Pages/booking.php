@@ -1,6 +1,7 @@
 <?php
+include("scripts.php");
+include("sidenav.php");
 include("Config.php");
-session_start();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -8,6 +9,7 @@ session_start();
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<<<<<<< Updated upstream
     <link rel="icon" type="image/x-icon" href="../assets/images/logo (3).png">
     <!-- bootstrap cdn -->
     <link rel="stylesheet" href="../assets/css/bootstrap-5.0.2-dist/css/bootstrap.min.css">
@@ -17,98 +19,41 @@ session_start();
     <!-- Font_Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
     <title>Admin | Tickets Bucket</title>
+=======
+    <title>Document</title>
+    <link rel="stylesheet" href="../assets/css/instyle.css">
+
+>>>>>>> Stashed changes
 </head>
-<body>
-    <!-- ######################## Navigation ########################## -->
-<div class="container1">
-    <div class="row">
-        <div class="col-sm-12">
-        <div class="navigation">
-        <ul>
-        <li>
-            <a href="#">
-                <span class="icon">
-                    <!-- <ion-icon name="ticket-outline"></ion-icon> -->
-                    <img src="../assets/images/mylogo (2).png" alt="" class="ion-icon">
-                </span>
-                <!-- <span class="title" style="margin-top:20px;margin-left: 6px;">Tickets Bucket</span> -->
-            </a>
-        </li>
-        <li>
-           <a href="../index.php">
-                <span class="icon">
-                  <ion-icon name="home-outline"></ion-icon>
-                </span>
-                <span class="title" style="margin-top:20px;margin-left: 10px;">Dashboard</span>
-            </a>
-        </li>
-        <li>
-           <a href="Users.php">
-                <span class="icon">
-                <ion-icon name="people-outline"></ion-icon>
-                </span>
-                <span class="title" style="margin-top:20px;margin-left: 10px;">Users</span>
-            </a>
-        </li>
-        <li>
-           <a href="Movies.php">
-                <span class="icon">
-                     <ion-icon name="videocam-outline"></ion-icon>
-                </span>
-                <span class="title" style="margin-top:20px;margin-left: 10px;">Movies</span>
-            </a>
-        </li>
-        <li>
-           <a href="Theaters.php">
-                <span class="icon">
-                <ion-icon name="tv-outline"></ion-icon>
-                </span>
-                <span class="title" style="margin-top:20px;margin-left: 10px;">Theaters</span>
-            </a>
-        </li>
-        <li>
-           <a href="booking.php">
-                <span class="icon">
-                <ion-icon name="id-card-outline"></ion-icon>
-                </span>
-                <span class="title" style="margin-top:20px;margin-left: 10px;">Booking</span>
-            </a>
-        </li>
-        <li>
-           <a href="reviews.php">
-                <span class="icon">
-                <ion-icon name="star-half-outline"></ion-icon>
-                </span>
-                <span class="title" style="margin-top:20px;margin-left: 10px;">Reviews</span>
-            </a>
-        </li>
-        <li>
-           <a href="#">
-                <span class="icon" style="margin-top:8px;margin-left:3px;">
-                <ion-icon name="log-out-outline"></ion-icon>
-                </span>
-                <form action="" method="post" style="margin-top:20px;margin-left: 6px;">
-                   <button class="title "id="LgBtn" name="logout" type="submit" style=" padding: 5px 10px;
-                    background: transparent; color: var(--dark_red); text-decoration: none;
-                     border-radius: 6px;border:1px solid var(--dark_red);">Logout</button>
-                </form>
-                <?php
-                  if(isset($_POST['logout'])){
-                    session_start();
-                   session_unset();
-                   session_destroy();
+<!-- sidenavbar starts -->
+  
+<body id="body-pd">
+    <header class="header" id="header">
+        <div class="header_toggle"> <i class='bx bx-menu' id="header-toggle"></i> </div>
+        <div class="header_img"> <img src="https://i.imgur.com/hczKIze.jpg" alt=""> </div>
+    </header>
+    <div class="l-navbar" id="nav-bar">
+        <nav class="nav">
+            <div>
+                 <a href="#" class="nav_logo"> <img src="../assets/images/adminlogo.svg" alt="">  <span class="nav_logo-name">Admin &nbsp;Panel </span> </a>
+                <div class="nav_list"> 
+                    <a href="../index.php" class="nav_link  "> <i class="fa-solid fa-gauge"></i>
+                        <span class="nav_name">Dashboard</span>
+                     </a> 
+                     <a href="../Pages/Users.php" class="nav_link "> <i class='bx bx-user nav_icon'></i> 
+                    <span class="nav_name ">Users</span> </a>
+                     <a href="../Pages/booking.php" class="nav_link active " > <i class="fa-solid fa-ticket"></i> <span class="nav_name">bookings</span> </a> 
+                     <a href="../Pages/reviews.php" class="nav_link"> <i class="fa-solid fa-star"></i><span class="nav_name">reviews</span> </a> 
+                     <a href="../Pages/Movies.php" class="nav_link"> <i class="fa-solid fa-video"></i> <span class="nav_name">movies</span> </a> 
+                     <a href="../Pages/Theaters.php" class="nav_link"><i class="fa-solid fa-masks-theater"></i> <span class="nav_name">theatre</span> </a>
+                     <!-- <a href="#" class="nav_link"> <i class='bx bx-bar-chart-alt-2 nav_icon'></i> <span class="nav_name"></span> </a> -->
  
-                   echo "<script>window.location.href ='http://localhost/ticketBuckets/AdminPanel/pages/adminlogin.php';</script>"; 
- 
-                  }
-                ?>
- 
-            </a>
-        </li>
-        </ul>
-        </div>
-        </div>
+                    </div>
+            </div> 
+            <a href="#" class="nav_link"> <i class='bx bx-log-out nav_icon'></i> <span class="nav_name">SignOut</span> </a>
+        </nav>
     </div>
+<<<<<<< Updated upstream
     
 
     <!-- ############################### Main ########################### -->
@@ -225,3 +170,6 @@ session_start();
    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 </body>
 </html>
+=======
+<!-- sidenavbar ends -->
+>>>>>>> Stashed changes
