@@ -9,7 +9,6 @@ include("Config.php");
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<<<<<<< Updated upstream
     <link rel="icon" type="image/x-icon" href="../assets/images/logo (3).png">
     <!-- bootstrap cdn -->
     <link rel="stylesheet" href="../assets/css/bootstrap-5.0.2-dist/css/bootstrap.min.css">
@@ -19,10 +18,6 @@ include("Config.php");
     <!-- Font_Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
     <title>Admin | Tickets Bucket</title>
-=======
-    <title>Document</title>
-    <link rel="stylesheet" href="../assets/css/instyle.css">
->>>>>>> Stashed changes
 </head>
   
 <body id="body-pd">
@@ -95,68 +90,12 @@ include("Config.php");
           
           //   include("../AdminPanel/Pages/Config.php");
             
-<<<<<<< Updated upstream
-            <div class="AD_Info">
-               <div class="admin" style="float:right;margin-top:7px;">
-                    <img src="../assets/images/<?php echo $_SESSION['picture']; ?>" alt="">
-                </div>
-               <div class="AD_Name" style="margin-right:56px;margin-top:5px;">
-                   <h6 class="text-white"><?php echo $_SESSION['full_name']; ?></h6>
-                </div>
-                <div class="AD_Role" style="margin-right:56px;">
-                    <h6 class="text-sm text-center" style="color:var(--dark_red);font-size:13px;">( <?php echo $_SESSION['role']; ?> )</h6>
-                </div>
-            </div>
-        </div><br>
-            </div>
-        </div>
-
-     <!-- ############################## User Data List ############################ -->
-     <div class="container-fluid">
-        <div class="row">
-            <div class="col-sm-12">
-            <div class="details">
-          <div class="userData">
-              <div class="cardHeader">
-                  <h3 class="userHd">Theater Details</h3>
-                       <button type="submit" class="Addbtn" name="fetch">Add Theater</button>
-                  <!-- <button type="add" class="Addbtn" >Add Users</a> -->
-              </div><br>
-              <div class="table-responsive-sm">
-             <table class="table table-bordered-bottom align-middle border-d table-sm table-responsive-md table-striped">
-                <thead class="align-middle">
-                    <tr class="text-dark" style="background: var(--dark_red);">
-                        <th>ID</th>
-                        <th>NAME</th>
-                        <th>COUNTRY</th>
-                        <th>HALL-1</th>
-                        <th>HALL-2</th>
-                        <th>HALL-3</th>
-                        <th>CAPACITY</th>
-                        <th>LOCATION</th>
-                        <th>ACTION</th>
-                    </tr>
-                </thead>
-                <tbody>
-                <?php
-          
-        //   include("../AdminPanel/Pages/Config.php");
-          
-          $data = mysqli_query($conn,"SELECT * from theatre");
-
-          while ($theater_data = mysqli_fetch_array($data)){
-            ?>
-
-            <tr>
-              <th><?php echo $theater_data["theater_id"] ?></th>
-=======
             $data = mysqli_query($conn,"SELECT * from theatre");
   
             while ($theater_data = mysqli_fetch_array($data)){
               ?>
 
     <th><?php echo $theater_data["theater_id"] ?></th>
->>>>>>> Stashed changes
               <td><?php echo $theater_data["theater-title"] ?></td>
               <td><?php echo $theater_data["country"] ?></td>
               <td><?php echo $theater_data["Hall-1"] ?></td>
@@ -170,20 +109,12 @@ include("Config.php");
                class="text-white text-decoration-none"> Delete</a></button></td>
             </tr>
         <?php  } ?>
-<<<<<<< Updated upstream
-                </tbody>
-             </table>
-             </div>
-          </div>
-       </div>
-=======
         <tbody>
         </tbody>
                     </table>
                   </div>
                 </div>
               </div>
->>>>>>> Stashed changes
             </div>
             </div>
               </div>

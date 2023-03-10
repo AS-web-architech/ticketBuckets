@@ -49,62 +49,6 @@ session_start();
     <!-- main container  -->
     <div class="height-100 bg-light main-container">
 
-<<<<<<< Updated upstream
-    <!-- ############################### Main ########################### -->
-    <div class="main">
-        <div class="row">
-            <div class="col-sm-12">
-            <div class="topbar">
-            <div class="toggle">
-               <ion-icon name="menu-outline"></ion-icon>
-            </div>
-
-            <div class="search">
-                <label>
-                    <input type="text" placeholder="Search Here">
-                    <ion-icon name="search-outline"></ion-icon>
-                </label>
-            </div>
-            
-            <div class="AD_Info">
-               <div class="admin" style="float:right;margin-top:7px;">
-                    <img src="../assets/images/<?php echo $_SESSION['picture']; ?>" alt="">
-                </div>
-               <div class="AD_Name" style="margin-right:56px;margin-top:5px;">
-                   <h6 class="text-white"><?php echo $_SESSION['full_name']; ?></h6>
-                </div>
-                <div class="AD_Role" style="margin-right:56px;">
-                    <h6 class="text-sm text-center" style="color:var(--dark_red);font-size:13px;">( <?php echo $_SESSION['role']; ?> )</h6>
-                </div>
-            </div>
-        </div><br>
-            </div>
-        </div>
-
-     <!-- ############################## User Data List ############################ -->
-     <div class="container-fluid">
-        <div class="row">
-            <div class="col-sm-12">
-            <div class="details">
-          <div class="userData">
-              <div class="cardHeader pt-2">
-                  <h3 class="userHd ps-2">Movie Details</h3>
-                       <button type="submit" class="Addbtn" name="fetch">Add Movie</button>
-                  <!-- <button type="add" class="Addbtn" >Add Users</a> -->
-              </div><br>
-              <div class="table-responsive-sm">
-             <table class="table table-bordered-bottom align-middle border-d table-sm table-responsive-md table-striped ">
-                <thead class="align-middle">
-                    <tr class="text-dark" style="background: var(--dark_red);">
-                        <th>ID</th>
-                        <th>IMAGE</th>
-                        <th>MOVIE NAME</th>
-                        <th>GENRE</th>
-                        <th>YEAR</th>
-                        <th>DURATION</th>
-                        <!-- <th>COMMENTS</th> -->
-                        <th>ACTION</th>
-=======
     <div class="user-l d-flex mt-3">
         <a href="#" class="user-head"><i class="fa-sharp fa-solid fa-film"></i> <span class="nav_name">My collections</span> </a> 
         <!-- action buttons -->
@@ -138,7 +82,6 @@ session_start();
                         <th>YEAR</th>
                         <th>DURATION</th>
                         
->>>>>>> Stashed changes
                     </tr>
                 </thead>
                 <tbody>
@@ -184,35 +127,12 @@ session_start();
                 <?php
             }
             ?>
-<<<<<<< Updated upstream
-
-            <tr>
-              <th><?php echo $movie_data["movie_id"] ?></th>
-              <td><img width="100px" class="pic" height="100px" src="../assets/images/<?php echo $movie_data["movie_pic"] ?>" alt=""></td>
-              <td><?php echo $movie_data["movieTitle"] ?></td>
-              <td><?php echo $movie_data["genre_type"] ?></td>
-              <td><?php echo $movie_data["year"] ?></td>
-              <td><?php echo $movie_data["duration"] ?></td>
-              <td><button class="btn btn-primary btn-sm"><a href="update.php?Mid=<?php echo  $movie_data["movie_id"] ?>"
-               class="text-white text-decoration-none"> Update</a></button>&nbsp;
-               <button class="btn btn-danger btn-sm"><a href="delete.php?Mid=<?php echo  $movie_data["movie_id"] ?>" 
-               class="text-white text-decoration-none"> Delete</a></button></td>
-            </tr>
-        <?php  } ?>
-                </tbody>
-             </table>
-             </div>
-          </div>
-       </div>
-            </div>
-=======
               
                     
             <?php   ?>       
                 </tbody>
             </table>
             </form>
->>>>>>> Stashed changes
         </div>
     </div>
 </div>
