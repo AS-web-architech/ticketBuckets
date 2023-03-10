@@ -9,21 +9,9 @@ include("Config.php");
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<<<<<<< Updated upstream
-    <link rel="icon" type="image/x-icon" href="../assets/images/logo (3).png">
-    <!-- bootstrap cdn -->
-    <link rel="stylesheet" href="../assets/css/bootstrap-5.0.2-dist/css/bootstrap.min.css">
-    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"> -->
-    <!-- style_css -->
-    <link rel="stylesheet" href="../assets/css/main.css">
-    <!-- Font_Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
-    <title>Admin | Tickets Bucket</title>
-=======
     <title>Document</title>
     <link rel="stylesheet" href="">
     <link rel="stylesheet" href="../assets/css/instyle.css">
->>>>>>> Stashed changes
 </head>
   
 <body id="body-pd">
