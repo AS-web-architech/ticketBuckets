@@ -31,14 +31,14 @@ if ($useremail == $row AND $password == $row   ) {
 }
 }
 
-if(isset($_POST['remember'])){
-    setcookie('email',$_POST['email'],time()+4000);
-    setcookie('Apassword',$_POST['Apassword'],time()+4000);
-    echo "cookies are set";
-}
-else{
-    echo "cookies are not set";
-}
+// if(isset($_POST['remember'])){
+//     setcookie('email',$_POST['email'],time()+4000);
+//     setcookie('Apassword',$_POST['Apassword'],time()+4000);
+//     echo "cookies are set";
+// }
+// else{
+//     echo "cookies are not set";
+// }
 
 
 
@@ -56,11 +56,7 @@ else{
     <title>Document</title>
     <link rel="stylesheet" href="./assets/css/instyle.css">
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-  <style>
-    body{
-        background-color:black;
-    }
-  </style>
+  
 
 </head>
 <body >
