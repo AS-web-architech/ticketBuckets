@@ -9,7 +9,7 @@ if(isset($_POST["register"])){
     $destination="../assets/images/uploads/".$imageName;
     move_uploaded_file($tempName,$destination);
     // $sql="INSERT INTO registration(picture) VALUES ('$imageName')";
-    // $que=mysqli_query($conn,$sql);
+    // $que=mysqli_query($conn,$sql); 
     $adminName=mysqli_real_escape_string($conn,$_POST['Aname']);
     $adminEmail=mysqli_real_escape_string($conn,$_POST['Aemail']);
     $adminPassword=mysqli_real_escape_string($conn,$_POST['Apassword']);
@@ -40,7 +40,7 @@ if(isset($_POST["register"])){
             echo "<script>alert('you have successfully signin ')</script>";
             // echo "<script>alert('please login your account')</script>";
            
-            echo "<script>window.location.href = '../../adminlogin.php';</script>"; 
+            echo "<script>window.location.href = '../adminlogin.php';</script>"; 
         }else{
 
             echo "<script>window.location.href = 'adminregister.php';</script>"; 

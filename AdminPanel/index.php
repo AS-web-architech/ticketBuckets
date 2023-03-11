@@ -1,27 +1,36 @@
 <?php
+session_start();
 include("./Pages/sidenav.php");
 include("./Pages/scripts.php");
 include("./Pages/Config.php");
-session_start();
 ?>
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ticketBuckets.com</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="./assets/css/instyle.css">
-</head>
-<body id="body-pd">
-   <!-- sidenavbar starts -->
-
-    <header class="header" id="header">
-        <div class="header_toggle"> <i class='bx bx-menu' id="header-toggle"></i> </div>
-        <div class="header_img"> <img src="./assets/images/  "    alt=""> </div>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>ticketBuckets.com</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css">
+        <link rel="stylesheet" href="./assets/css/instyle.css">
+    </head>
+    <body id="body-pd">
+        <!-- sidenavbar starts -->
+        
+        <header class="header d-flex" id="header">
+            <div class="header_toggle"> <i class='bx bx-menu' id="header-toggle"></i> </div>
+            
+            <div class="d-flex" >
+                <div class="header_img ms-auto mx-4"> <img class="img-fluid" src=".assets/images/uploads/<?php $_SESSION['picture'] ;?> "  
+                style="width:40px;height:40px;border:1px solid black"  alt="logo"> </div>
+                <p> <?php echo $_SESSION['full_name'];?> </p>&nbsp;     
+                
+               <!-- <button class="btn btn-info"styyle="margin:0;" >logout</button>    -->
+             </div>
+            
+        
     </header>
     <div class="l-navbar" id="nav-bar">
         <nav class="nav">
@@ -40,8 +49,17 @@ session_start();
                      <!-- <a href="#" class="nav_link"> <i class='bx bx-bar-chart-alt-2 nav_icon'></i> <span class="nav_name"></span> </a> -->
  
                     </div>
-            </div> 
-            <a href="#" class="nav_link"> <i class='bx bx-log-out nav_icon'></i> <span class="nav_name">SignOut</span> </a>
+            </div>
+            
+            <!-- signout button action   -->
+            <a href="#" class="nav_link"> 
+                <form action="./Pages/logout.php" method="POST">
+                <button class="btn btn-transparent m-0 p-0" type="submit" name="Signout">
+                    <i class='bx bx-log-out nav_icon'></i> <span class="nav_name">SignOut</span>
+                 </a>
+                </button>
+                </form>
+                <!-- signout button ends   -->
         </nav>
     </div>
 <!-- sidenavbar ends -->
@@ -50,7 +68,8 @@ session_start();
        <!-- <h1 class="text-center main-heading">welcome  <?php echo $_SESSION['email'];?> </h1> -->
       
        <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous" /> -->
-<div class="container">
+ 
+       <div class="container">
 <div class="col-md-10 ">
     <div class="row ">
         <div class="col-xl-3 col-lg-6">
@@ -113,12 +132,12 @@ session_start();
                 </div>
             </div>
         </div>
-        <div class="col-xl-3 col-lg-6">
+        <div class="col-xl-3 col-lg-6 colxl">
             <div class="card l-bg-green-dark">
                 <div class="card-statistic-3 p-4">
                     <div class="card-icon card-icon-large"><i class="fa-sharp fa-solid fa-film fas"></i> </div>
                     <div class="mb-4">
-                        <h5 class="card-title mb-0">movies collections</h5>
+                        <h5 class="card-title mb-0">movie collection</h5>
                     </div>
                     <div class="row align-items-center mb-2 d-flex">
                         <div class="col-8">

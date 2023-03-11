@@ -1,4 +1,5 @@
 <?php
+session_start();
 include("scripts.php");
 include("sidenav.php");
 include("Config.php");
@@ -18,7 +19,13 @@ include("Config.php");
 <body id="body-pd">
     <header class="header" id="header">
         <div class="header_toggle"> <i class='bx bx-menu' id="header-toggle"></i> </div>
-        <div class="header_img"> <img src="https://i.imgur.com/hczKIze.jpg" alt=""> </div>
+        <div class="d-flex" >
+                <div class="header_img ms-auto mx-4"> <img class="img-fluid" src=".assets/images/uploads/<?php $_SESSION['picture'] ;?> "  
+                style="width:40px;height:40px;border:1px solid black"  alt="logo"> </div>
+                <p> <?php echo $_SESSION['full_name'];?> </p>&nbsp;     
+                
+               <!-- <button class="btn btn-info"styyle="margin:0;" >logout</button>    -->
+             </div>
     </header>
     <div class="l-navbar" id="nav-bar">
         <nav class="nav">
@@ -38,7 +45,15 @@ include("Config.php");
  
                     </div>
             </div> 
-            <a href="#" class="nav_link"> <i class='bx bx-log-out nav_icon'></i> <span class="nav_name">SignOut</span> </a>
+                     <!-- signout button action   -->
+                     <a href="#" class="nav_link"> 
+                <form action="logout.php" method="POST">
+                <button class="btn btn-transparent m-0 p-0" type="submit" name="Signout">
+                    <i class='bx bx-log-out nav_icon'></i> <span class="nav_name">SignOut</span>
+                 </a>
+                </button>
+                </form>
+                <!-- signout button ends   -->
         </nav>
     </div>
 <!-- sidenavbar ends -->

@@ -1,48 +1,42 @@
 <?php
-include("./Pages/Config.php");
 session_start();
+include('Pages/Config.php');
+include('Pages/scripts.php');
 
+if(isset($_POST['adminLogin'])){
+    $adminEmail=mysqli_real_escape_string($conn,$_POST['email']);
+    $adminPassword=mysqli_real_escape_string($conn,$_POST['Apassword']);
+      $login="SELECT * FROM registration WHERE email='$adminEmail' AND Apassword = '$adminPassword'";
+      $login_query_run=mysqli_query($conn,$login);
+      $loginData=mysqli_num_rows($login_query_run);
+      if($loginData)
+      {
+        $email_pass=mysqli_fetch_assoc($login_query_run);
+        $db_pass=$email_pass['Apassword'];
+        $_SESSION['full_name']=$email_pass['full_name'];
+        $_SESSION['picture']=$email_pass['picture'];
+        if($db_pass){
+            echo "<script>window.location.href='./index.php';</script>";
+        }else{
+            echo "<script>window.location.href='./adminlogin.php';</script>";
+        }
+        //  $_SESSION['auth']= true;
+        //  $adminData=mysqli_fetch_array($login_query_run);
+        //  $adminName=$adminData['full_name'];
+        //  $adminEmail=$adminData['email'];
+        //  $_SESSION['auth-name']=[
+        //     'full_name' => $adminName,
+        //     'email' => $adminEmail,
+        //  ];
+        //  $_SESSION['message']="logged in successfully";
+        //  echo "<script>window.location.href='./index.php'</script>"; 
 
-if (isset($_POST['login'])) {
-
-    $useremail = $_POST['email'];
-    $password = $_POST['Apassword'];
-    
-    $login = "SELECT * FROM registration WHERE email = '$useremail' AND  Apassword = '$password' ";
-
-    $data = mysqli_query($conn, $login);
-    $row = mysqli_fetch_assoc($data);
-    $AdminName = $row['full_name'];
-    $role = $row['role']; 
-    $admin_pic = $row['picture'];
-    print_r($row);
-if ($useremail == $row AND $password == $row   ) {
-    echo "<script>alert(' Login failed !')</script>";
-    echo "<script>window.location.href = 'adminlogin.php';</script>";
-
-} else
-{
-    $_SESSION['email'] = $useremail;
-    $_SESSION['role'] = $role;
-    $_SESSION['picture'] = $admin_pic;
-    echo "<script>alert('Login Successfully!')</script>";
-    echo "<script>window.location.href ='./index.php';</script>"; 
- 
+      }
+      else{
+        $_SESSION['message']="invalid Credentials";
+        echo "<script>window.location.href='./adminlogin.php'</script>";
+      }
 }
-}
-
-// if(isset($_POST['remember'])){
-//     setcookie('email',$_POST['email'],time()+4000);
-//     setcookie('Apassword',$_POST['Apassword'],time()+4000);
-//     echo "cookies are set";
-// }
-// else{
-//     echo "cookies are not set";
-// }
-
-
-
-
 
 
 
@@ -66,20 +60,31 @@ if ($useremail == $row AND $password == $row   ) {
 
    <div class="login-card-light p-3 shadow-lg rounded">
             <div class="pt-3">
-                <h2 class="text-danger text-center">Admin | Sign In </h2>
+                <h2 class="text-danger text-center">Admin | logIn </h2>
             </div>
-
-            <form class="mt-5 my-login-form" action="adminlogin.php" method="post">
+            <?php
+            if(isset($_SESSION['message'])){
+                ?>
+            <div class="alert alert-warning" role="alert">
+               <strong><?php $_SESSION['message'];?></strong>
+        </div>
+        <?php
+        unset($_SESSION['message']);
+     } 
+     ?>  
+            
+           
+            <form class="mt-5 my-login-form" action="adminlogin.php" method="POST">
                 <div class="form-group">
                     <input type="email" 
-                         class="form-control form-control-sm" required
-                     name="email"  value="<?php  if(isset($_COOKIE['email'])){echo $_COOKIE['email'];} ?>"   placeholder="Email Id">
+                         class="form-control form-control-sm"
+                     name="email"  placeholder="Email Id">
                  </div>
 
                 <div class="form-group">
                     <input type="password" 
-                        class="form-control form-control-sm" required
-                      name="Apassword"  value="<?php if(isset($_COOKIE['Aassword'])){echo $_COOKIE['Apassword'];}?>" placeholder="Password">
+                        class="form-control form-control-sm" 
+                      name="Apassword"  placeholder="Password">
                 </div>
 
                 <div class="form-group form-check">
@@ -88,7 +93,7 @@ if ($useremail == $row AND $password == $row   ) {
                 </div>
 
                 <div class="mt-5">
-                    <button name="login" type="submit" class="btn btn-sm btn-danger col  ">
+                    <button  type="submit" name="adminLogin" class="btn btn-sm btn-danger col  ">
                         Login
                     </button>
   

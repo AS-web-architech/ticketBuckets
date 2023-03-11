@@ -1,4 +1,5 @@
 <?php
+session_start();
 include("scripts.php");
 include("sidenav.php");
 include("Config.php");
@@ -14,7 +15,7 @@ include("Config.php");
     <link rel="stylesheet" href="../assets/css/bootstrap-5.0.2-dist/css/bootstrap.min.css">
     <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"> -->
     <!-- style_css -->
-    <link rel="stylesheet" href="../assets/css/main.css">
+    <link rel="stylesheet" href="../assets/css/instyle.css">
     <!-- Font_Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
     <title>Admin | Tickets Bucket</title>
@@ -25,8 +26,14 @@ include("Config.php");
 
     <header class="header" id="header">
         <div class="header_toggle"> <i class='bx bx-menu' id="header-toggle"></i> </div>
-        <div class="header_img"> <img src="https://i.imgur.com/hczKIze.jpg" alt=""> </div>
-    </header>
+        <div class="d-flex" >
+                <div class="header_img ms-auto mx-4"> <img class="img-fluid" src=".assets/images/uploads/<?php $_SESSION['picture'] ;?> "  
+                style="width:40px;height:40px;border:1px solid black"  alt="logo"> </div>
+                <p> <?php echo $_SESSION['full_name'];?> </p>&nbsp;     
+                
+               <!-- <button class="btn btn-info"styyle="margin:0;" >logout</button>    -->
+             </div>
+      </header>
     <div class="l-navbar" id="nav-bar">
         <nav class="nav">
             <div>
@@ -44,9 +51,18 @@ include("Config.php");
                      <!-- <a href="#" class="nav_link"> <i class='bx bx-bar-chart-alt-2 nav_icon'></i> <span class="nav_name"></span> </a> -->
  
                     </div>
-            </div> 
-            <a href="#" class="nav_link"> <i class='bx bx-log-out nav_icon'></i> <span class="nav_name">SignOut</span> </a>
-        </nav>
+              </div> 
+
+                       <!-- signout button action   -->
+                       <a href="#" class="nav_link"> 
+                <form action="logout.php" method="POST">
+                <button class="btn btn-transparent m-0 p-0" type="submit" name="Signout">
+                    <i class='bx bx-log-out nav_icon'></i> <span class="nav_name">SignOut</span>
+                 </a>
+                </button>
+                </form>
+                <!-- signout button ends   -->
+          </nav>
     </div>
     <!-- sidenavbar ends -->
 
