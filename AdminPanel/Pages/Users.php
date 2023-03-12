@@ -38,10 +38,9 @@ include("Config.php");
     <header class="header" id="header">
         <div class="header_toggle"> <i class='bx bx-menu' id="header-toggle"></i> </div>
         <div class="d-flex" >
-                <div class="header_img ms-auto mx-4">
-                   <img class="img-fluid" src="../assets/images/uploads/<?php echo $_SESSION['picture'] ;?> "  
-                style="width:40px;height:40px;border:1px solid black"  alt="logo"> </div>
-                <p> <?php echo $_SESSION['full_name'];?> </p>&nbsp;     
+                <p class="pt-2"> <?php echo $_SESSION['full_name'];?> </p>&nbsp;&nbsp;&nbsp;
+                <div class="header_img ms-auto mx-4"> <img class="img-fluid" src="../assets/images/uploads/<?php echo $_SESSION['picture'] ;?> "  
+                style="width:40px;height:40px;border:1px solid black;border-radius:50px;"  alt="logo"> </div>     
                 
                <!-- <button class="btn btn-info"styyle="margin:0;" >logout</button>    -->
              </div>
@@ -77,8 +76,13 @@ include("Config.php");
     </div>
     <!-- sidenavbar ends -->
 <div class="height-100 bg-light main-container ">
+<<<<<<< HEAD
 <div class="user-l d-flex  ">
 <a href="#" class="user-head"> <i class="fa-solid fa-users"></i> <span class="nav_name">users lists</span> </a>
+=======
+<div class="user-l d-flex ">
+<a href="#" class="user-head"> <i class="fa-solid fa-users"></i> <span class="nav_name">Users Detail</span> </a>
+>>>>>>> 97a902eb8833105df90bee22d6c34907e9e97d40
 <!-- action buttons -->
 <div class="ms-auto ">
   <!-- <form class="d-flex ms-auto">
@@ -104,32 +108,19 @@ include("Config.php");
                 <div class="card-body">
 
                   <div class="table-responsive">
-                    <table class="table table-striped">
+                    <table class="table table-striped table-hover align-middle text-center">
                       <thead>
                         <tr>
-                          <th>
-                            User
-                          </th>
-                          <th>
-                            User-id
-                          </th>
-                          <th>
-                            full name
-                          </th>
-                          
-                          <th>
-                            Email
-                          </th>
-                          <th>
-                            role
-                          </th>
-                          <th>
-                            status
-                          </th>
-                          
-                          
+                         <th>Select</th>
+                          <th>ID</th>
+                          <th>Name</th>
+                          <th>Email</th>
+                          <th>Role</th>
+                          <th>User_Pic</th>
+                          <th>Status</th>
                         </tr>
                       </thead>
+                      <tbody class="table table-dark table-striped">
                       <?php
                       
                 $data = mysqli_query($conn,"SELECT * from registration");
@@ -137,8 +128,9 @@ include("Config.php");
                 while ($users_data = mysqli_fetch_array($data)){
                       
                       ?>
-                      <tbody>
+                      
                         <tr>
+<<<<<<< HEAD
                         <td>
                           <form action="delete.php" method="POST">
                           <input type="checkbox" name="delete_check"
@@ -147,13 +139,22 @@ include("Config.php");
                         </td>
                           <td class="py-1">
                             <img src="https://img.icons8.com/color/36/000000/administrator-male.png" alt="image">
+=======
+                         <td>
+                            <form action="" method="post">
+                            <input type="checkbox" name="deleteMovie[]" value="<?php echo $row['register_id'];?>">
+                            </form>
+>>>>>>> 97a902eb8833105df90bee22d6c34907e9e97d40
                           </td>
-                          <td><?php echo $users_data["register-id"] ?></td>
+                          <!-- <td class="py-1">
+                            <img src="https://img.icons8.com/color/36/000000/administrator-male.png" alt="image">
+                          </td> -->
+                          <td><?php echo $users_data["register_id"] ?></td>
                           <td><?php echo $users_data["full_name"] ?></td>
                           <td><?php echo $users_data["email"] ?></td>
-                          <td><?php echo $users_data["role"] ?></td>
+                          <td><?php echo $users_data["Urole"] ?></td>
+                          <td class="py-1" ><img width="66px" height="66px" style="border-radius: 50px;" src="../assets/images/uploads/<?php echo $users_data["picture"] ?>" alt=""></td>
                           <td></td>
-
                          
                         </tr>
                         <?php  } ?>      

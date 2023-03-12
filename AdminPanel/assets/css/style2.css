@@ -26,7 +26,7 @@
     @import url('https://fonts.googleapis.com/css?family=Assistant');
 
 body {
-    /* background: #eee; */
+    background: #eee;
     font-family: Assistant, sans-serif
 }
 
@@ -35,3 +35,4 @@ body {
   color: blue;
 }
  */
+

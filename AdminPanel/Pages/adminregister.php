@@ -29,7 +29,7 @@ if(isset($_POST["register"])){
         $error="your password must be atleast 6  to 18 charachters ";
     }else{
         
-        $insert = "INSERT INTO registration (`full_name`, `email`, `Apassword`, `picture`, `role`) 
+        $insert = "INSERT INTO registration (`full_name`, `email`, `Apassword`, `picture`, `Urole`) 
         VALUES ( '$adminName' , '$adminEmail','$adminPassword','$imageName','$role')";
         $query= mysqli_query($conn, $insert);
         if($query){

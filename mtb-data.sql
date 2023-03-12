@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 06, 2023 at 11:14 PM
+-- Generation Time: Mar 12, 2023 at 06:18 PM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.2.0
 
@@ -187,12 +187,13 @@ CREATE TABLE `registration` (
 --
 
 INSERT INTO `registration` (`register_id`, `full_name`, `email`, `Apassword`, `picture`, `Urole`) VALUES
-(1, 'Aqsa Ashfaq', 'aqsa510@gmail.com', 'Ashfaq', 'admin.png', 'Admin'),
+(1, 'Aqsa Ashfaq', 'aqsa510@gmail.com', 'Ashfaq', 'jannat-mirza-intro-pic-2aa.jpg', 'Admin'),
 (2, 'Areeba Shafi', 'ariba2001.dev@gmail.com', 'Areeba', 'userdp.png', 'Admin'),
 (3, 'Sana Tariq', 'sanatariq@gmail.com', 'Sana', 'UserPic2.png', 'User'),
 (4, 'Ali Ahmed', 'aliahmed@gmail.com', 'AliAhmed', 'user3.png', 'User'),
 (5, 'Taha Ashraf ', 'taha10@gmail.com', 'Taha', 'user5.jpg', 'User'),
-(6, 'Ammar Khan', 'khan@gmail.com', 'Ammar', 'user4.png', 'User');
+(6, 'Ammar Khan', 'khan@gmail.com', 'Ammar', 'user4.png', 'User'),
+(7, 'Dua Khan', 'duakhan@gmail.com', 'duakhan', 'admin.png', 'admin');
 
 -- --------------------------------------------------------
 
@@ -294,7 +295,7 @@ CREATE TABLE `theatre` (
 --
 
 INSERT INTO `theatre` (`theater_id`, `theater-title`, `country`, `Hall-1`, `Hall-2`, `Hall-3`, `capacity`, `Location`) VALUES
-(1, 'Atrium Cinemas', 'Pakistan', '27:12:00', '50:45:15', '30:20:05', '74 seats', 'V24J+C24, MBL Panorama Karachi Cantonment.'),
+(1, 'Atrium Cinemas', 'Pakistan', '27:12:00', '50:45:15', '30:20:05', '74 Seat', 'V24J+C24, MBL Panorama Karachi Cantonment.'),
 (2, 'Capri Cinema', 'Pakistan', '14:58:21', '41:58:21', '15:58:21', '74 seat', 'M.A Jinnah Rd, Central Jacob Lines Karachi.'),
 (3, 'The Arena Karachi', 'Pakistan', '01:20:15', '28:36:13', '10:40:00', '70 seat', 'Bahria Town Tower, Tariq Rd, P.E.C.H.S Block 2 Karachi.'),
 (4, 'Mega Multiplex Cinema\r\n', 'Pakistan', '05:07:54', '40:25:08', '46:20:13', '74 Seat', 'Millennium Mall, Rashid Minhas Rd, Gulistan-e-Johar, Karachi.'),
@@ -471,7 +472,7 @@ ALTER TABLE `payment`
 -- AUTO_INCREMENT for table `registration`
 --
 ALTER TABLE `registration`
-  MODIFY `register_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `register_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `reviews`

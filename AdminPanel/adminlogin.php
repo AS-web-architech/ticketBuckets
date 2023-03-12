@@ -6,6 +6,7 @@ include('Pages/scripts.php');
 if(isset($_POST['adminLogin'])){
     $adminEmail=mysqli_real_escape_string($conn,$_POST['email']);
     $adminPassword=mysqli_real_escape_string($conn,$_POST['Apassword']);
+
       $login="SELECT * FROM registration WHERE email='$adminEmail' AND Apassword = '$adminPassword'";
       $login_query_run=mysqli_query($conn,$login);
       $loginData=mysqli_num_rows($login_query_run);
@@ -13,6 +14,7 @@ if(isset($_POST['adminLogin'])){
       {
         $email_pass=mysqli_fetch_assoc($login_query_run);
         $db_pass=$email_pass['Apassword'];
+        
         $_SESSION['full_name']=$email_pass['full_name'];
         $_SESSION['picture']=$email_pass['picture'];
         if($db_pass){

@@ -20,17 +20,17 @@ include("Config.php");
     <header class="header" id="header">
         <div class="header_toggle"> <i class='bx bx-menu' id="header-toggle"></i> </div>
         <div class="d-flex" >
+                <p class="pt-2"> <?php echo $_SESSION['full_name'];?> </p>&nbsp;&nbsp;&nbsp;
                 <div class="header_img ms-auto mx-4"> <img class="img-fluid" src="../assets/images/uploads/<?php echo $_SESSION['picture'] ;?> "  
-                style="width:40px;height:40px;border:1px solid black"  alt="logo"> </div>
-                <p> <?php echo $_SESSION['full_name'];?> </p>&nbsp;     
-                
+                style="width:40px;height:40px;border:1px solid black;border-radius:50px;"  alt="logo"> </div>
                <!-- <button class="btn btn-info"styyle="margin:0;" >logout</button>    -->
              </div>
     </header>
     <div class="l-navbar" id="nav-bar">
         <nav class="nav">
             <div>
-                 <a href="#" class="nav_logo"> <img src="../assets/images/adminlogo.svg" alt="">  <span class="nav_logo-name">Admin &nbsp;Panel </span> </a>
+               <a href="../index.php" class="nav_logo"> <img src="../assets/images/adminlogo.svg" alt="">  <span class="nav_logo-name">Admin &nbsp;Panel </span> </a>
+
                 <div class="nav_list"> 
                     <a href="../index.php" class="nav_link  "> <i class="fa-solid fa-gauge"></i>
                         <span class="nav_name">Dashboard</span>
