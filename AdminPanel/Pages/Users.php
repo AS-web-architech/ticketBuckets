@@ -76,13 +76,8 @@ include("Config.php");
     </div>
     <!-- sidenavbar ends -->
 <div class="height-100 bg-light main-container ">
-<<<<<<< HEAD
-<div class="user-l d-flex  ">
-<a href="#" class="user-head"> <i class="fa-solid fa-users"></i> <span class="nav_name">users lists</span> </a>
-=======
 <div class="user-l d-flex ">
 <a href="#" class="user-head"> <i class="fa-solid fa-users"></i> <span class="nav_name">Users Detail</span> </a>
->>>>>>> 97a902eb8833105df90bee22d6c34907e9e97d40
 <!-- action buttons -->
 <div class="ms-auto ">
   <!-- <form class="d-flex ms-auto">
@@ -130,21 +125,10 @@ include("Config.php");
                       ?>
                       
                         <tr>
-<<<<<<< HEAD
-                        <td>
-                          <form action="delete.php" method="POST">
-                          <input type="checkbox" name="delete_check"
-                           value="<?php echo  $users_data['register-id'] ?>">
-                          </form>
-                        </td>
-                          <td class="py-1">
-                            <img src="https://img.icons8.com/color/36/000000/administrator-male.png" alt="image">
-=======
                          <td>
                             <form action="" method="post">
                             <input type="checkbox" name="deleteMovie[]" value="<?php echo $row['register_id'];?>">
                             </form>
->>>>>>> 97a902eb8833105df90bee22d6c34907e9e97d40
                           </td>
                           <!-- <td class="py-1">
                             <img src="https://img.icons8.com/color/36/000000/administrator-male.png" alt="image">
