@@ -23,10 +23,9 @@ include("Config.php");
     <header class="header" id="header">
         <div class="header_toggle"> <i class='bx bx-menu' id="header-toggle"></i> </div>
         <div class="d-flex" >
-                <div class="header_img ms-auto mx-4"> <img class="img-fluid" src=".assets/images/uploads/<?php $_SESSION['picture'] ;?> "  
-                style="width:40px;height:40px;border:1px solid black"  alt="logo"> </div>
-                <p> <?php echo $_SESSION['full_name'];?> </p>&nbsp;     
-                
+                <p class="pt-2"> <?php echo $_SESSION['full_name'];?> </p>&nbsp;&nbsp;&nbsp;
+                <div class="header_img ms-auto mx-4"> <img class="img-fluid" src="../assets/images/uploads/<?php echo $_SESSION['picture'] ;?> "  
+                style="width:40px;height:40px;border:1px solid black;border-radius:50px;"  alt="logo"> </div>
                <!-- <button class="btn btn-info"styyle="margin:0;" >logout</button>    -->
              </div>
     </header>
@@ -63,7 +62,7 @@ include("Config.php");
     <div class="height-100 bg-light main-container">
 
     <div class="user-l d-flex mt-3">
-        <a href="#" class="user-head"><i class="fa-sharp fa-solid fa-film"></i> <span class="nav_name">My collections</span> </a> 
+        <a href="#" class="user-head"><i class="fa-sharp fa-solid fa-film"></i> <span class="nav_name">Movie collections</span> </a> 
         <!-- action buttons -->
         <div class="ms-auto">
             <form action="delete.php" method="POST"  >    
@@ -79,25 +78,30 @@ include("Config.php");
 </div>
 <hr>
 <!-- movie data  -->
-<div class="container mt-3">
-<div class="container mt-5">
+<div class="height-100 bg-light main-container">
+    <div class="page-content page-container" id="page-content">
+    <div class="padding">
+        <div class="row container d-flex justify-content-center">
+<div class="col-lg-12 grid-margin stretch-card">
+              <div class="card">
+                <div class="card-body">
         <div class="table-responsive">
         <form action="delete.php" method="POST">
-            <table class="table table-striped table-dark text-white table-hover">
+            <table class="table table-striped text-center table-hover align-middle">
                 
-                <thead>
+                <thead class="text-center">
                     <tr>
-                        <th></th>
-                        <th>movie title</th>
+                        <th>Select</th>
+                        <th>ID</th>
                         <th>MOVIE</th>
-                        <th>MOVIE ID</th>
+                        <th>MOVIE TITLE</th>
                         <th>GENRE</th>
                         <th>YEAR</th>
                         <th>DURATION</th>
                         
                     </tr>
                 </thead>
-                <tbody>
+                <tbody class="table-dark">
                 <?php
           
             
@@ -109,19 +113,19 @@ include("Config.php");
                     <tr>
                         <td>
                             <form action="" method="post">
-                            <input type="checkbox" name="deleteMovie[]" value="<?php echo $row['movie-id'];?>">
+                            <input type="checkbox" name="deleteMovie[]" value="<?php echo $row['movie_id'];?>">
                             </form>
                         </td>
-                        <td>
-                          <h6><?php echo $row["movieTitle"] ?></h6>
+                        <td >
+                        <?php echo $row["movie_id"] ?>
                         </td>
                         <td>
                             <div class="d-flex align-items-center">
-                            <img width="100px" class="pic" height="100px" src="../assets/images/<?php echo $row["movie_pic"] ?>" alt="">
+                            <img width="80px" class="pic" height="80px" src="../assets/images/<?php echo $row["movie_pic"] ?>" alt="">
                             </div>
                         </td>
-                        <td >
-                        <?php echo $row["movie-id"] ?>
+                        <td>
+                          <h6><?php echo $row["movieTitle"] ?></h6>
                         </td>
                         <td><?php echo $row["genre_type"] ?></td>
                         <td  class="font-weight-bold"><?php echo $row["year"] ?></td>
@@ -142,13 +146,17 @@ include("Config.php");
             ?>
               
                     
-            <?php   ?>       
+            
                 </tbody>
             </table>
             </form>
         </div>
-    </div>
-</div>
+        </div>
+              </div>
+            </div>
+            </div>
+              </div>
+            </div>
 
 
 <!-- movie data ends  -->

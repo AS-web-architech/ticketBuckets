@@ -23,9 +23,9 @@ include("./Pages/Config.php");
             <div class="header_toggle"> <i class='bx bx-menu' id="header-toggle"></i> </div>
             
             <div class="d-flex" >
-                <div class="header_img ms-auto mx-4"> <img class="img-fluid" src=".assets/images/uploads/<?php $_SESSION['picture'] ;?> "  
-                style="width:40px;height:40px;border:1px solid black"  alt="logo"> </div>
-                <p> <?php echo $_SESSION['full_name'];?> </p>&nbsp;     
+                <p class="pt-2"> <?php echo $_SESSION['full_name'];?> </p>&nbsp; &nbsp; 
+                <div class="header_img ms-auto mx-4"> <img class="img-fluid" src="./assets/images/uploads/<?php echo $_SESSION['picture'] ;?> "  
+                style="width:40px;height:40px;border:1px solid black;border-radius:50px;"  alt="logo"> </div>    
                 
                <!-- <button class="btn btn-info"styyle="margin:0;" >logout</button>    -->
              </div>

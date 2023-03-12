@@ -27,10 +27,9 @@ include("Config.php");
     <header class="header" id="header">
         <div class="header_toggle"> <i class='bx bx-menu' id="header-toggle"></i> </div>
         <div class="d-flex" >
-                <div class="header_img ms-auto mx-4"> <img class="img-fluid" src=".assets/images/uploads/<?php $_SESSION['picture'] ;?> "  
-                style="width:40px;height:40px;border:1px solid black"  alt="logo"> </div>
-                <p> <?php echo $_SESSION['full_name'];?> </p>&nbsp;     
-                
+                <p class="pt-2"> <?php echo $_SESSION['full_name'];?> </p>&nbsp;&nbsp;&nbsp;
+                <div class="header_img ms-auto mx-4"> <img class="img-fluid" src="../assets/images/uploads/<?php echo $_SESSION['picture'] ;?> "  
+                style="width:40px;height:40px;border:1px solid black;border-radius:50px;"  alt="logo"> </div>
                <!-- <button class="btn btn-info"styyle="margin:0;" >logout</button>    -->
              </div>
       </header>
@@ -65,7 +64,25 @@ include("Config.php");
           </nav>
     </div>
     <!-- sidenavbar ends -->
-
+    <div class="height-100 bg-light main-container ">
+<div class="user-l d-flex ">
+<a href="#" class="user-head"> <i class="fa-solid fa-users"></i> <span class="nav_name">Theater Detail</span> </a>
+<!-- action buttons -->
+<div class="ms-auto">
+            <form action="delete.php" method="POST"  >    
+              <!-- <form class="d-flex ms-auto">
+                      <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                      <button class="btn btn-outline-success" type="submit">Search</button>
+                    </form> -->
+            <button class="btn btn-success ">
+            <i class="fa-solid fa-circle-plus"></i>  new users</button>
+            <button class="btn btn-warning ">
+            <i class="fa-solid fa-pen-to-square"></i> modify</button>
+            <button type="submit" name="del_movie_data" class="btn btn-danger "><i class="fa-solid fa-trash"></i> </button>
+            </form>    
+       </div>
+       <!-- action buttons --> 
+</div><br>
     <div class="height-100 bg-light main-container">
     <div class="page-content page-container" id="page-content">
     <div class="padding">
@@ -75,33 +92,19 @@ include("Config.php");
                 <div class="card-body">
 
                   <div class="table-responsive">
-                    <table class="table table-striped">
+                    <table class="table table-striped table-bordered table-hover align-middle text-center">
                       <thead>
                         <tr>
-                          <th>
-                            theatre-id
-                          </th>
-                          <th>
-                            theatre-title
-                          </th>
-                          <th>
-                            country
-                          </th>
-                          
-                          <th>
-                            Halls
-                          </th>
-                          <th>
-                            capacity
-                          </th>
-                          <th>
-                            Location
-                          </th>
-                          
-                          
+                          <th>ID</th>
+                          <th>Theatre Name</th>
+                          <th>country</th>
+                          <th colspan="3" class="text-center">Halls</th>
+                          <th>capacity</th>
+                          <th>Location</th>
+                          <!-- <th>Action</th> -->
                         </tr>
                       </thead>
-
+                      <tbody class="table table-dark table-striped">
                       <?php
           
           //   include("../AdminPanel/Pages/Config.php");
@@ -110,8 +113,8 @@ include("Config.php");
   
             while ($theater_data = mysqli_fetch_array($data)){
               ?>
-
-    <th><?php echo $theater_data["theater_id"] ?></th>
+            <tr>
+              <th><?php echo $theater_data["theater_id"] ?></th>
               <td><?php echo $theater_data["theater-title"] ?></td>
               <td><?php echo $theater_data["country"] ?></td>
               <td><?php echo $theater_data["Hall-1"] ?></td>
@@ -119,13 +122,13 @@ include("Config.php");
               <td><?php echo $theater_data["Hall-3"] ?></td>
               <td><?php echo $theater_data["capacity"] ?></td>
               <td><?php echo $theater_data["Location"] ?></td>
-              <td><button class="btn btn-primary btn-sm"><a href="update.php?Tid=<?php echo  $theater_data["theater_id"] ?>"
+              <!-- <td><button class="btn btn-primary btn-sm"><a href="update.php?Tid=<?php echo  $theater_data["theater_id"] ?>"
                class="text-white text-decoration-none"> Update</a></button>&nbsp;<br>
                <button class="btn btn-danger btn-sm"><a href="delete.php?Tid=<?php echo  $theater_data["theater_id"] ?>" 
-               class="text-white text-decoration-none"> Delete</a></button></td>
+               class="text-white text-decoration-none"> Delete</a></button></td> -->
             </tr>
         <?php  } ?>
-        <tbody>
+        
         </tbody>
                     </table>
                   </div>
