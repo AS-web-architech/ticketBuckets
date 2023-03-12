@@ -23,7 +23,7 @@ include("Config.php");
     <header class="header" id="header">
         <div class="header_toggle"> <i class='bx bx-menu' id="header-toggle"></i> </div>
         <div class="d-flex" >
-                <div class="header_img ms-auto mx-4"> <img class="img-fluid" src=".assets/images/uploads/<?php $_SESSION['picture'] ;?> "  
+                <div class="header_img ms-auto mx-4"> <img class="img-fluid" src="../assets/images/uploads/<?php echo $_SESSION['picture'] ;?> "  
                 style="width:40px;height:40px;border:1px solid black"  alt="logo"> </div>
                 <p> <?php echo $_SESSION['full_name'];?> </p>&nbsp;     
                 
@@ -103,14 +103,14 @@ include("Config.php");
             
           $movie_data= "SELECT * from movie";
             $data = mysqli_query($conn, $movie_data);
-            if(mysqli_num_rows($data) > 0){
+            if(mysqli_fetch_array($data) > 0){
                 foreach($data as $row){
                     ?>
                     <tr>
                         <td>
-                            <form action="" method="post">
-                            <input type="checkbox" name="deleteMovie[]" value="<?php echo $row['movie-id'];?>">
-                            </form>
+                            <!-- <form action="" method="post"> -->
+                            <input type="checkbox" name="delete-check[]" value="<?php echo $row['movie-id'] ;?>">
+                            <!-- </form> -->
                         </td>
                         <td>
                           <h6><?php echo $row["movieTitle"] ?></h6>

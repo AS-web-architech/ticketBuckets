@@ -8,14 +8,11 @@ if(isset($_POST["register"])){
     $tempName=$_FILES['picture']['tmp_name'];
     $destination="../assets/images/uploads/".$imageName;
     move_uploaded_file($tempName,$destination);
-    // $sql="INSERT INTO registration(picture) VALUES ('$imageName')";
-    // $que=mysqli_query($conn,$sql); 
     $adminName=mysqli_real_escape_string($conn,$_POST['Aname']);
     $adminEmail=mysqli_real_escape_string($conn,$_POST['Aemail']);
     $adminPassword=mysqli_real_escape_string($conn,$_POST['Apassword']);
     $confirmPassword=mysqli_real_escape_string($conn,$_POST['confirmPass']);
     $role=$_POST['Role'];
-    // $profile=$_POST['Profile'];
     if(empty($adminName)){
         $error="* Name field is required";
     }
