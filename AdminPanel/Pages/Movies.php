@@ -148,7 +148,7 @@ include("Config.php");
                     
             
                 </tbody>
-            </table>
+            </table> 
             </form>
         </div>
         </div>
