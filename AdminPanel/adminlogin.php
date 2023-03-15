@@ -40,8 +40,6 @@ if(isset($_POST['adminLogin'])){
       }
 }
 
-
-
 ?>
 <!DOCTYPE html>
 <html lang="en">

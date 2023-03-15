@@ -127,8 +127,7 @@ if(isset($_POST["register"])){
                 <select class="form-select" name="Role"   aria-label="Default select example">
                     <option value="null" selected></option>
                     <option  value="admin">Admin</option>
-
-                    </select>
+                </select>
                 </div>
                 <div class="form-group mt-3 d-flex">
                 <label for=""  class="form-label">profile:</label>
