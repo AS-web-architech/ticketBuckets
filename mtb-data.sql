@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 12, 2023 at 06:18 PM
+-- Generation Time: Mar 15, 2023 at 11:27 PM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.2.0
 
@@ -30,7 +30,6 @@ SET time_zone = "+00:00";
 CREATE TABLE `booking` (
   `booking_id` int(11) NOT NULL,
   `customer-name` varchar(255) NOT NULL,
-  `movie-id` int(11) NOT NULL,
   `movieTitle` varchar(255) NOT NULL,
   `genre-type` varchar(255) NOT NULL,
   `theater-name` varchar(255) NOT NULL,
@@ -46,9 +45,9 @@ CREATE TABLE `booking` (
 -- Dumping data for table `booking`
 --
 
-INSERT INTO `booking` (`booking_id`, `customer-name`, `movie-id`, `movieTitle`, `genre-type`, `theater-name`, `ticket-type`, `seat-type`, `Total-seat`, `show-time`, `show-date`, `status`) VALUES
-(1, 'Sana', 3, 'Knives Out\r\n', 'comedy', 'Atrium Cinemas', 'Platinum ', 'Adult', '4', '50:20:40', '2023-03-03', 'Pending'),
-(2, 'Ali', 5, 'The Boss Baby', 'kids animation', 'Atrium Cinemas', 'Silver', 'Child', '3', '50:10:25', '2023-03-02', 'Confirmed');
+INSERT INTO `booking` (`booking_id`, `customer-name`, `movieTitle`, `genre-type`, `theater-name`, `ticket-type`, `seat-type`, `Total-seat`, `show-time`, `show-date`, `status`) VALUES
+(1, 'Sana', 'Knives Out\r\n', 'comedy', 'Atrium Cinemas', 'Platinum ', 'Adult', '4', '50:20:40', '2023-03-03', 'Pending'),
+(2, 'Ali', 'The Boss Baby', 'kids animation', 'Atrium Cinemas', 'Silver', 'Child', '3', '50:10:25', '2023-03-02', 'Confirmed');
 
 -- --------------------------------------------------------
 
@@ -124,8 +123,8 @@ CREATE TABLE `movie` (
   `movie_id` int(11) NOT NULL,
   `movieTitle` varchar(255) NOT NULL,
   `movie_pic` varchar(255) NOT NULL,
-  `genre_type` varchar(255) NOT NULL,
-  `genre-id` int(11) DEFAULT NULL,
+  `Movie_Trailers` varchar(1000) NOT NULL,
+  `genre_type` varchar(255) DEFAULT NULL,
   `year` year(4) NOT NULL,
   `duration` time NOT NULL,
   `reviews` varchar(255) NOT NULL
@@ -135,21 +134,21 @@ CREATE TABLE `movie` (
 -- Dumping data for table `movie`
 --
 
-INSERT INTO `movie` (`movie_id`, `movieTitle`, `movie_pic`, `genre_type`, `genre-id`, `year`, `duration`, `reviews`) VALUES
-(1, 'Kingsman: The Secret Service', 'kingsman.PNG', 'action', 4, 2015, '02:10:00', 'great Action Movie... '),
-(2, 'Enola Holmes', 'EnolaHolmes.PNG', 'mystry', 5, 2020, '02:03:00', ''),
-(3, 'Knives Out\r\n', 'knivesOut.PNG', 'comedy', 2, 2020, '02:10:00', ''),
-(4, 'Now You See Me', 'NYSM.PNG', 'action', 4, 2013, '01:13:34', ''),
-(5, 'The Boss Baby', 'BossBaby.PNG', 'kids animation', 3, 2017, '01:17:34', ''),
-(6, 'Lights Out', 'LightOut.PNG', 'horror', 1, 2016, '01:21:34', ''),
-(7, 'Annabelle: Creation\r\n', 'Annabelle.PNG', 'horror', 1, 2017, '01:39:56', ''),
-(8, 'Resident Evil: Welcome to Raccoon City\r\n', 'ResidentEvil.PNG', 'horror', 1, 2021, '01:21:34', ''),
-(9, 'Spider-Man: Homecoming\r\n', 'spiderman.jpeg', 'action', 4, 2021, '02:03:00', ''),
-(10, 'Zombieland', 'zombieLand.PNG', 'horror', 1, 2009, '01:21:34', ''),
-(11, 'Pixels', 'pixels.PNG', 'comedy', 2, 2015, '01:13:34', ''),
-(12, 'Free Guy', 'Free_Guy.PNG', 'action', 4, 2020, '01:21:34', ''),
-(13, 'Love And Monsters', 'L&M.PNG', 'comedy', 2, 2020, '01:13:38', ''),
-(14, 'Orphan', 'Orphan.PNG', 'horror', 1, 2016, '01:45:56', '');
+INSERT INTO `movie` (`movie_id`, `movieTitle`, `movie_pic`, `Movie_Trailers`, `genre_type`, `year`, `duration`, `reviews`) VALUES
+(1, 'Kingsman: The Secret Service', 'kingsman.PNG', '', 'action', 2015, '02:10:00', 'great Action Movie... '),
+(2, 'Enola Holmes', 'EnolaHolmes.PNG', '', 'mystry', 2020, '02:03:00', ''),
+(3, 'Knives Out\r\n', 'knivesOut.PNG', '', 'comedy', 2020, '02:10:00', ''),
+(4, 'Now You See Me', 'NYSM.PNG', '', 'action', 2013, '01:13:34', ''),
+(5, 'The Boss Baby', 'BossBaby.PNG', '', 'kids animation', 2017, '01:17:34', ''),
+(6, 'Lights Out', 'LightOut.PNG', '', 'horror', 2016, '01:21:34', ''),
+(7, 'Annabelle: Creation\r\n', 'Annabelle.PNG', '', 'horror', 2017, '01:39:56', ''),
+(8, 'Resident Evil: Welcome to Raccoon City\r\n', 'ResidentEvil.PNG', '', 'horror', 2021, '01:21:34', ''),
+(9, 'Spider-Man: Homecoming\r\n', 'spiderman.jpeg', '', 'action', 2021, '02:03:00', ''),
+(10, 'Zombieland', 'zombieLand.PNG', '', 'horror', 2009, '01:21:34', ''),
+(11, 'Pixels', 'pixels.PNG', '', 'comedy', 2015, '01:13:34', ''),
+(12, 'Free Guy', 'Free_Guy.PNG', '', 'action', 2020, '01:21:34', ''),
+(13, 'Love And Monsters', 'L&M.PNG', '', 'comedy', 2020, '01:13:38', ''),
+(14, 'Orphan', 'Orphan.PNG', '', 'horror', 2016, '01:45:56', '');
 
 -- --------------------------------------------------------
 
@@ -193,7 +192,11 @@ INSERT INTO `registration` (`register_id`, `full_name`, `email`, `Apassword`, `p
 (4, 'Ali Ahmed', 'aliahmed@gmail.com', 'AliAhmed', 'user3.png', 'User'),
 (5, 'Taha Ashraf ', 'taha10@gmail.com', 'Taha', 'user5.jpg', 'User'),
 (6, 'Ammar Khan', 'khan@gmail.com', 'Ammar', 'user4.png', 'User'),
-(7, 'Dua Khan', 'duakhan@gmail.com', 'duakhan', 'admin.png', 'admin');
+(7, 'Dua Khan', 'duakhan@gmail.com', 'duakhan', 'admin.png', 'admin'),
+(11, 'Hamza Ahmed', 'hamzaahmed@gmail.com', 'hamzaahmed', 'bg.jpg', 'admin'),
+(26, 'Maham Fareed', 'mahamkhan@gmail.com', 'maham20', 'Capture1.JPG', 'User'),
+(29, 'Alishba Faheem', 'alishba@gmail.com', 'alishba', 'My project-1 (7).png', 'User'),
+(31, 'Wania Malik', 'wania@gmail.com', 'waniamalik', 'Capture1.JPG', 'User');
 
 -- --------------------------------------------------------
 
@@ -241,7 +244,7 @@ INSERT INTO `role` (`Role_id`, `Role_name`) VALUES
 
 CREATE TABLE `seat` (
   `seat-id` int(11) NOT NULL,
-  `theater-no` int(11) NOT NULL,
+  `theater-title` varchar(255) NOT NULL,
   `seat-type` varchar(50) NOT NULL,
   `No_of_seat` varchar(74) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
@@ -250,9 +253,9 @@ CREATE TABLE `seat` (
 -- Dumping data for table `seat`
 --
 
-INSERT INTO `seat` (`seat-id`, `theater-no`, `seat-type`, `No_of_seat`) VALUES
-(1, 1, 'Adult', '1'),
-(2, 1, 'Child', '1');
+INSERT INTO `seat` (`seat-id`, `theater-title`, `seat-type`, `No_of_seat`) VALUES
+(1, 'Atrium Cinemas', 'Adult', '1'),
+(2, 'Capri Cinema', 'Child', '1');
 
 -- --------------------------------------------------------
 
@@ -334,9 +337,10 @@ ALTER TABLE `booking`
   ADD PRIMARY KEY (`booking_id`),
   ADD KEY `moviet` (`movieTitle`),
   ADD KEY `c-id` (`customer-name`),
-  ADD KEY `movie-id` (`movie-id`),
   ADD KEY `genre-id` (`genre-type`),
-  ADD KEY `seat` (`seat-type`);
+  ADD KEY `seat` (`seat-type`),
+  ADD KEY `status` (`status`),
+  ADD KEY `Ttitle` (`theater-name`);
 
 --
 -- Indexes for table `book_status`
@@ -381,7 +385,8 @@ ALTER TABLE `payment`
 ALTER TABLE `registration`
   ADD PRIMARY KEY (`register_id`),
   ADD UNIQUE KEY `email` (`email`),
-  ADD UNIQUE KEY `user-password` (`Apassword`);
+  ADD UNIQUE KEY `user-password` (`Apassword`),
+  ADD KEY `connect` (`Urole`);
 
 --
 -- Indexes for table `reviews`
@@ -403,7 +408,7 @@ ALTER TABLE `role`
 --
 ALTER TABLE `seat`
   ADD PRIMARY KEY (`seat-id`),
-  ADD KEY `test` (`theater-no`),
+  ADD KEY `test` (`theater-title`),
   ADD KEY `type` (`seat-type`);
 
 --
@@ -472,7 +477,7 @@ ALTER TABLE `payment`
 -- AUTO_INCREMENT for table `registration`
 --
 ALTER TABLE `registration`
-  MODIFY `register_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `register_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
 
 --
 -- AUTO_INCREMENT for table `reviews`
@@ -518,9 +523,11 @@ ALTER TABLE `ticket`
 -- Constraints for table `booking`
 --
 ALTER TABLE `booking`
-  ADD CONSTRAINT `booking_ibfk_1` FOREIGN KEY (`movie-id`) REFERENCES `movie` (`movie_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `Cname` FOREIGN KEY (`customer-name`) REFERENCES `customer` (`customer_name`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `Ttitle` FOREIGN KEY (`theater-name`) REFERENCES `theatre` (`theater-title`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `gener` FOREIGN KEY (`genre-type`) REFERENCES `genre` (`type`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `seat` FOREIGN KEY (`seat-type`) REFERENCES `seat` (`seat-type`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `seat` FOREIGN KEY (`seat-type`) REFERENCES `seat` (`seat-type`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `status` FOREIGN KEY (`status`) REFERENCES `book_status` (`status`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `customer`
@@ -536,6 +543,12 @@ ALTER TABLE `payment`
   ADD CONSTRAINT `customer` FOREIGN KEY (`custome-id`) REFERENCES `customer` (`customer-id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
+-- Constraints for table `registration`
+--
+ALTER TABLE `registration`
+  ADD CONSTRAINT `connect` FOREIGN KEY (`Urole`) REFERENCES `role` (`Role_name`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
 -- Constraints for table `reviews`
 --
 ALTER TABLE `reviews`
@@ -545,8 +558,7 @@ ALTER TABLE `reviews`
 -- Constraints for table `seat`
 --
 ALTER TABLE `seat`
-  ADD CONSTRAINT `test` FOREIGN KEY (`theater-no`) REFERENCES `theatre` (`theater_id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `type` FOREIGN KEY (`seat-type`) REFERENCES `seat_categories` (`categories`);
+  ADD CONSTRAINT `type` FOREIGN KEY (`seat-type`) REFERENCES `seat_categories` (`categories`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `ticket`
