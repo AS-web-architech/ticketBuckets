@@ -114,7 +114,7 @@ include("Config.php");
             while ($theater_data = mysqli_fetch_array($data)){
               ?>
             <tr>
-              <th><?php echo $theater_data["theater_id"] ?></th>
+              <th><?php echo $theater_data["theater-id"] ?></th>
               <td><?php echo $theater_data["theater-title"] ?></td>
               <td><?php echo $theater_data["country"] ?></td>
               <td><?php echo $theater_data["Hall-1"] ?></td>

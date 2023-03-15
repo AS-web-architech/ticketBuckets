@@ -2,8 +2,7 @@
 include("scripts.php");
 include("Config.php");
 if(isset($_POST["register"])){
-    $name= $_FILES['picture'];
-    
+    $name= $_FILES['picture']; 
     $imageName=$_FILES['picture']['name'];
     $tempName=$_FILES['picture']['tmp_name'];
     $destination="../assets/images/uploads/".$imageName;
@@ -29,10 +28,10 @@ if(isset($_POST["register"])){
         $error="your password must be atleast 6  to 18 charachters ";
     }else{
         
-        $insert = "INSERT INTO registration (`full_name`, `email`, `Apassword`, `picture`, `Urole`) 
+        $insert = "INSERT INTO registration (`full_name`, `email`, `Apassword`, `picture`, `role`) 
         VALUES ( '$adminName' , '$adminEmail','$adminPassword','$imageName','$role')";
-        $query= mysqli_query($conn, $insert);
-        if($query){
+        $loginquery= mysqli_query($conn, $insert);
+        if($loginquery){
 
             echo "<script>alert('you have successfully signin ')</script>";
             // echo "<script>alert('please login your account')</script>";
@@ -41,7 +40,7 @@ if(isset($_POST["register"])){
         }else{
 
             echo "<script>window.location.href = 'adminregister.php';</script>"; 
-            echo "sigup failed !";
+            echo "singup failed !";
         }
  }
    
@@ -80,7 +79,7 @@ if(isset($_POST["register"])){
             ?>
             </p>
             
-            <form class="mt-5 my-login-form" action="adminregister.php" method="POST" enctype="multipart/form-data">
+            <form class="mt-5 my-login-form" action="adminregister.php" method="post" enctype="multipart/form-data">
            
                 <div class="form-group mt-2">
                     <label for=""  class="form-label"> Name:</label>        
@@ -131,13 +130,7 @@ if(isset($_POST["register"])){
                 <input class="form-control " name="picture" type="file" >
                 <!-- <input class="btn btn-success" type="submit" value="upload" name="upload_btn" >  -->
                 </div>
-                <?php
-                // if(isset($_POST['upload_btn'])){
-                // }
                 
-                
-                
-                ?>
 
                 <!-- <div class="form-group form-check">
                     <input type="checkbox" name="remember" class="form-check-input" id="rememberCheckBox">

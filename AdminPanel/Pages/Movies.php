@@ -4,7 +4,17 @@ include("scripts.php");
 include("sidenav.php");
 include("Config.php");
 // include('delete.php');
+$page_per_record=03;
+if(isset($_GET['page'])){
+    $page=$_GET['page'];
+}else{
+    $page=1;
+}
+// $page=1;
+$start_from=($page - 1) * $page_per_record;
 
+
+   
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -14,7 +24,39 @@ include("Config.php");
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="../assets/css/instyle.css">
-
+    <style>   
+    table {  
+        border-collapse: collapse;  
+    }  
+        .inline{   
+            display: inline-block;   
+            float: right;   
+            margin: 20px 0px;   
+        }   
+         
+        input, button{   
+            height: 34px;   
+        }   
+  
+    .pagination {   
+        display: inline-block;   
+    }   
+    .pagination a {   
+        font-weight:bold;   
+        font-size:18px;   
+        color: black;   
+        float: left;   
+        padding: 8px 16px;   
+        text-decoration: none;   
+        border:1px solid black;   
+    }   
+    .pagination a.active {   
+            background-color: pink;   
+    }   
+    .pagination a:hover:not(.active) {   
+        background-color: skyblue;   
+    }   
+        </style>   
 </head>
   
 <body id="body-pd">
@@ -61,92 +103,44 @@ include("Config.php");
     <!-- main container  -->
     <div class="height-100 bg-light main-container">
 
-    <div class="user-l d-flex mt-3">
-        <a href="#" class="user-head"><i class="fa-sharp fa-solid fa-film"></i> <span class="nav_name">Movie collections</span> </a> 
-        <!-- action buttons -->
-        <div class="ms-auto">
-            <form action="delete.php" method="POST"  >    
-            <button class="btn btn-success ">
-            <i class="fa-solid fa-circle-plus"></i>  new movies</button>
-            <button class="btn btn-warning ">
-            <i class="fa-solid fa-pen-to-square"></i> modify</button>
-            <button type="submit" name="del_movie_data" class="btn btn-danger "><i class="fa-solid fa-trash"></i> </button>
-            </form>    
-       </div>
-       <!-- action buttons -->
-        
-</div>
 <hr>
-<!-- movie data  -->
-<div class="height-100 bg-light main-container">
-    <div class="page-content page-container" id="page-content">
-    <div class="padding">
-        <div class="row container d-flex justify-content-center">
-<div class="col-lg-12 grid-margin stretch-card">
-              <div class="card">
-                <div class="card-body">
-        <div class="table-responsive">
-        <form action="delete.php" method="POST">
-            <table class="table table-striped text-center table-hover align-middle">
-                
-                <thead class="text-center">
-                    <tr>
-                        <th>Select</th>
-                        <th>ID</th>
-                        <th>MOVIE</th>
-                        <th>MOVIE TITLE</th>
-                        <th>GENRE</th>
-                        <th>YEAR</th>
-                        <th>DURATION</th>
-                        
-                    </tr>
-                </thead>
-                <tbody class="table-dark">
-                <?php
-          
+<div class="container">
+    <div class="row">
+<div class="card">
+    <div class="card-body d-flex">
+        
+             <div class="user-l  mt-3">
+                <a
+                 href="#" class="user-head"><i class="fa-sharp fa-solid fa-film"></i> <span class="nav_name">Movie collections</span> </a> 
+                <!-- action buttons -->
+
             
-          $movie_data= "SELECT * from movie";
-            $data = mysqli_query($conn, $movie_data);
-            if(mysqli_fetch_array($data) > 0){
-                foreach($data as $row){
-                    ?>
-                    <tr>
-                        <td>
-                            <form action="" method="post">
-                            <input type="checkbox" name="deleteMovie[]" value="<?php echo $row['movie_id'];?>">
-                            </form>
-                        </td>
-                        <td >
-                        <?php echo $row["movie_id"] ?>
-                        </td>
-                        <td>
-                            <div class="d-flex align-items-center">
-                            <img width="80px" class="pic" height="80px" src="../assets/images/<?php echo $row["movie_pic"] ?>" alt="">
-                            </div>
-                        </td>
-                        <td>
-                          <h6><?php echo $row["movieTitle"] ?></h6>
-                        </td>
-                        <td><?php echo $row["genre_type"] ?></td>
-                        <td  class="font-weight-bold"><?php echo $row["year"] ?></td>
-                         <td class="text-warning"><?php echo $row["duration"] ?></td>
-                        
-                    </tr>
-                    
-                    <?php   
-                }
-            }
-            else{
-                ?>
-                     <tr>
-                        <td>no record found</td>
-                     </tr>
-                <?php
-            }
-            ?>
+             </div>
+                <div class="ms-auto mt-3">
               
-                    
+              <button class="btn btn-success" >
+             <i class="fa-solid fa-circle-plus"></i>  new movies</button>
+               <!-- Button trigger modal -->
+    
+    </div>
+    </div>
+    <!-- action buttons -->
+    </div>
+    </div>
+</div>
+<p style="color:red;">
+            <?php if(isset($_SESSION['status'])){
+              echo $_SESSION['status'];
+              unset($_SESSION['status']);
+            } ?>
+            <?php
+             if(isset($_SESSION['message'])){
+                echo $_SESSION['message'];
+                unset($_SESSION['message']);
+              } 
+            ?>
             
+<<<<<<< Updated upstream
                 </tbody>
             </table> 
             </form>
@@ -155,16 +149,171 @@ include("Config.php");
               </div>
             </div>
             </div>
+=======
+        </p>
+<!-- movie data  -->
+<!-- <div class="height-100 bg-light main-container"> -->
+    <div class="page-content page-container" id="page-content">
+        <div class="padding">
+            <div class="row container d-flex justify-content-center">
+                <div class="col-lg-12 grid-margin stretch-card">
+                 <div class="card">
+                      <div class="card-body">
+                          <div class="table-responsive">
+                              <form action="delete.php" method="POST">
+                                  <table class="table table-striped text-center table-hover align-middle">
+                                      
+                                      <thead class="text-center">
+                                          <tr>
+                                              <th>
+                                                <button type="submit" name="del_movie_data" class="btn btn-danger "><i class="fa-solid fa-trash"></i> </button>
+
+                                            </th>
+                                            <th>ID</th>
+                                            <th>MOVIE</th>
+                                            <th>MOVIE TITLE</th>
+                                            <th>GENRE</th>
+                                            <th>YEAR</th>
+                                            <th>DURATION</th>
+                                            <th>edit</th>
+                                             <th>delete</th>       
+                                        </tr>
+                                    </thead>
+                                    <tbody class="table-dark">
+                                    <?php
+                            
+                                
+                            $movie_data= "SELECT * from movie";
+                                $data = mysqli_query($conn, $movie_data);
+                                if(mysqli_num_rows($data) > 0){
+                                    foreach($data as $row){
+                                        ?>
+                                        <tr>
+                                            <td>
+                                                
+                                                <input type="checkbox" name="deleteMovie[]"value="<?php echo $row['movie-id'] ?>" >
+                                              
+                                            </td>
+                                            <td >
+                                            <?php echo $row["movie-id"] ?>
+                                            </td>
+                                            <td>
+                                                <div class="d-flex align-items-center">
+                                                <img src="../assets/images/<?php echo $row['movie_pic'] ?>" style="height:100px;width:100px" alt="">
+                                                </div>
+                                            </td>
+                                            <td>
+                                            <h6><?php echo $row["movieTitle"] ?></h6>
+                                            </td>
+                                            <td>
+                                            <?php echo $row['genre_type'];?>     
+                                           </td>
+                                            <td  class="font-weight-bold"><?php echo $row["year"] ?></td>
+                                            <td class="text-warning"><?php echo $row["duration"] ?></td>
+                                            <td>
+                                                <a href="edit.php?id=<?php echo $row['movie-id'] ?>" class="btn btn-info"
+                                                 style="font-size:small;" ><i class="fa-solid fa-pen-to-square"></i></a>
+                                           </td>
+                                           <td>                              
+                                             <button type="submit" class="btn btn-danger" style="font-size:small;">
+                                               <i class="fa-solid fa-trash"></i>
+                                             </button>
+                                          </td>  
+                                            
+                                       
+                                       
+                                       
+                              
+                                        </tr>
+                                        
+                                        <?php   
+                                    }
+                                }
+                                else{
+                                    ?>
+                                        <tr>
+                                            <td>no record found</td>
+                                        </tr>
+                                    <?php
+                                      }
+                                ?>
+                                
+                                        
+                                
+                                    </tbody>
+                                </table>
+                                </form>
+                                </div>
+                        </div>
+                  </div>
+>>>>>>> Stashed changes
               </div>
             </div>
+        </div>
+    </div>
+<!-- </div> -->
+
 
 
 <!-- movie data ends  -->
+<center>
+<div class="pagination">    
+      <?php  
+        $query = "SELECT COUNT(*) FROM movie";     
+        $rs_result = mysqli_query($conn, $query);     
+        $row = mysqli_fetch_row($rs_result);  
+        // print_r($row);   
+        $total_records = $row[0];     
 
+//   $sql="SELECT * FROM `movie` ";
+//   $rs_result=mysqli_query($conn,$sql);
+//   $total_records=mysqli_num_rows($rs_result);
+//   echo $total_records;
+// $total_pages=ceil($total_records/$limit);
+// for($i=1;$i<$total_pages;$i++){
+//     echo "<a href='Movies.php?page=''".$i." >".$i."</a>";
+// }
+$total_pages = ceil($total_records / $page_per_record);     
+$pagLink = "";       
 
+if($page>=2){   
+    echo "<a href='Movies.php?page=".($page-1)."'>  Prev </a>";   
+}       
+           
+for ($i=1; $i<=$total_pages; $i++) {   
+  if ($i == $page) {   
+      $pagLink .= "<a class = 'active' href='Movies.php?page="  
+                                        .$i."'>".$i." </a>";   
+  }               
+  else  {   
+      $pagLink .= "<a href='Movies.php?page=".$i."'>   
+                                        ".$i." </a>";     
+  }   
+};     
+echo $pagLink;   
 
+if($page<$total_pages){   
+    echo "<a href='Movies.php?page=".($page+1)."'>  Next </a>";   
+}   
 
+?>
 
+<div class="inline m-auto">   
+      <input id="page" type="number" min="1" max="<?php echo $total_pages?>"   
+      placeholder="<?php echo $page."/".$total_pages; ?>" required>   
+      <button onClick="go2Page();">Go</button>   
+     </div>   
+     </center>
+     <script>   
+    function go2Page()   
+    {   
+        var page = document.getElementById("page").value;   
+        page = ((page><?php echo $total_pages; ?>)?<?php echo $total_pages; ?>:((page<1)?1:page));   
+        window.location.href = 'Movies.php?page='+page;   
+    }   
+  </script>  
 
     </div>
     <!-- main container ends  -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    
