@@ -107,7 +107,7 @@ include("Config.php");
             
           $movie_data= "SELECT * from movie";
             $data = mysqli_query($conn, $movie_data);
-            if(mysqli_num_rows($data) > 0){
+            if(mysqli_fetch_array($data) > 0){
                 foreach($data as $row){
                     ?>
                     <tr>

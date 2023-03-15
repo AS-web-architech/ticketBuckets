@@ -17,7 +17,24 @@ include("Config.php");
   
 <body id="body-pd">
   <!-- sidenavbar starts -->
+  <?php  
+      
 
+    
+        $per_page_record = 3;  // Number of entries to show in a page.   
+        // Look for a GET variable page if not found default is 1.        
+        if (isset($_GET["page"])) {    
+            $page  = $_GET["page"];    
+        }    
+        else {    
+          $page=1;    
+        }    
+    
+        $start_from = ($page-1) * $per_page_record;     
+    
+        $query = "SELECT * FROM `users` LIMIT $start_from, $per_page_record";     
+        $rs_result = mysqli_query ($conn, $query);    
+    ?> 
     <header class="header" id="header">
         <div class="header_toggle"> <i class='bx bx-menu' id="header-toggle"></i> </div>
         <div class="d-flex" >
@@ -62,16 +79,16 @@ include("Config.php");
 <div class="user-l d-flex ">
 <a href="#" class="user-head"> <i class="fa-solid fa-users"></i> <span class="nav_name">Users Detail</span> </a>
 <!-- action buttons -->
-<div class="ms-auto">
-            <form action="delete.php" method="POST"  >    
-              <!-- <form class="d-flex ms-auto">
-                      <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                      <button class="btn btn-outline-success" type="submit">Search</button>
-                    </form> -->
-            <button class="btn btn-success ">
-            <i class="fa-solid fa-circle-plus"></i>  new users</button>
-            <button class="btn btn-warning ">
-            <i class="fa-solid fa-pen-to-square"></i> modify</button>
+<div class="ms-auto ">
+  <!-- <form class="d-flex ms-auto">
+    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+    <button class="btn btn-outline-success" type="submit">Search</button>
+  </form> -->
+  <button class="btn btn-success ">
+    <i class="fa-solid fa-circle-plus"></i>  new users</button>
+    <button class="btn btn-warning ">
+      <i class="fa-solid fa-pen-to-square"></i> modify</button>
+      <form action="delete.php" method="POST"  >    
             <button type="submit" name="del_movie_data" class="btn btn-danger "><i class="fa-solid fa-trash"></i> </button>
             </form>    
        </div>
@@ -127,6 +144,42 @@ include("Config.php");
                         <?php  } ?>      
                       </tbody>
                     </table>
+                    
+     <!-- <div class="pagination">     -->
+       <?php  
+        // $Pquery = "SELECT COUNT(*) FROM users";     
+        // $rs = mysqli_query($conn, $Pquery);     
+        // $paginationRow = mysqli_num_rows($rs); 
+        // print_r($paginationRow);   
+    //     $total_records = $paginationRow[0];     
+          
+    // echo "</br>";     
+        // Number of pages required.   
+      //   $total_pages = ceil($total_records / $per_page_record);     
+      //   $pagLink = "";       
+      
+      //   if($page>=2){   
+      //       echo "<a href='pagination.php?page=".($page-1)."'>  Prev </a>";   
+      //   }       
+                   
+      //   for ($i=1; $i<=$total_pages; $i++) {   
+      //     if ($i == $page) {   
+      //         $pagLink .= "<a class = 'active' href='pagination.php?page="  
+      //                                           .$i."'>".$i." </a>";   
+      //     }               
+      //     else  {   
+      //         $pagLink .= "<a href='pagination.php?page=".$i."'>   
+      //                                           ".$i." </a>";     
+      //     }   
+      //   };     
+      //   echo $pagLink;   
+  
+      //   if($page<$total_pages){   
+      //       echo "<a href='pagination.php?page=".($page+1)."'>  Next </a>";   
+      //   }   
+  
+      // ?>    
+
                   </div>
                 </div>
               </div>
@@ -137,6 +190,14 @@ include("Config.php");
 
 
 </div>
+<!-- <script>   
+    function go2Page()   
+    {   
+        var page = document.getElementById("page").value;   
+        page = ((page><?php echo $total_pages; ?>)?<?php echo $total_pages; ?>:((page<1)?1:page));   
+        window.location.href = 'index1.php?page='+page;   
+    }   
+  </script> -->
 </body>
 </html>
 

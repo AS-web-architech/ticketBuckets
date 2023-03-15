@@ -22,6 +22,7 @@ include("./Pages/Config.php");
         <header class="header d-flex" id="header">
             <div class="header_toggle"> <i class='bx bx-menu' id="header-toggle"></i> </div>
             
+            
             <div class="d-flex" >
                 <p class="pt-2"> <?php echo $_SESSION['full_name'];?> </p>&nbsp; &nbsp; 
                 <div class="header_img ms-auto mx-4"> <img class="img-fluid" src="./assets/images/uploads/<?php echo $_SESSION['picture'] ;?> "  
