@@ -80,6 +80,8 @@
 	/* admin login form css */
 	.admin-container{
 		margin-top: 8%;
+	}.admin-container {
+          box-shadow: 5px 5px 10px 10px rgba(0,0,0,0.15);
 	}
 	
 	/* admin login form css ends  */
@@ -157,27 +159,3 @@
 	
 	
 	/* admin panel css ends  */
-<<<<<<< HEAD
-
-	/* pagination css start  */
-	.pagination {   
-        display: inline-block;   
-    }   
-    .pagination a {   
-        font-weight:bold;   
-        font-size:18px;   
-        color: black;   
-        float: left;   
-        padding: 8px 16px;   
-        text-decoration: none;   
-        border:1px solid black;   
-    }   
-    .pagination a.active {   
-            background-color: pink;   
-    }   
-    .pagination a:hover:not(.active) {   
-        background-color: skyblue;   
-    }   
-		/* pagination css ends  */
-=======
->>>>>>> 97a902eb8833105df90bee22d6c34907e9e97d40

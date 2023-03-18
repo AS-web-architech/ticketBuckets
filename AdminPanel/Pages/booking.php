@@ -56,3 +56,98 @@ include("Config.php");
         </nav>
     </div>
 <!-- sidenavbar ends -->
+<div class="container">
+    <div class="row">
+<div class="card">
+    <div class="card-body d-flex">
+        
+             <div class="user-l  mt-3">
+                <a
+                 href="#" class="user-head"><i class="fa-sharp fa-solid fa-film"></i> <span class="nav_name">Movie booked</span> </a> 
+                <!-- action buttons -->
+
+            
+             </div>
+                <div class="ms-auto mt-3">
+              
+              <!-- <button class="btn btn-success" > -->
+             <!-- <i class="fa-solid fa-circle-plus"></i>  new movies</button> -->
+               <!-- Button trigger modal -->
+    
+    </div>
+    </div>
+
+<!-- booking data  -->
+<div class="page-content page-container"  id="page-content">
+            <div class="padding">
+              <div class="row container d-flex justify-content-center">
+                <div class="col-lg-12 grid-margin stretch-card">
+                  <div class="card ">
+                    <div class="card-body">
+                      
+                      <div class="table-responsive">
+                        <form action="" method="post" id="user_del_form"  >
+                          <table class="table table-striped table-hover align-middle text-center">
+                            <thead>
+                              <tr>
+                                
+                                <th>
+                                  <button type="submit"   name=""
+                                   class="btn btn-danger mx-2 "><i class="fa-solid fa-trash">
+
+                                  </i> </button>
+                                  
+                                </th>
+                                <th>ID</th>
+                                <th>Name</th>
+                               <th>Email</th>
+                               <th>Role</th>
+                               <th>User_Pic</th> 
+ 
+
+                        </tr>
+                      </thead>
+                      <tbody class="table table-dark table-striped">
+                      <?php
+                      
+                $data = mysqli_query($conn,"SELECT * from registration");
+
+                while ($users_data = mysqli_fetch_array($data)){
+                      
+                      ?>
+                      
+                        <tr>
+                         <td>
+                         <input type="checkbox" name="delete_check[]" value="<?php echo $users_data['register-id']  ?>" >
+                          </td>
+                          
+                          <td><?php echo $users_data["register-id"] ?></td>
+                          <td><?php echo $users_data["full_name"] ?></td>
+                          <td><?php echo $users_data["email"] ?></td>
+                          <td><?php echo $users_data["role"] ?></td>
+                          <td class="py-1" ><img width="66px" height="66px" style="border-radius: 50px;" src="../assets/images/uploads/<?php echo $users_data["picture"] ?>" alt=""></td> 
+
+                         
+                         </tr>
+                        <?php  } ?>      
+                      </tbody>
+                    </form>
+                    </table> 
+      
+  <!-- user data cards end -->
+      
+
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+    
+</body>
