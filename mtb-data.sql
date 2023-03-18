@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 15, 2023 at 11:27 PM
+-- Generation Time: Mar 18, 2023 at 09:01 AM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.2.0
 
@@ -46,8 +46,8 @@ CREATE TABLE `booking` (
 --
 
 INSERT INTO `booking` (`booking_id`, `customer-name`, `movieTitle`, `genre-type`, `theater-name`, `ticket-type`, `seat-type`, `Total-seat`, `show-time`, `show-date`, `status`) VALUES
-(1, 'Sana', 'Knives Out\r\n', 'comedy', 'Atrium Cinemas', 'Platinum ', 'Adult', '4', '50:20:40', '2023-03-03', 'Pending'),
-(2, 'Ali', 'The Boss Baby', 'kids animation', 'Atrium Cinemas', 'Silver', 'Child', '3', '50:10:25', '2023-03-02', 'Confirmed');
+(1, 'Sana', 'Knives Out\r\n', 'Comedy', 'Atrium Cinemas', 'Platinum ', 'Adult', '4', '50:20:40', '2023-03-03', 'Pending'),
+(2, 'Ali', 'The Boss Baby', 'Kids Animation', 'Atrium Cinemas', 'Silver', 'Child', '3', '50:10:25', '2023-03-02', 'Confirmed');
 
 -- --------------------------------------------------------
 
@@ -107,11 +107,11 @@ CREATE TABLE `genre` (
 --
 
 INSERT INTO `genre` (`genere-id`, `type`) VALUES
-(4, 'action'),
-(2, 'comedy'),
-(1, 'horror'),
-(3, 'kids animation'),
-(5, 'mystry');
+(4, 'Action'),
+(2, 'Comedy'),
+(1, 'Horror'),
+(3, 'Kids Animation'),
+(5, 'Mystry');
 
 -- --------------------------------------------------------
 
@@ -125,30 +125,31 @@ CREATE TABLE `movie` (
   `movie_pic` varchar(255) NOT NULL,
   `Movie_Trailers` varchar(1000) NOT NULL,
   `genre_type` varchar(255) DEFAULT NULL,
-  `year` year(4) NOT NULL,
-  `duration` time NOT NULL,
-  `reviews` varchar(255) NOT NULL
+  `release` varchar(55) NOT NULL,
+  `duration` varchar(55) NOT NULL,
+  `description` varchar(1000) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `movie`
 --
 
-INSERT INTO `movie` (`movie_id`, `movieTitle`, `movie_pic`, `Movie_Trailers`, `genre_type`, `year`, `duration`, `reviews`) VALUES
-(1, 'Kingsman: The Secret Service', 'kingsman.PNG', '', 'action', 2015, '02:10:00', 'great Action Movie... '),
-(2, 'Enola Holmes', 'EnolaHolmes.PNG', '', 'mystry', 2020, '02:03:00', ''),
-(3, 'Knives Out\r\n', 'knivesOut.PNG', '', 'comedy', 2020, '02:10:00', ''),
-(4, 'Now You See Me', 'NYSM.PNG', '', 'action', 2013, '01:13:34', ''),
-(5, 'The Boss Baby', 'BossBaby.PNG', '', 'kids animation', 2017, '01:17:34', ''),
-(6, 'Lights Out', 'LightOut.PNG', '', 'horror', 2016, '01:21:34', ''),
-(7, 'Annabelle: Creation\r\n', 'Annabelle.PNG', '', 'horror', 2017, '01:39:56', ''),
-(8, 'Resident Evil: Welcome to Raccoon City\r\n', 'ResidentEvil.PNG', '', 'horror', 2021, '01:21:34', ''),
-(9, 'Spider-Man: Homecoming\r\n', 'spiderman.jpeg', '', 'action', 2021, '02:03:00', ''),
-(10, 'Zombieland', 'zombieLand.PNG', '', 'horror', 2009, '01:21:34', ''),
-(11, 'Pixels', 'pixels.PNG', '', 'comedy', 2015, '01:13:34', ''),
-(12, 'Free Guy', 'Free_Guy.PNG', '', 'action', 2020, '01:21:34', ''),
-(13, 'Love And Monsters', 'L&M.PNG', '', 'comedy', 2020, '01:13:38', ''),
-(14, 'Orphan', 'Orphan.PNG', '', 'horror', 2016, '01:45:56', '');
+INSERT INTO `movie` (`movie_id`, `movieTitle`, `movie_pic`, `Movie_Trailers`, `genre_type`, `release`, `duration`, `description`) VALUES
+(1, 'Kingsman: The Secret Service', 'kingsman.PNG', '', 'Action', '24 JAN 2015', '2 HRS 10 MINS', 'Gary \'Eggsy\' Unwin faces several challenges when he gets recruited as a secret agent in a secret spy organisation in order to look for Richmond Valentine, an eco-terrorist.'),
+(2, 'Enola Holmes', 'EnolaHolmes.PNG', '', 'Mystry', '23 SEP 2020', '2 HRS 3 MINS', 'While searching for her missing mother, intrepid teen Enola Holmes uses her sleuthing skills to outsmart big brother Sherlock and help a runaway lord.'),
+(3, 'KNIVES OUT\r\n', 'knivesOut.PNG', 'Knives Out (2019 Movie).mp4', 'Comedy', '7 SEP 2019', '2 HRS 10 MINS', 'Harlan Thrombey, a reputable crime novelist, is found dead after his 85th birthday celebrations. However, as detective Benoit Blanc investigates the case, it unravels a ploy of sinister intentions.'),
+(4, 'Now You See Me', 'NYSM.PNG', '', 'Action', '31 MAY 2013', '1 HRS 55 MINS', 'Four street magicians, Daniel, Merritt, Henley and Jack, ransack a huge amount of money belonging to insurance baron Arthur Tressler while being chased by police officers.'),
+(5, 'The Boss Baby', 'BossBaby.PNG', 'The Baby Bosss.mp4', 'Kids Animation', '31 MARCH 2017', '1 HRS 37 MINS', 'Seven-year-old Tim gets jealous when his parents give all their attention to his little brother. Tim soon learns that the baby can talk and the two team up to foil the plans of the CEO of Puppy Co.'),
+(6, 'Lights Out', 'LightOut.PNG', 'Light Outmp4.mp4', 'Horror', '8 JUNE 2016', '1 HRS 21 MINS', 'Rebecca and her boyfriend try to investigate the connection between her mother and her imaginary friend, Diana, after her stepfather is murdered by a supernatural entity.'),
+(7, 'ANNABELLE:\r\n', 'Annabelle.PNG', 'ANNABELLE_ CREATION.mp4', 'Horror', '11 AUG 2017', '1 HRS 49 MINS', 'Samuel and Elle embed their daughter\'s spirit into a doll, only to realise it is a demon. Years later, they open their home to a nun and six orphan girls, one of whom finds the doll.'),
+(8, 'Resident Evil: Welcome to Raccoon City\r\n', 'ResidentEvil.PNG', '', 'Horror', '24 NOV 2021', '1 HRS 47 MINS', 'Claire and her brother Chris get caught in a zombie outbreak in the dying Raccoon City. They must band together with others to survive and uncover the truth about the experiments held in the city.'),
+(9, 'Spider-Man: Homecoming\r\n', 'spiderman.jpeg', '', 'Action', '7 JULY 2017', '2 HRS 13 MINS', 'Peter Parker tries to stop the Vulture from selling weapons made with advanced Chitauri technology while trying to balance his life as an ordinary high school student.'),
+(10, 'Zombieland', 'zombieLand.PNG', '', 'Horror', '2 OCT 2009', '1 HRS 28 MINS', 'Zombieland is a 2009 American post-apocalyptic zombie comedy film directed by Ruben Fleischer (in his theatrical debut) and written by Rhett Reese and Paul Wernick. It stars Woody Harrelson, Jesse Eisenberg, Emma Stone, Abigail Breslin, and Bill Murray.'),
+(11, 'Pixels', 'pixels.PNG', '', 'Comedy', '24 JULY 2015', '1 HRS 46 MINS', 'A special team of arcade gamers is put together to fight a mysterious alien race that watches classic games of the \'80s and presumes them to be a declaration of war.'),
+(12, 'Free Guy', 'Free_Guy.PNG', 'Free_Guy.mp4', 'Action', '13 AUG 2021', '1 HRS 55 MINS', 'When Guy, a bank teller, learns that he is a non-player character in a bloodthirsty, open-world video game, he goes on to become the hero of the story and takes the responsibility of saving the world.'),
+(13, 'Love And Monsters', 'L&M.PNG', '', 'Comedy', '16 OCT 2020', '1 HRS 48 MINS', 'Seven years after the Monsterpocalypse, Joel Dawson, along with the rest of humanity, has been living underground ever since giant creatures took control of the land. After reconnecting over the radio with his high school girlfriend, Aimee, who is now 80 miles away at a coastal colony, Joel begins to fall for her again.'),
+(14, 'Orphan', 'Orphan.PNG', '', 'Horror', '24 JULY 2009', '2 HRS 3 MINS', 'After losing their baby, a couple adopt a nine-year-old girl. However, they soon make a troubling discovery about her mysterious past and uncover several traits of her disturbing personality.'),
+(15, 'THE SUPER MARIO BROS.', 'Mario Bros.jpg', 'The Super Mario Bros.mp4', 'Kids Animation', '5 April 2023', '1 HRS 32 MINS', 'With help from Princess Peach, Mario gets ready to square off against the all-powerful Bowser to stop his plans from conquering the world.');
 
 -- --------------------------------------------------------
 
