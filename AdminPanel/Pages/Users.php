@@ -1,7 +1,6 @@
 <?php
 session_start();
 include("scripts.php");
-include("sidenav.php");
 include("Config.php");
 $page_per_record=03;
 if(isset($_GET['page'])){

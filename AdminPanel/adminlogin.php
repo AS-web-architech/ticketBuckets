@@ -58,7 +58,7 @@ if(isset($_POST['adminLogin'])){
         <div class="row">
     <div class="col-12 col-md-12 col-lg-6 col-xl-6 m-auto " >
 
-   <div class="login-card-light p-3 shadow-lg rounded">
+   <!-- <div class="login-card-light p-3 shadow-lg rounded"> -->
             <div class="pt-3">
                 <h2 class="text-danger text-center">Admin | logIn </h2>
             </div>
@@ -111,7 +111,7 @@ if(isset($_POST['adminLogin'])){
                     </p>
                 </div>
             </form>
-        </div>
+        <!-- </div> -->
         </div>
         </div>
     </div>

@@ -29,7 +29,9 @@ if(isset($_POST['del_movie_data'])){
     if($del_query_run){
        $_SESSION['status']="your data deleted successfully";
        echo "<script>window.location.href='Movies.php'</script>";
-    }else{
+    }
+    
+    else{
         $_SESSION['status']="can't delet data some error occuured";
         echo "<script>window.location.href='Movies.php'</script>";
     }

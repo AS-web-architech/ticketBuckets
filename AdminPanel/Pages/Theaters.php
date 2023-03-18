@@ -1,7 +1,6 @@
 <?php
 session_start();
 include("scripts.php");
-include("sidenav.php");
 include("Config.php");
 ?>
 <!DOCTYPE html>

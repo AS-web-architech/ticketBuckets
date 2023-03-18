@@ -1,6 +1,5 @@
 <?php
 session_start();
-include("./Pages/sidenav.php");
 include("./Pages/scripts.php");
 include("./Pages/Config.php");
 ?>
@@ -66,12 +65,9 @@ include("./Pages/Config.php");
 <!-- sidenavbar ends -->
     <!--Container Main start-->
     <div class="height-100 bg-light main-container">
-       <!-- <h1 class="text-center main-heading">welcome  <?php echo $_SESSION['email'];?> </h1> -->
-      
-       <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous" /> -->
- 
-       <div class="container">
-<div class="col-md-10 ">
+     
+ <div class="container">
+   <div class="col-md-10 ">
     <div class="row ">
         <div class="col-xl-3 col-lg-6">
             <div class="card l-bg-cherry">
