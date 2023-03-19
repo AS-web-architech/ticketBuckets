@@ -78,7 +78,7 @@ include("Config.php");
        <form action="insert.php" method="POST">
           <div class="row mb-4">
                     <div class="col-12 col-md-6 col-xl-6 ">
-                        <input type="text" name="movie-id"  >
+                        <input type="text" name="movie-id" >
                         <div class="form-outline">
                         <input type="text" id="form6Example1" name="movieTitle" class="form-control" />
                             <label class="form-label" for="form6Example1" >Movie title</label>

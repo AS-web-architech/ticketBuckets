@@ -2,7 +2,7 @@
 $localhost="localhost";
 $root="root";
 $password="";
-$db="mtbdata";
+$db="mtb-data";
 
 $conn = mysqli_connect($localhost, $root, $password, $db);
 

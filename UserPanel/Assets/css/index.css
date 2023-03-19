@@ -28,11 +28,13 @@ body {
   font-size: var(--normal-font-size);
   transition: 0.5s;
   background: var(--Navy-Blue);
+  font-family: 'Poppins', sans-serif;
+  /* overflow: hidden; */
   
 }
 .body{
     background: #180f0f;
-    height: 100vh;
+    height: 200vh;
     width: 100%;
 }
 .header {
@@ -124,10 +126,10 @@ body {
 .body-pd {
   padding-left: calc(var(--nav-width) + 1rem);
 }
-.active {
+.activee{
   color: var(--yellow-brown);
 }
-.active::before {
+.activee::before {
   content: "";
   position: absolute;
   left: 0;
@@ -136,76 +138,240 @@ body {
   background-color: var(--light-red);
 }
 
+/* @media (max-width: 901px){
+	.trailer video{
+		max-width: 90%;/
+	}
+} */
+/* @media screen and (max-width: 1050px) {
+  .header .header_toggle{
+    display: none;
+    overflow: hidden;
+  }
+  .nav_logo .header_toggle{
+    display: block;
+  }
+}
+@media screen and (max-width: 1000px){
+  .nav_logo .header_toggle{
+    display:none;
+  }
+  .header .header_toggle{
+    display: block;
+  }
+} */
+/* @media screen and (max-width:1280px) {
+  .l-navbar .header_toggle{
+    display:block;
+  }
+  .header .header_toggle{
+    display: none;
+  }
+}
+@media screen and (max-width: 900px){
+  .l-navbar .header_toggle{
+    display:block;
+  }
+  .header .header_toggle{
+    display: none;
+  }
+}
+
+@media screen and (max-width:750px) {
+  .l-navbar .header_toggle{
+    display:none;
+  }
+  .header .header_toggle{
+    display: block  ;
+  }
+}
+@media screen and (max-width:700px) {
+  .l-navbar .header_toggle{
+    display:none;
+  }
+  .header .header_toggle{
+    display: block  ;
+  }
+} */
 /* ####################################### main content ######################################## */
-.cont{
-    height: 70vh;
+.main-cont{
+    height: 85vh;
     width: 100%;
-    /* display: flex; */
+    display: flex;
     justify-content: center;
     align-items: center;
     border: 1px solid var(--dark-black);
-    border-radius: 20px;
+    border-radius: 13px;
     overflow: hidden;
     box-shadow: 0px 10px 25px -8px #a90101;
     margin-top: 75px;
     display: flex;
     position: relative;
     background: linear-gradient(rgba(0, 0, 0, 0.5));
-    /* z-index: -1; */
+    /* z-index: 1; */
+    /* padding-right: 10rem; */
 
 }
-/* .bgtext{
-  position: absolute;
-  justify-content:flex-start;
-  align-items: flex-start ;
-  right: 19rem;
-  left: 0;
-  display: flex;
-  top: 0;
-  bottom: 90px;
-} */
-/* .conatiner .slider{
+.main-cont .bgcarousel{
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 70vh;
-  object-fit:cover;
-  z-index: -10;
-}
-.conatiner .swiper{
-  position: absolute;
-  bottom: 30px;
-  left: 80%;
-  transform: translateX(-50%);
-  display:block;
-  justify-content:flex-end;
-  align-items:flex-end;
-  z-index: 20;
-}
-video{
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  position: absolute;
+  border: 1px solid yellow;
+  /* object-fit:cover; */
+  /* z-index: -10; */
+  /* background: url(../videos/Free_Guy.mp4); */
+  background: #000;
 }
-.cont1 .swiper{
-  list-style: none;
-  cursor: pointer;
-  margin: 20px;
-
-
-}
-.cont1 .swiper video{
-  width: 160%;
-  transition: all 0.3s;
-  border-radius: 10%;
-  object-fit: cover;
+.Citem1{
   position: relative;
+  width: 100%;
+  height: 84.6vh;
+  overflow: hidden;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: #E49B0F 1px solid;
+
 }
-.cont1 .swiper video:hover{
-  transform: scale(1.2);
+video{
+  object-fit: cover;
+  height: 84.6vh;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  opacity: 0.3;
+  left: 0;
+  /* aspect-ratio: 4/3; */
+    /* z-index: 1; */
+}
+.content1{
+  position: absolute;
+  padding-bottom: 110px;
+  /* z-index: 2; */
+  /* display:flex; */
+  justify-content:flex-start;
+  text-align:left;
+  align-items: flex-start;
+  /* width: 60%; */
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 90%;
+  font-size: 0.9rem;
+  font-weight:490;
+  /* padding-left: 13rem; */
+  /* font-size: 10px; */
+}
+.content1 .btn{
+  font-size: 0.9rem;
+  border: none;
+  background-image: linear-gradient(to right, #c80a0a, #f94242, #c80a0a);
+  transition: .5s;
+  cursor: pointer;
+  outline: none;
+  background-size: 200%;
+  font-weight: 600;
+}
+.content1 .btn1 {
+ text-decoration: none;
+ position: relative;
+ list-style: none;
+ /* border: 1.5px solid ; */
+ /* border-image: linear-gradient(45deg, #c80a0a, #f94242, #c80a0a) 1; */
+ padding:3px 16px;
+ color: #ffffff;
+ font-weight: 360;
+}
+.content1 .btn1::before{
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 50px; 
+  border: 1.7px solid transparent;
+  background: linear-gradient(to right, #8f0fdf, #da6812, #8f0fdf);
+  -webkit-mask:
+    linear-gradient(#fff 0 0) padding-box, 
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: destination-out;
+  mask-composite: exclude;
+}
+.content1 .btn:hover{
+  background-position: right;
+}
+.content1 h1{
+  text-shadow: 1px 1px 8px rgba(0,0,0,0.6);
+  color: white;
+  font-weight:900;
+  font-size: 1.8rem;
+
+}
+.content1 img{
+  font-weight:100;
+  width: 46%;
+  height: 37px;
+}
+
+/* .content2{
+  position: absolute;
+  padding-bottom: 110px;
+  z-index: 2;
+  display:flex;
+  justify-content:flex-start;
+  text-align:left;
+  align-items: flex-start;
+  width: 60%;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 90%;
+  font-size: 0.9rem;
+  font-weight:600;
+}
+.content2 .btn{
+  font-size: 0.8rem;
+}
+.content2 h1{
+  text-shadow: 1px 1px 8px rgba(0,0,0,0.6);
+  color: white;
+  font-weight:600;
+}
+.content3{
+  position: absolute;
+  padding-bottom: 110px;
+  justify-content:flex-start;
+  text-align:left;
+  align-items: flex-start;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 90%;
+  font-size: 0.9rem;
+  font-weight:600;
+}
+.content3 .btn{
+  font-size: 0.8rem;
+}
+.content3 h1{
+  text-shadow: 1px 1px 8px rgba(0,0,0,0.6);
+  color: white;
+  font-weight:600;
 } */
+.carousel-ind{
+  margin-bottom: 53px;
+}
+.carousel-ind .indbtn{
+  width: 100px !important;
+  transition: all 0.3s;
+}
+.carousel-ind .indbtn:hover{
+  transform: scale(1.1);
+}
 
 @media screen and (min-width: 768px) {
   body {
@@ -233,4 +399,7 @@ video{
   .body-pd {
     padding-left: calc(var(--nav-width) + 188px);
   }
+  /* .carousel-item{
+    
+  } */
 }

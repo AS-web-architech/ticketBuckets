@@ -27,11 +27,13 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
   function colorLink() {
     if (linkColor) {
-      linkColor.forEach((l) => l.classList.remove("active"));
-      this.classList.add("active");
+      linkColor.forEach((l) => l.classList.remove("activee"));
+      this.classList.add("activee");
     }
   }
   linkColor.forEach((l) => l.addEventListener("click", colorLink));
 
   // Your code to run since DOM is loaded and ready
 });
+
+// trailer

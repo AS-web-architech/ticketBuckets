@@ -9,10 +9,11 @@ if(isset($_POST['add'])){
     $movieYear =$_POST['year'];
     $movieDuration =$_POST['duration'];
     // print_r($_POST);
-    $insert="INSERT INTO movie (`movieTitle`,`genre_type`,`year`,`duration`) VALUES 
+    $insert="INSERT INTO movie (`movieTitle`,`genre_type`,`release`,`duration`) VALUES 
     ('$movieName','$movieGenre','$movieYear','$movieDuration') ";
-    mysqli_query($conn,$insert);
-    if(mysqli_query($conn,$insert)){
+
+    $result = mysqli_query($conn,$insert);
+    if($result){
         echo "<script>alert(data inserted successfully)</script>";
     }
     else{
