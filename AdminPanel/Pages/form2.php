@@ -75,10 +75,17 @@ include("Config.php");
       </div>
      
        <!-- insert data form -->
+<<<<<<< Updated upstream
        <form action="insert.php" method="POST">
           <div class="row mb-4">
                     <div class="col-12 col-md-6 col-xl-6 ">
                         <input type="text" name="movie-id" >
+=======
+       <form action="insert.php" method="POST" enctype="multipart/form-data">
+       <div class="row mb-4">
+           <div class="col-12 col-md-6 col-xl-6 ">
+               
+>>>>>>> Stashed changes
                         <div class="form-outline">
                         <input type="text" id="form6Example1" name="movieTitle" class="form-control" />
                             <label class="form-label" for="form6Example1" >Movie title</label>
@@ -103,14 +110,35 @@ include("Config.php");
                     <div class="col-12 col-md-6 col-xl-6 ">
                         <div class="form-outline mb-4">
                                                 
-                        <input type="time" id="form6Example5" class="form-control" name="duration"  />
+                        <input type="text" id="form6Example5" class="form-control" name="duration"  />
                         <label class="form-label" for="form6Example5">duration</label>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-xl-6 ">
+                        <div class="form-outline mb-4">
+                                                
+                        <input type="text" id="form6Example5" class="form-control" name="trailers"  />
+                        <label class="form-label" for="form6Example5">movie trailers</label>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-xl-6 ">
+                        <div class="form-outline mb-4">
+                                                
+                        <input type="file" id="form6Example5" class="form-control" name="movie-image"  />
+                        <br><label class="form-label" for="form6Example5">upload image</label>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-xl-6 ">
+                        <div class="form-outline mb-4">
+                                                
+                        <input type="text" id="form6Example5" class="form-control" name="description"  />
+                        <label class="form-label" for="form6Example5">description</label>
                         </div>
                     </div>
                     </div>
                     
                             <!-- Submit button -->
-                    <button type="submit" class="btn btn-dark btn-block mb-4 w-25" name="add" >insert</button>
+                    <button type="submit" class="btn btn-dark btn-block mb-4 w-25" name="insert" >insert</button>
 
             </div>
             

@@ -63,29 +63,29 @@ include("Config.php");
       <div class="heading d-flex">
         <h1 class="mb-3">Edit Category</h1>
         <!-- goback button  -->
-        <a href="Movies.php" class="btn btn-danger  ms-auto mb-3 w-22 text-center">
-          <i class="fa-solid fa-arrow-left"></i> back</a>
+        
       </div>
-      <?php
-      if(isset($_GET['id'])){
-                   
-      $movieId=$_GET['id'];
-      $showquery="SELECT * FROM `movie` WHERE `movie-id`= {$movieId}" ;
       
-      $showdata=mysqli_query($conn,$showquery);
-      $arr=mysqli_fetch_array($showdata);
-      
-      if($arr > 0){
-        
-        
-        ?>
   
   <!-- Movie update  form  -->
   
-  <form action="update.php" method="post">
+  <form action="update.php" method="POST" id="form-1" >
+  <?php                  
+      
+  if(isset($_GET['id'] )){
+    $movieId=$_GET['id'];
+    $showquery="SELECT * FROM `movie` WHERE `movie_id`= $movieId" ;
+    
+    $showdata=mysqli_query($conn,$showquery);
+    $arr=mysqli_fetch_array($showdata);
+    
+    if($arr){
+      
+      ?> 
+      
   <div class="row mb-4">
        <div class="col-12 col-md-6 col-xl-6 ">
-        <input type="text" name="movie-id" value="<?php echo $arr['movie-id']?>" >
+        <input type="text" name="movie-id" value="<?php echo $arr['movie_id']?>" >
          <div class="form-outline">
             <input type="text" id="form6Example1" name="movieTitle" class="form-control"value="<?php echo $arr['movieTitle']?>" />
             <label class="form-label" for="form6Example1" >Movie title</label>
@@ -102,7 +102,7 @@ include("Config.php");
               
   <div class="col-12 col-md-6 col-xl-6 ">
     <div class="form-outline mb-4">
-      <input type="text" id="form6Example4" class="form-control" name="year" value="<?php echo $arr['year']?>" />
+      <input type="text" id="form6Example4" class="form-control" name="year" value="<?php echo $arr['release']?>" />
       <label class="form-label" for="form6Example4">year</label>
     </div>
   </div>
@@ -110,18 +110,18 @@ include("Config.php");
     <div class="col-12 col-md-6 col-xl-6 ">
       <div class="form-outline mb-4">
                               
-        <input type="time" id="form6Example5" class="form-control" name="duration" value="<?php echo $arr['duration']?>" />
+        <input type="text" id="form6Example5" class="form-control" name="duration" value="<?php echo $arr['duration']?>" />
         <label class="form-label" for="form6Example5">duration</label>
       </div>
     </div>
-  
+       
   
             <!-- Submit button -->
     <button type="submit" class="btn btn-dark btn-block mb-4 w-25" name="update" >Edit</button>
     
   </form>
       
-    </div>
+    
         <!-- Movie update  form ends  -->
         
         <?php
@@ -134,16 +134,57 @@ include("Config.php");
         
         ?>                  
 
-</div>  
+  
+<br><br>
 
 
 
 
-
-
-
-
-
+<form action="update.php" method="POST"  >
+  
+      
+  <div class="row mb-4">
+       <div class="col-12 col-md-6 col-xl-6 ">
+        <input type="text" name="movie-id" value="<?php echo $arr['movie_id']?>" >
+         <div class="form-outline">
+            <input type="text" id="form6Example1" name="movieTitle" class="form-control"value="<?php echo $arr['movieTitle']?>" />
+            <label class="form-label" for="form6Example1" >Movie title</label>
+        </div>
+      </div>
+      <!-- Text input -->
+      <div class="col-12 col-md-6 col-xl-6 ">
+        <div class="form-outline mb-4">
+          <input type="text"  class="form-control" name="genre_type"  value="<?php echo $arr['genre_type']?>" />
+          <label class="form-label" >genre</label>
+      </div>
+  </div>
+    <!-- Text input -->
+              
+  <div class="col-12 col-md-6 col-xl-6 ">
+    <div class="form-outline mb-4">
+      <input type="text" id="form6Example4" class="form-control" name="year" value="<?php echo $arr['release']?>" />
+      <label class="form-label" for="form6Example4">year</label>
+    </div>
+  </div>
+              <!-- Email input -->
+    <div class="col-12 col-md-6 col-xl-6 ">
+      <div class="form-outline mb-4">
+                              
+        <input type="text" id="form6Example5" class="form-control" name="duration" value="<?php echo $arr['duration']?>" />
+        <label class="form-label" for="form6Example5">duration</label>
+      </div>
+    </div>
+       
+  
+            <!-- Submit button -->
+    <button type="submit" class="btn btn-dark btn-block mb-4 w-25" name="update" >Edit</button>
+    
+  </form>
+      
+    
+        <!-- Movie update  form ends  -->
+        
+                
 
 
 

@@ -7,13 +7,12 @@
     $movieGenre =$_POST['genre_type'];
     $movieYear =$_POST['year'];
     $movieDuration =$_POST['duration'];
-    // print_r($_POST);
-
-    $update="UPDATE `movie` SET `movie-id`='[$id]',`movieTitle`='[$movieName ]',
-    `genre_type`='[$movieGenre ]',
-    `year`='[$movieYear]',`duration`='[$movieDuration]' WHERE movie-id=$id ";
-    $queryrun=mysqli_query($conn,$update);
-    if($queryrun > 0){
+    $update="UPDATE `movie` SET `movieTitle`='$movieName ',
+    `genre_type`='$movieGenre ',
+    `release`='$movieYear',`duration`='$movieDuration' WHERE  movie_id=$id ";
+    mysqli_query($conn,$update);
+    
+    if(mysqli_query($conn,$update)){
         $_SESSION['message']="data has been updated";
         echo "<script>window.location.href='Movies.php'</script>";
     }else{
@@ -21,4 +20,5 @@
         echo "<script>window.location.href='Movies.php'</script>";
     }
   }  
+
     ?>

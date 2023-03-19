@@ -147,10 +147,10 @@ $start_from=($page - 1) * $page_per_record;
                       
                         <tr>
                          <td>
-                         <input type="checkbox" name="delete_check[]" value="<?php echo $users_data['register-id']  ?>" >
+                         <input type="checkbox" name="delete_check[]" value="<?php echo $users_data['register_id']  ?>" >
                           </td>
                           
-                          <td><?php echo $users_data["register-id"] ?></td>
+                          <td><?php echo $users_data["register_id"] ?></td>
                           <td><?php echo $users_data["full_name"] ?></td>
                           <td><?php echo $users_data["email"] ?></td>
                           <td><?php echo $users_data["role"] ?></td>

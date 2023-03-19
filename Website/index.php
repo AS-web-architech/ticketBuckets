@@ -86,7 +86,7 @@ include('../Website/Pages/scripts.php')
                                   Account
                                 </a>
                                 <div class="dropdown-menu">
-                                  <a class="dropdown-item" href="account.html">Log In</a>
+                                  <a class="dropdown-item" href="../../login.php">Log In</a>
                                   <a class="dropdown-item" href="signup.html">Register</a>
                                 </div>
                             </li>

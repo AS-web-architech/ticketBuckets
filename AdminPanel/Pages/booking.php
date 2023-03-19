@@ -57,8 +57,8 @@ include("Config.php");
 <!-- sidenavbar ends -->
 <div class="container">
     <div class="row">
-<div class="card">
-    <div class="card-body d-flex">
+<div class="">
+    <div class=" d-flex">
         
              <div class="user-l  mt-3">
                 <a
@@ -90,18 +90,17 @@ include("Config.php");
                             <thead>
                               <tr>
                                 
-                                <th>
-                                  <button type="submit"   name=""
-                                   class="btn btn-danger mx-2 "><i class="fa-solid fa-trash">
-
-                                  </i> </button>
-                                  
-                                </th>
-                                <th>ID</th>
-                                <th>Name</th>
-                               <th>Email</th>
-                               <th>Role</th>
-                               <th>User_Pic</th> 
+                                <!-- <th>booking ID</th> -->
+                                <th>Customer Name</th>
+                               <th>Movie</th>
+                               <th>Genre</th>
+                               <th>Theatre </th> 
+                               <th>Ticket </th>
+                                <th>Seat </th>
+                               <th>Total Seats</th>
+                               <th>Show time</th>
+                               <th>Show Date</th> 
+                               <th>status</th>
  
 
                         </tr>
@@ -109,22 +108,33 @@ include("Config.php");
                       <tbody class="table table-dark table-striped">
                       <?php
                       
-                $data = mysqli_query($conn,"SELECT * from registration");
+                $data = mysqli_query($conn,"SELECT * from booking");
 
                 while ($users_data = mysqli_fetch_array($data)){
                       
                       ?>
                       
                         <tr>
-                         <td>
-                         <input type="checkbox" name="delete_check[]" value="<?php echo $users_data['register-id']  ?>" >
+                         
+                          <!-- <td><?php echo $users_data["booking_id"] ?></td> -->
+                          <td><?php echo $users_data["customer-name"] ?></td>
+                          <td><?php echo $users_data["movieTitle"] ?></td>
+                          <td><?php echo $users_data["genre-type"] ?></td>
+                          <td><?php echo $users_data["theater-name"] ?></td>
+                          <td><?php echo $users_data["ticket-type"] ?></td>
+                          <td><?php echo $users_data["seat-type"] ?></td>
+                          <td><?php echo $users_data["Total-seat"] ?></td>
+                          <td><?php echo $users_data["show-time"] ?></td>
+                          <td><?php echo $users_data["show-date"] ?></td>
+                          <td>
+                          <button class="btn btn-danger">
+                                    <a href="delete.php?id=<?php echo $row["userID"] ?>" class="text-white "> </a>
+                                </button>
+                                <button class="btn btn-danger">
+                                    <a href="delete.php?id=<?php echo $row["userID"] ?>" class="text-white "> Delete</a>
+                                </button>
+
                           </td>
-                          
-                          <td><?php echo $users_data["register-id"] ?></td>
-                          <td><?php echo $users_data["full_name"] ?></td>
-                          <td><?php echo $users_data["email"] ?></td>
-                          <td><?php echo $users_data["role"] ?></td>
-                          <td class="py-1" ><img width="66px" height="66px" style="border-radius: 50px;" src="../assets/images/uploads/<?php echo $users_data["picture"] ?>" alt=""></td> 
 
                          
                          </tr>

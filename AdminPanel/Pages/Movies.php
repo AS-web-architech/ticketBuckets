@@ -143,15 +143,8 @@ $start_from=($page - 1) * $page_per_record;
     
 </p>
 <!-- movie data  -->
-<!-- <div class="height-100 bg-light main-container"> -->
-<div class="page-content page-container" id="page-content">
-<div class="padding">
-    <div class="row container d-flex justify-content-center">
-    <div class="col-lg-12 grid-margin stretch-card">
-        <div class="card">
-        <div class="card-body">
         <div class="table-responsive">
-    <form action="delete.php" method="POST">
+    <form action="delete.php" method="POST" Id="movieForm" >
         <table class="table table-striped text-center table-hover align-middle">
             
             <thead class="text-center">
@@ -163,11 +156,12 @@ $start_from=($page - 1) * $page_per_record;
                 <th>ID</th>
                 <th>MOVIE</th>
                 <th>MOVIE TITLE</th>
+                <th>MOVIE TRAILER</th>
                 <th>GENRE</th>
-                <th>YEAR</th>
+                <th>RELEASE</th>
                 <th>DURATION</th>
+                <!-- <th>DESCRIPTION</th> -->
                 <th>edit</th>
-                    <!-- <th>delete</th>        -->
             </tr>
             </thead>
                 <tbody class="table-dark">
@@ -182,11 +176,11 @@ $start_from=($page - 1) * $page_per_record;
                         <tr>
                             <td>
                                 
-                                <input type="checkbox" name="deleteMovie[]"value="<?php echo $row['movie-id'] ?>" >
+                                <input type="checkbox" name="deleteMovie[]"value="<?php echo $row['movie_id'] ?>" >
                                 
                             </td>
                             <td >
-                            <?php echo $row["movie-id"] ?>
+                            <?php echo $row["movie_id"] ?>
                             </td>
                             <td>
                                 <div class="d-flex align-items-center">
@@ -196,24 +190,20 @@ $start_from=($page - 1) * $page_per_record;
                             <td>
                             <h6><?php echo $row["movieTitle"] ?></h6>
                             </td>
+                            <td  class="font-weight-bold"><?php echo $row["Movie_Trailers"] ?></td>
                             <td>
                             <?php echo $row['genre_type'];?>     
                             </td>
-                            <td  class="font-weight-bold"><?php echo $row["year"] ?></td>
-                            <td class="text-warning"><?php echo $row["duration"] ?></td>
+
+                            <td  class="font-weight-bold"><?php echo $row["release"] ?></td>
+                            <td colspan="2" class="text-warning"><?php echo $row["duration"] ?></td>
+                            <!-- <td class="text-warning"><?php echo $row["description"] ?></td> -->
+
                             <td>
-                                <a href="form.php?id=<?php echo $row['movie-id'] ?>" class="btn btn-info"
+
+                                <a href="form.php#form-1?id=<?php echo $row['movie_id'] ?>" class="btn btn-info"
                                     style="font-size:small;" ><i class="fa-solid fa-pen-to-square"></i></a>
                             </td>
-                            <!-- <td>                              
-                                <button type="submit" class="btn btn-danger" style="font-size:small;">
-                                <i class="fa-solid fa-trash"></i>
-                                </button>
-                            </td>   -->
-                            
-                        
-                        
-                        
                 
                         </tr>
                         
@@ -235,75 +225,14 @@ $start_from=($page - 1) * $page_per_record;
                 </table>
                 </form>
          </div>
-    </div>
-</div>
-</div>
-</div>
- </div>
-</div>
-<!-- </div> -->
-
 
 
 <!-- movie data ends  -->
-<center>
-<div class="pagination">    
-      <?php  
-        $query = "SELECT COUNT(*) FROM movie";     
-        $rs_result = mysqli_query($conn, $query);     
-        $row = mysqli_fetch_row($rs_result);  
-        // print_r($row);   
-        $total_records = $row[0];     
 
-//   $sql="SELECT * FROM `movie` ";
-//   $rs_result=mysqli_query($conn,$sql);
-//   $total_records=mysqli_num_rows($rs_result);
-//   echo $total_records;
-// $total_pages=ceil($total_records/$limit);
-// for($i=1;$i<$total_pages;$i++){
-//     echo "<a href='Movies.php?page=''".$i." >".$i."</a>";
-// }
-$total_pages = ceil($total_records / $page_per_record);     
-$pagLink = "";       
 
-if($page>=2){   
-    echo "<a href='Movies.php?page=".($page-1)."'>  Prev </a>";   
-}       
-           
-for ($i=1; $i<=$total_pages; $i++) {   
-  if ($i == $page) {   
-      $pagLink .= "<a class = 'active' href='Movies.php?page="  
-                                        .$i."'>".$i." </a>";   
-  }               
-  else  {   
-      $pagLink .= "<a href='Movies.php?page=".$i."'>   
-                                        ".$i." </a>";     
-  }   
-};     
-echo $pagLink;   
 
-if($page<$total_pages){   
-    echo "<a href='Movies.php?page=".($page+1)."'>  Next </a>";   
-}   
 
-?>
-
-<div class="inline m-auto">   
-      <input id="page" type="number" min="1" max="<?php echo $total_pages?>"   
-      placeholder="<?php echo $page."/".$total_pages; ?>" required>   
-      <button onClick="go2Page();">Go</button>   
-     </div>   
-     </center>
-     <script>   
-    function go2Page()   
-    {   
-        var page = document.getElementById("page").value;   
-        page = ((page><?php echo $total_pages; ?>)?<?php echo $total_pages; ?>:((page<1)?1:page));   
-        window.location.href = 'Movies.php?page='+page;   
-    }   
-  </script>  
-
-    </div>
+    </div> 
     <!-- main container ends  -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     

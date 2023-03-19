@@ -68,21 +68,28 @@ include("Config.php");
 <a href="#" class="user-head"> <i class="fa-solid fa-users"></i> <span class="nav_name">Theater Detail</span> </a>
 <!-- action buttons -->
 <div class="ms-auto">
-            <form action="delete.php" method="POST"  >    
+              
               <!-- <form class="d-flex ms-auto">
                       <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
                       <button class="btn btn-outline-success" type="submit">Search</button>
                     </form> -->
-            <button class="btn btn-success ">
-            <i class="fa-solid fa-circle-plus"></i>  new users</button>
-            <button class="btn btn-warning ">
-            <i class="fa-solid fa-pen-to-square"></i> modify</button>
-            <button type="submit" name="del_movie_data" class="btn btn-danger "><i class="fa-solid fa-trash"></i> </button>
-            </form>    
+            <a href="form.php#theatreForm"   class="btn btn-success " ">
+            <i class="fa-solid fa-circle-plus"></i>  add theatre
+            </a>
+                
        </div>
        <!-- action buttons --> 
 </div><br>
     <div class="height-100 bg-light main-container">
+    <p style="color:red;">
+    <?php
+        if(isset($_SESSION['status'])){
+        echo $_SESSION['status'];
+        unset($_SESSION['status']);
+        } 
+    ?>
+
+    </p>
     <div class="page-content page-container" id="page-content">
     <div class="padding">
         <div class="row container d-flex justify-content-center">
@@ -91,29 +98,36 @@ include("Config.php");
                 <div class="card-body">
 
                   <div class="table-responsive">
+                    <form action="delete.php" method="POST" >
                     <table class="table table-striped table-bordered table-hover align-middle text-center">
                       <thead>
                         <tr>
+                          <th>
+                          <button type="submit" name="del_theatre_data" class="btn btn-danger "><i class="fa-solid fa-trash"></i> </button>
+
+                          </th>    
                           <th>ID</th>
                           <th>Theatre Name</th>
                           <th>country</th>
-                          <th colspan="3" class="text-center">Halls</th>
+                          <th  class="text-center">Halls</th>
                           <th>capacity</th>
                           <th>Location</th>
-                          <!-- <th>Action</th> -->
                         </tr>
                       </thead>
                       <tbody class="table table-dark table-striped">
-                      <?php
+                        <?php
           
-          //   include("../AdminPanel/Pages/Config.php");
-            
-            $data = mysqli_query($conn,"SELECT * from theatre");
-  
-            while ($theater_data = mysqli_fetch_array($data)){
-              ?>
+          
+          $data = mysqli_query($conn,"SELECT * from theatre");
+          
+          while ($theater_data = mysqli_fetch_array($data)){
+            ?>
             <tr>
-              <th><?php echo $theater_data["theater-id"] ?></th>
+              <td>
+                <input type="checkbox" name="delTheater[]" value="<?php echo $theater_data['theater_id'] ?>" >
+    
+              </td>
+              <th><?php echo $theater_data["theater_id"] ?></th>
               <td><?php echo $theater_data["theater-title"] ?></td>
               <td><?php echo $theater_data["country"] ?></td>
               <td><?php echo $theater_data["Hall-1"] ?></td>
@@ -121,15 +135,17 @@ include("Config.php");
               <td><?php echo $theater_data["Hall-3"] ?></td>
               <td><?php echo $theater_data["capacity"] ?></td>
               <td><?php echo $theater_data["Location"] ?></td>
-              <!-- <td><button class="btn btn-primary btn-sm"><a href="update.php?Tid=<?php echo  $theater_data["theater_id"] ?>"
-               class="text-white text-decoration-none"> Update</a></button>&nbsp;<br>
-               <button class="btn btn-danger btn-sm"><a href="delete.php?Tid=<?php echo  $theater_data["theater_id"] ?>" 
-               class="text-white text-decoration-none"> Delete</a></button></td> -->
+              <td  rowspan=1>
+                 <a href="form.php#theatreForm?Tid=<?php echo  $theater_data["theater_id"] ?>"
+               class="text-white text-decoration-none btn btn-info"> <i class="fa-solid fa-pen-to-square"></i>
+              </a>
+               
             </tr>
         <?php  } ?>
         
         </tbody>
                     </table>
+        </form>
                   </div>
                 </div>
               </div>
