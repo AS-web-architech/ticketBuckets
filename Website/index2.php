@@ -1,5 +1,5 @@
 <?php
-include('../Website/Pages/scripts.php')
+include('../Website/Pages/Scripts.php')
 
 
 
