@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 18, 2023 at 09:01 AM
+-- Generation Time: Mar 19, 2023 at 10:11 PM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.2.0
 
@@ -121,12 +121,13 @@ INSERT INTO `genre` (`genere-id`, `type`) VALUES
 
 CREATE TABLE `movie` (
   `movie_id` int(11) NOT NULL,
+  `theater-id` int(55) NOT NULL,
   `movieTitle` varchar(255) NOT NULL,
   `movie_pic` varchar(255) NOT NULL,
   `Movie_Trailers` varchar(1000) NOT NULL,
   `genre_type` varchar(255) DEFAULT NULL,
-  `release` varchar(55) NOT NULL,
-  `duration` varchar(55) NOT NULL,
+  `release` date NOT NULL,
+  `duration` time NOT NULL,
   `description` varchar(1000) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -134,22 +135,22 @@ CREATE TABLE `movie` (
 -- Dumping data for table `movie`
 --
 
-INSERT INTO `movie` (`movie_id`, `movieTitle`, `movie_pic`, `Movie_Trailers`, `genre_type`, `release`, `duration`, `description`) VALUES
-(1, 'Kingsman: The Secret Service', 'kingsman.PNG', '', 'Action', '24 JAN 2015', '2 HRS 10 MINS', 'Gary \'Eggsy\' Unwin faces several challenges when he gets recruited as a secret agent in a secret spy organisation in order to look for Richmond Valentine, an eco-terrorist.'),
-(2, 'Enola Holmes', 'EnolaHolmes.PNG', '', 'Mystry', '23 SEP 2020', '2 HRS 3 MINS', 'While searching for her missing mother, intrepid teen Enola Holmes uses her sleuthing skills to outsmart big brother Sherlock and help a runaway lord.'),
-(3, 'KNIVES OUT\r\n', 'knivesOut.PNG', 'Knives Out (2019 Movie).mp4', 'Comedy', '7 SEP 2019', '2 HRS 10 MINS', 'Harlan Thrombey, a reputable crime novelist, is found dead after his 85th birthday celebrations. However, as detective Benoit Blanc investigates the case, it unravels a ploy of sinister intentions.'),
-(4, 'Now You See Me', 'NYSM.PNG', '', 'Action', '31 MAY 2013', '1 HRS 55 MINS', 'Four street magicians, Daniel, Merritt, Henley and Jack, ransack a huge amount of money belonging to insurance baron Arthur Tressler while being chased by police officers.'),
-(5, 'The Boss Baby', 'BossBaby.PNG', 'The Baby Bosss.mp4', 'Kids Animation', '31 MARCH 2017', '1 HRS 37 MINS', 'Seven-year-old Tim gets jealous when his parents give all their attention to his little brother. Tim soon learns that the baby can talk and the two team up to foil the plans of the CEO of Puppy Co.'),
-(6, 'Lights Out', 'LightOut.PNG', 'Light Outmp4.mp4', 'Horror', '8 JUNE 2016', '1 HRS 21 MINS', 'Rebecca and her boyfriend try to investigate the connection between her mother and her imaginary friend, Diana, after her stepfather is murdered by a supernatural entity.'),
-(7, 'ANNABELLE:\r\n', 'Annabelle.PNG', 'ANNABELLE_ CREATION.mp4', 'Horror', '11 AUG 2017', '1 HRS 49 MINS', 'Samuel and Elle embed their daughter\'s spirit into a doll, only to realise it is a demon. Years later, they open their home to a nun and six orphan girls, one of whom finds the doll.'),
-(8, 'Resident Evil: Welcome to Raccoon City\r\n', 'ResidentEvil.PNG', '', 'Horror', '24 NOV 2021', '1 HRS 47 MINS', 'Claire and her brother Chris get caught in a zombie outbreak in the dying Raccoon City. They must band together with others to survive and uncover the truth about the experiments held in the city.'),
-(9, 'Spider-Man: Homecoming\r\n', 'spiderman.jpeg', '', 'Action', '7 JULY 2017', '2 HRS 13 MINS', 'Peter Parker tries to stop the Vulture from selling weapons made with advanced Chitauri technology while trying to balance his life as an ordinary high school student.'),
-(10, 'Zombieland', 'zombieLand.PNG', '', 'Horror', '2 OCT 2009', '1 HRS 28 MINS', 'Zombieland is a 2009 American post-apocalyptic zombie comedy film directed by Ruben Fleischer (in his theatrical debut) and written by Rhett Reese and Paul Wernick. It stars Woody Harrelson, Jesse Eisenberg, Emma Stone, Abigail Breslin, and Bill Murray.'),
-(11, 'Pixels', 'pixels.PNG', '', 'Comedy', '24 JULY 2015', '1 HRS 46 MINS', 'A special team of arcade gamers is put together to fight a mysterious alien race that watches classic games of the \'80s and presumes them to be a declaration of war.'),
-(12, 'Free Guy', 'Free_Guy.PNG', 'Free_Guy.mp4', 'Action', '13 AUG 2021', '1 HRS 55 MINS', 'When Guy, a bank teller, learns that he is a non-player character in a bloodthirsty, open-world video game, he goes on to become the hero of the story and takes the responsibility of saving the world.'),
-(13, 'Love And Monsters', 'L&M.PNG', '', 'Comedy', '16 OCT 2020', '1 HRS 48 MINS', 'Seven years after the Monsterpocalypse, Joel Dawson, along with the rest of humanity, has been living underground ever since giant creatures took control of the land. After reconnecting over the radio with his high school girlfriend, Aimee, who is now 80 miles away at a coastal colony, Joel begins to fall for her again.'),
-(14, 'Orphan', 'Orphan.PNG', '', 'Horror', '24 JULY 2009', '2 HRS 3 MINS', 'After losing their baby, a couple adopt a nine-year-old girl. However, they soon make a troubling discovery about her mysterious past and uncover several traits of her disturbing personality.'),
-(15, 'THE SUPER MARIO BROS.', 'Mario Bros.jpg', 'The Super Mario Bros.mp4', 'Kids Animation', '5 April 2023', '1 HRS 32 MINS', 'With help from Princess Peach, Mario gets ready to square off against the all-powerful Bowser to stop his plans from conquering the world.');
+INSERT INTO `movie` (`movie_id`, `theater-id`, `movieTitle`, `movie_pic`, `Movie_Trailers`, `genre_type`, `release`, `duration`, `description`) VALUES
+(1, 1, 'Kingsman: The Secret Service', 'kingsman.PNG', 'https://www.youtube.com/watch?v=kl8F-8tR8to', 'Action', '2015-01-24', '02:10:00', 'Gary \'Eggsy\' Unwin faces several challenges when he gets recruited as a secret agent in a secret spy organisation in order to look for Richmond Valentine, an eco-terrorist.'),
+(2, 2, 'Enola Holmes', 'EnolaHolmes.PNG', 'https://www.youtube.com/watch?v=1d0Zf9sXlHk', 'Mystry', '2020-09-23', '02:03:00', 'While searching for her missing mother, intrepid teen Enola Holmes uses her sleuthing skills to outsmart big brother Sherlock and help a runaway lord.'),
+(3, 3, 'KNIVES OUT\r\n', 'knivesOut.PNG', 'https://www.youtube.com/watch?v=qGqiHJTsRkQ', 'Mystry', '2019-09-07', '02:10:00', 'Harlan Thrombey, a reputable crime novelist, is found dead after his 85th birthday celebrations. However, as detective Benoit Blanc investigates the case, it unravels a ploy of sinister intentions.'),
+(4, 4, 'Now You See Me 2', 'NYSM.PNG', 'https://www.youtube.com/watch?v=kMrUHV0VJe4', 'Action', '2016-06-17', '02:10:00', 'Four street magicians, Daniel, Merritt, Henley and Jack, ransack a huge amount of money belonging to insurance baron Arthur Tressler while being chased by police officers.'),
+(5, 5, 'The Boss Baby', 'BossBaby.PNG', 'https://www.youtube.com/watch?v=3cw_-XXGMm0', 'Kids Animation', '2017-03-31', '01:37:00', 'Seven-year-old Tim gets jealous when his parents give all their attention to his little brother. Tim soon learns that the baby can talk and the two team up to foil the plans of the CEO of Puppy Co.'),
+(6, 1, 'Lights Out', 'LightOut.PNG', 'https://www.youtube.com/watch?app=desktop&v=6LiKKFZyhRU', 'Horror', '2016-06-08', '01:21:00', 'Rebecca and her boyfriend try to investigate the connection between her mother and her imaginary friend, Diana, after her stepfather is murdered by a supernatural entity.'),
+(7, 2, 'ANNABELLE:\r\n', 'Annabelle.PNG', 'https://www.youtube.com/watch?v=KisPhy7T__Q', 'Horror', '2017-08-11', '01:49:00', 'Samuel and Elle embed their daughter\'s spirit into a doll, only to realise it is a demon. Years later, they open their home to a nun and six orphan girls, one of whom finds the doll.'),
+(8, 3, 'Resident Evil: Welcome to Raccoon City\r\n', 'ResidentEvil.PNG', 'https://www.youtube.com/watch?v=4q6UGCyHZCI', 'Horror', '2021-11-24', '01:47:00', 'Claire and her brother Chris get caught in a zombie outbreak in the dying Raccoon City. They must band together with others to survive and uncover the truth about the experiments held in the city.'),
+(9, 4, 'Spider-Man: Homecoming\r\n', 'spiderman.jpg', 'https://www.youtube.com/watch?v=rk-dF1lIbIg', 'Action', '2017-07-07', '02:13:00', 'Peter Parker tries to stop the Vulture from selling weapons made with advanced Chitauri technology while trying to balance his life as an ordinary high school student.'),
+(10, 5, 'Zombieland', 'zombieLand.PNG', 'https://www.youtube.com/watch?v=8m9EVP8X7N8', 'Horror', '2009-10-02', '01:28:00', 'Zombieland is a 2009 American post-apocalyptic zombie comedy film directed by Ruben Fleischer (in his theatrical debut) and written by Rhett Reese and Paul Wernick. It stars Woody Harrelson, Jesse Eisenberg, Emma Stone, Abigail Breslin, and Bill Murray.'),
+(11, 2, 'Pixels', 'pixels.PNG', 'https://www.youtube.com/watch?v=eIOcWZOQL5M', 'Comedy', '2015-08-24', '01:46:00', 'A special team of arcade gamers is put together to fight a mysterious alien race that watches classic games of the \'80s and presumes them to be a declaration of war.'),
+(12, 4, 'Free Guy', 'Free_Guy.PNG', 'https://www.youtube.com/watch?v=tK6jSOaoVDk', 'Action', '2021-08-13', '01:55:00', 'When Guy, a bank teller, learns that he is a non-player character in a bloodthirsty, open-world video game, he goes on to become the hero of the story and takes the responsibility of saving the world.'),
+(13, 1, 'Love And Monsters', 'L&M.PNG', 'https://www.youtube.com/watch?v=-19tBHrZwOM', 'Comedy', '2020-10-16', '01:48:00', 'Seven years after the Monsterpocalypse, Joel Dawson, along with the rest of humanity, has been living underground ever since giant creatures took control of the land. After reconnecting over the radio with his high school girlfriend, Aimee, who is now 80 miles away at a coastal colony, Joel begins to fall for her again.'),
+(14, 5, 'Orphan', 'Orphan.PNG', 'https://www.youtube.com/watch?v=m5BSLNAKIZs', 'Horror', '2009-07-24', '02:03:00', 'After losing their baby, a couple adopt a nine-year-old girl. However, they soon make a troubling discovery about her mysterious past and uncover several traits of her disturbing personality.'),
+(15, 3, 'THE SUPER MARIO BROS.', 'Mario Bros.jpg', 'https://www.youtube.com/watch?v=TnGl01FkMMo', 'Kids Animation', '2023-04-05', '01:32:00', 'With help from Princess Peach, Mario gets ready to square off against the all-powerful Bowser to stop his plans from conquering the world.');
 
 -- --------------------------------------------------------
 
@@ -466,7 +467,7 @@ ALTER TABLE `genre`
 -- AUTO_INCREMENT for table `movie`
 --
 ALTER TABLE `movie`
-  MODIFY `movie_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `movie_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
 
 --
 -- AUTO_INCREMENT for table `payment`
