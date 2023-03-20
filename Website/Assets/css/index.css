@@ -89,7 +89,7 @@ video{
     /* z-index: 1; */
 }
 .content1{
-  position: absolute;
+  position: relative;
   padding-bottom: 110px;
   /* z-index: 2; */
   /* display:flex; */

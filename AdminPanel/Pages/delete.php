@@ -23,7 +23,7 @@ if(isset($_POST['del_theatre_data'])){
     $id=$_POST['delTheater'];
     $ext_id=implode(',',$id);
     // echo $extract_id;
-    $del_query="DELETE FROM `theatre` WHERE `theater_id` IN($extract_id)"; 
+    $del_query="DELETE FROM `theatre` WHERE `theater_id` IN($ext_id)"; 
     $del_query_run=mysqli_query($conn,$del_query);
     if($del_query_run){
        $_SESSION['status']="your data deleted successfully";

@@ -15,19 +15,6 @@ if(isset($_POST['insert'])){
     $movieGenre =$_POST['genre_type'];
     $movieYear =$_POST['year'];
     $movieDuration =$_POST['duration'];
-<<<<<<< Updated upstream
-    // print_r($_POST);
-    $insert="INSERT INTO movie (`movieTitle`,`genre_type`,`release`,`duration`) VALUES 
-    ('$movieName','$movieGenre','$movieYear','$movieDuration') ";
-
-    $result = mysqli_query($conn,$insert);
-    if($result){
-        echo "<script>alert(data inserted successfully)</script>";
-    }
-    else{
-        echo "<script>alert(data not inserted successfully)</script>";
-        
-=======
     $moviedescrip =$_POST['description'];
     $trailers =$_POST['trailers'];
     // $insert="INSERT INTO `movie`( `movieTitle`, `movie_pic`, `Movie_Trailers`, `genre_type`, `release`, `duration`, `description`) VALUES
@@ -45,7 +32,6 @@ if(isset($_POST['insert'])){
     }else{
     $_SESSION['message']="data not inserted yet";
         echo "<script>window.location.href='Movies.php'</script>";
->>>>>>> Stashed changes
     }
 }
 

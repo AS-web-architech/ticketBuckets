@@ -75,17 +75,10 @@ include("Config.php");
       </div>
      
        <!-- insert data form -->
-<<<<<<< Updated upstream
-       <form action="insert.php" method="POST">
-          <div class="row mb-4">
-                    <div class="col-12 col-md-6 col-xl-6 ">
-                        <input type="text" name="movie-id" >
-=======
        <form action="insert.php" method="POST" enctype="multipart/form-data">
        <div class="row mb-4">
            <div class="col-12 col-md-6 col-xl-6 ">
                
->>>>>>> Stashed changes
                         <div class="form-outline">
                         <input type="text" id="form6Example1" name="movieTitle" class="form-control" />
                             <label class="form-label" for="form6Example1" >Movie title</label>

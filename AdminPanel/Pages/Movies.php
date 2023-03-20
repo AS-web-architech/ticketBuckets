@@ -170,8 +170,10 @@ $start_from=($page - 1) * $page_per_record;
                 
             $movie_data= "SELECT * from movie";
                 $data = mysqli_query($conn, $movie_data);
-                if(mysqli_num_rows($data) > 0){
-                    foreach($data as $row){
+                print_r(mysqli_fetch_assoc($data));
+                if(mysqli_fetch_assoc($data)){
+                    while($row= mysqli_fetch_assoc($data)){
+                        
                         ?>
                         <tr>
                             <td>
@@ -184,7 +186,7 @@ $start_from=($page - 1) * $page_per_record;
                             </td>
                             <td>
                                 <div class="d-flex align-items-center">
-                                <img src="../assets/images/<?php echo $row['movie_pic'] ?>" style="height:100px;width:100px" alt="">
+                                <img src="../assets/images/uploads/<?php echo $row['movie_pic']?>" style="height:100px;width:100px" alt="">
                                 </div>
                             </td>
                             <td>
