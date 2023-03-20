@@ -76,7 +76,7 @@ include("Config.php");
 </div>
 </div>
     <div class="table-responsive">
-    <form action="delete.php" method="POST" Id="movieForm" >
+    <form action="delete.php" method="POST"  >
         <table class="table table-striped text-center table-hover align-middle">
             
             <thead class="text-center">

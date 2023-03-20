@@ -73,7 +73,7 @@ include("Config.php");
                       <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
                       <button class="btn btn-outline-success" type="submit">Search</button>
                     </form> -->
-            <a href="form.php#theatreForm"   class="btn btn-success " ">
+            <a href="form2.php#theatre"   class="btn btn-success " >
             <i class="fa-solid fa-circle-plus"></i>  add theatre
             </a>
                 
@@ -81,19 +81,26 @@ include("Config.php");
        <!-- action buttons --> 
 </div><br>
     <div class="height-100 bg-light main-container">
+    
     <p style="color:red;">
-    <?php
-        if(isset($_SESSION['status'])){
+    <?php if(isset($_SESSION['status'])){
         echo $_SESSION['status'];
         unset($_SESSION['status']);
+    } ?>
+    <?php
+        if(isset($_SESSION['message'])){
+        echo $_SESSION['message'];
+        unset($_SESSION['message']);
         } 
     ?>
+    
+</p>
 
     </p>
     <div class="page-content page-container" id="page-content">
     <div class="padding">
         <div class="row container d-flex justify-content-center">
-<div class="col-lg-12 grid-margin stretch-card">
+   <div class="col-lg-12 grid-margin stretch-card">
               <div class="card">
                 <div class="card-body">
 
@@ -136,7 +143,7 @@ include("Config.php");
               <td><?php echo $theater_data["capacity"] ?></td>
               <td><?php echo $theater_data["Location"] ?></td>
               <td  rowspan=1>
-                 <a href="form.php#theatreForm?Tid=<?php echo  $theater_data["theater_id"] ?>"
+                 <a href="form.php?Tid=<?php echo  $theater_data["theater_id"] ?>"
                class="text-white text-decoration-none btn btn-info"> <i class="fa-solid fa-pen-to-square"></i>
               </a>
                
