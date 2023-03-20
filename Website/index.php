@@ -1,7 +1,9 @@
 <?php
-session_start();
+// session_start();
+// include('./index2.php');
 include("./Pages/configg.php");
 include("./Pages/scripts.php");
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -24,8 +26,9 @@ include("./Pages/scripts.php");
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css">
   <title>Document</title>
 </head>
- <body>
- <div class="container-fluid main-cont mb-5" style="border: 1px solid green;">
+ <body >
+  
+ <div class="container-fluid main-cont  mb-5" style="border: 2px solid green;">
 
     <div id="carouselExampleCaptions" class="carousel slide bgcarousel" data-bs-ride="carousel">
       <div class="carousel-indicators carousel-ind mb-5">
