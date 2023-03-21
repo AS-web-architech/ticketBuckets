@@ -55,26 +55,20 @@ include("Config.php");
         </nav>
     </div>
 <!-- sidenavbar ends -->
-<div class="container">
-    <div class="row">
-<div class="">
+
+
     <div class=" d-flex">
         
              <div class="user-l  mt-3">
                 <a
-                 href="#" class="user-head"><i class="fa-sharp fa-solid fa-film"></i> <span class="nav_name">Movie booked</span> </a> 
+                 href="#" class="user-head"><i class="fa-sharp fa-solid fa-film"></i> <span class="nav_name">booking list</span> </a> 
                 <!-- action buttons -->
 
             
              </div>
-                <div class="ms-auto mt-3">
-              
-              <!-- <button class="btn btn-success" > -->
-             <!-- <i class="fa-solid fa-circle-plus"></i>  new movies</button> -->
-               <!-- Button trigger modal -->
-    
-    </div>
-    </div>
+                    
+        </div>
+<hr>
 
 <!-- booking data  -->
 <div class="page-content page-container"  id="page-content">
@@ -93,14 +87,15 @@ include("Config.php");
                                 <!-- <th>booking ID</th> -->
                                 <th>Customer Name</th>
                                <th>Movie</th>
-                               <th>Genre</th>
+                               <!-- <th>Genre</th> -->
                                <th>Theatre </th> 
                                <th>Ticket </th>
                                 <th>Seat </th>
                                <th>Total Seats</th>
                                <th>Show time</th>
-                               <th>Show Date</th> 
-                               <th>status</th>
+                               <th >Show Date</th> 
+                               <th colspan=2 >status</th>
+                               
  
 
                         </tr>
@@ -119,7 +114,6 @@ include("Config.php");
                           <!-- <td><?php echo $users_data["booking_id"] ?></td> -->
                           <td><?php echo $users_data["customer-name"] ?></td>
                           <td><?php echo $users_data["movieTitle"] ?></td>
-                          <td><?php echo $users_data["genre-type"] ?></td>
                           <td><?php echo $users_data["theater-name"] ?></td>
                           <td><?php echo $users_data["ticket-type"] ?></td>
                           <td><?php echo $users_data["seat-type"] ?></td>
@@ -127,12 +121,16 @@ include("Config.php");
                           <td><?php echo $users_data["show-time"] ?></td>
                           <td><?php echo $users_data["show-date"] ?></td>
                           <td>
-                          <button class="btn btn-danger">
-                                    <a href="delete.php?id=<?php echo $row["userID"] ?>" class="text-white "> </a>
-                                </button>
-                                <button class="btn btn-danger">
-                                    <a href="delete.php?id=<?php echo $row["userID"] ?>" class="text-white "> Delete</a>
-                                </button>
+                          <form action="adminAccept.php" method="post">
+                            <input  type="hidden" name="bookid" value="">
+                            <input class="btn btn-success" type="submit" name="book" value="book">
+                           </form>                         
+                          </td>
+                          <td>
+                           <form action="adminAccept.php" method="post">
+                            <input  type="hidden" name="bookid" value="">
+                            <input class="btn btn-info" type="submit" name="cancel" value="cancel" >
+                           </form>                          
 
                           </td>
 
@@ -144,7 +142,18 @@ include("Config.php");
                     </table> 
       
   <!-- user data cards end -->
-      
+  <?php
+  // if(isset($_POST['book'])){
+  //   $id=$_POST['bokid'];
+  //   $select="SELECT * FROM "
+  // }
+  
+  
+  
+  
+  
+  
+  ?>    
 
 </div>
 </div>

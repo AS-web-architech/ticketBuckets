@@ -3,16 +3,16 @@ include("configg.php");
 include("scripts.php");
 
 
-session_start();
-$user_check=$_SESSION['login_user'];
+// session_start();
+// $user_check=$_SESSION['login_user'];
 
-$query=mysqli_query($conn,"SELECT full_name FROM registration WHERE full_name='$user_check' ");
-$row=mysqli_fetch_array($query,MYSQLI_ASSOC);
-$login_session=$row['full_name'];
-if(!isset($login_session))
-{
- header("Location: ../UserLogin.php");
-}
+// $query=mysqli_query($conn,"SELECT full_name FROM registration WHERE full_name='$user_check' ");
+// $row=mysqli_fetch_array($query,MYSQLI_ASSOC);
+// $login_session=$row['full_name'];
+// if(!isset($login_session))
+// {
+//  header("Location: ../UserLogin.php");
+// }
 ?>
 
 <!DOCTYPE html>
@@ -26,15 +26,15 @@ if(!isset($login_session))
     <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
     <link rel="stylesheet" href="../Assets/css/mode.css">
     <link rel="stylesheet" href="../Assets/css/header.css">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
     <title></title>
 </head>
 <body>
-<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
 <!-- Navigation -->
 <div class="fixed-top">
   <header class="topbar">
       <div class="container">
-        <div class="row">
+        <div class="row"> 
           <!-- social icon-->
           <div class="col-sm-12">
             <ul class="social-network">
@@ -69,20 +69,20 @@ if(!isset($login_session))
             </a>
           </li>
 
-          <li class="nav-item">
-            <a class="nav-link" href="../Pages/movies.php">MOVIES</a>
+          <li class="nav-item ">
+            <a class="nav-link active" href="../Pages/movies.php">MOVIES</a>
           </li>
 
          <li class="nav-item">
-            <a class="nav-link" href="#">THEATER</a>
+            <a class="nav-link active" href="../Pages/theatre.php">THEATER</a>
           </li>
 
           <li class="nav-item">
-            <a class="nav-link" href="#">CONTACT</a>
+            <a class="nav-link active" href="../Pages/contact.php">CONTACT</a>
           </li>
 
           <li class="nav-item dropdown ">
-            <a class="nav-link  dropdown-togler" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <a class="nav-link active dropdown-togler" href="../Pages/contact.php" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 ACCOUNT
             </a>
             <div class="dropdown-menu">
@@ -91,14 +91,10 @@ if(!isset($login_session))
             </div>
           </li>
 
-          <!-- <li class="nav-item">
-            <a class="nav-link" href="#">Blog</a>
-          </li>
+          
 
-          <li class="nav-item">
-            <a class="nav-link" href="#">Contact</a>
-          </li> -->
-        </ul>&nbsp;&nbsp;&nbsp;
+          
+         </ul>&nbsp;&nbsp;&nbsp;
         <div class="justify-content-center align-items-center">
             <div class="one-quarter" id="switch">
               <input type="checkbox" class="checkbox" id="chk" />
@@ -117,4 +113,4 @@ if(!isset($login_session))
 </div>
 <script src="../Assets/js/mode.js"></script>
 </body>
-</html>
+</html> 

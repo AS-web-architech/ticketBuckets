@@ -39,10 +39,10 @@ if(isset($_POST["register"])){
         }elseif(strlen($UserPassword ) < 6 || strlen($UserPassword ) > 18){
             $error="your password must be atleast 6  to 18 charachters ";
         }elseif(empty($imageName)){
-            $error="* Profile field is required";
+            $error="* set your profile ";
         }else{
             
-            $insert = "INSERT INTO registration (`full_name`, `email`, `Apassword`, `picture`, `Urole`, `code`) 
+            $insert = "INSERT INTO registration (`full_name`, `email`, `Apassword`, `picture`, `role`, `code`) 
             VALUES ( '$UserName' , '$UserEmail','$UserPassword','$imageName','$role', '$code')";
             $loginquery= mysqli_query($conn, $insert);
 
