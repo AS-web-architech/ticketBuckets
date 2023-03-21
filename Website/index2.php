@@ -1,7 +1,16 @@
 <?php
-// include('./Pages/scripts.php');
-
-
+  include('./Pages/configg.php');
+  include("./Pages/scripts.php");
+  session_start();
+  $user_check=$_SESSION['login_user'];
+ 
+  $query=mysqli_query($conn,"SELECT full_name FROM registration WHERE full_name='$user_check' ");
+  $row=mysqli_fetch_array($query,MYSQLI_ASSOC);
+  $login_session=$row['full_name'];
+  if(!isset($login_session))
+  {
+   header("Location: UserLogin.php");
+  }
 ?>
 
 <!DOCTYPE html>
@@ -88,8 +97,8 @@
                                     Account
                                 </a>
                                 <div class="dropdown-menu">
-                                    <a class="dropdown-item" href="../../login.php">Log In</a>
-                                    <a class="dropdown-item" href="signup.html">Register</a>
+                                    <a class="dropdown-item" href="./UserLogin.php">Log In</a>
+                                    <a class="dropdown-item" href="./UserRegister.php">Register</a>
                                 </div>
                             </li>
                             
@@ -224,7 +233,7 @@
 </section>
 <section>
     <?php
-    include('moviecard.php')?>
+    include('MovieCard.php')?>
 </section>
 
   <!-- Hero Section Begin -->
