@@ -17,7 +17,7 @@
   .cardo {
     width: var(--card-width);
     height: var(--card-height);
-    position: absolute;
+    position: relative;
     justify-content:flex-start;
     text-align:left;
     align-items:center;

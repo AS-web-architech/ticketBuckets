@@ -138,52 +138,96 @@ include("Config.php");
 <br><br>
 
 
-
+<!-- theatre update stats -->
 
 <form action="update.php" method="POST"  >
-  
-      
-  <div class="row mb-4">
-       <div class="col-12 col-md-6 col-xl-6 ">
-        <input type="text" name="movie-id" value="<?php echo $arr['movie_id']?>" >
-         <div class="form-outline">
-            <input type="text" id="form6Example1" name="movieTitle" class="form-control"value="<?php echo $arr['movieTitle']?>" />
-            <label class="form-label" for="form6Example1" >Movie title</label>
-        </div>
-      </div>
-      <!-- Text input -->
-      <div class="col-12 col-md-6 col-xl-6 ">
-        <div class="form-outline mb-4">
-          <input type="text"  class="form-control" name="genre_type"  value="<?php echo $arr['genre_type']?>" />
-          <label class="form-label" >genre</label>
-      </div>
-  </div>
-    <!-- Text input -->
-              
-  <div class="col-12 col-md-6 col-xl-6 ">
-    <div class="form-outline mb-4">
-      <input type="text" id="form6Example4" class="form-control" name="year" value="<?php echo $arr['release']?>" />
-      <label class="form-label" for="form6Example4">year</label>
-    </div>
-  </div>
-              <!-- Email input -->
-    <div class="col-12 col-md-6 col-xl-6 ">
-      <div class="form-outline mb-4">
-                              
-        <input type="text" id="form6Example5" class="form-control" name="duration" value="<?php echo $arr['duration']?>" />
-        <label class="form-label" for="form6Example5">duration</label>
-      </div>
-    </div>
-       
-  
-            <!-- Submit button -->
-    <button type="submit" class="btn btn-dark btn-block mb-4 w-25" name="update" >Edit</button>
+  <?php 
+if(isset($_GET['Tid'] )){
+    $THId=$_GET['Tid'];
+    $showquery="SELECT * FROM `theatre` WHERE `theater_id`= $THId" ;
+    
+    $showdata=mysqli_query($conn,$showquery);
+    $arr=mysqli_fetch_array($showdata);
+    
+    if($arr){
+      ?>
+<div class="row mb-4">
+           <div class="col-12 col-md-6 col-xl-6 ">
+                    <div class="col-12 col-md-6 col-xl-6 ">
+                        <div class="form-outline mb-4">
+                            <input type="text"  class="form-control" name="theater_id"  value="<?php echo $arr['theater_id']?>"   />
+                            <label class="form-label" >theater_id</label>
+                        </div>
+                    </div>
+                        <div class="form-outline">
+                        <input type="text" id="form6Example1" name="theater-title" class="form-control"
+                        value=" <?php echo $arr['theater-title'] ?> " />
+                            <label class="form-label" for="form6Example1" >theater title</label>
+                        </div>
+                    </div>
+                        <!-- Text input -->
+                     <div class="col-12 col-md-6 col-xl-6 ">
+                        <div class="form-outline mb-4">
+                            <input type="text"  class="form-control" name="country" value="<?php echo $arr['country']?>"   />
+                            <label class="form-label"  >country</label>
+                        </div>
+                    </div>
+                    <!-- Text input -->
+                                
+                    <div class="col-12 col-md-6 col-xl-6 ">
+                    <div class="form-outline mb-4">
+                        <input type="text" id="form6Example4" class="form-control" name="Hall-1" value="<?php echo $arr['Hall-1']?>" />
+                        <label class="form-label" for="form6Example4">Hall-1</label>
+                    </div>
+                    </div>
+                                <!-- Email input -->
+                    <div class="col-12 col-md-6 col-xl-6 ">
+                        <div class="form-outline mb-4">
+                                                
+                        <input type="text" id="form6Example5" class="form-control" name="Hall-2" value="<?php echo $arr['Hall-2']?>"  />
+                        <label class="form-label" for="form6Example5">Hall-2</label>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-xl-6 ">
+                        <div class="form-outline mb-4">
+                                                
+                        <input type="text" id="form6Example5" class="form-control" name="Hall-3" value="<?php echo $arr['Hall-3']?>" />
+                        <label class="form-label" for="form6Example5">Hall-3</label>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-xl-6 ">
+                        <div class="form-outline mb-4">
+                                                
+                        <input type="file" id="form6Example5" class="form-control" name="capacity" value="<?php echo $arr['capacity']?>" />
+                        <br><label class="form-label" for="form6Example5">capacity</label>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-xl-6 ">
+                        <div class="form-outline mb-4">
+                                                
+                        <input type="text" id="form6Example5" class="form-control" name="Location" value="<?php echo $arr['Location']?>" />
+                        <label class="form-label" for="form6Example5">Location</label>
+                        </div>
+                    </div>
+                    </div>
+                    
+                            <!-- Submit button -->
+                    <button type="submit" class="btn btn-dark btn-block mb-4 w-25" name="th_update" >update</button>
+
+            </div>
     
   </form>
-      
-    
-        <!-- Movie update  form ends  -->
+  <?php
+        }             
+                               
+          }
+          else{
+              echo "<script>alert(no recored found)</script>";
+            }
         
+        ?>
+    
+<!-- theatre update ends -->        
                 
 
 

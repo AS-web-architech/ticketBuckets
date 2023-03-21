@@ -66,10 +66,11 @@ include("./Pages/scripts.php");
        
               while ($Show_Video = mysqli_fetch_array($data)){         
           ?>
-          <div class="carousel-caption">
+          <!-- <div class="carousel-caption"> -->
             <div class="container mb-5" style="height:56vh;margin-bottom:10rem;border:1px solid green;">
               <div class="row mb-5 pb-5">
-                <div class="col-3 col-md-6" style="border: 1px solid red;width:24%;height:56vh;position:relative;">
+                <!-- CARDS COLUMN -->
+                <div class="col-6 col-md-6" >
                   <div class="card" style="background: transparent;border:none;">
                     <div class="card-body">
                       <a href="#" alt="Annabelle" target="_blank">
@@ -83,8 +84,9 @@ include("./Pages/scripts.php");
                       </a>
                     </div>
                   </div>
-                </div>
-                <div class="col-3 col-md-6"style="width:60%;height:56vh;border: 1px solid red;">
+                </div>        
+                <!-- CONTENT COLUMN -->
+                <div class="col-6 col-md-6">
                   <div class="card content1" style="background: transparent;border:none;">
                     <div class="card-body">
                       <div class="button mb-3">
@@ -110,18 +112,18 @@ include("./Pages/scripts.php");
                 </div>
               </div>
             </div>  
-          </div>
+          <!-- </div> -->
           <?php }  ?>
         </div>
-        <div class="carousel-item Citem1">
-          <!-- <img src="..."  alt="..."> -->
+        <!-- <div class="carousel-item Citem1">
+          <img src="..."  alt="...">
           <?php
-            $query = "SELECT `movieTitle`, `Movie_Trailers`, `genre_type`,  `release`, `duration`, `description` FROM 
-                     `movie` WHERE `movie_id`=(7)";
-           $data = mysqli_query($conn, $query);
+          //   $query = "SELECT `movieTitle`, `Movie_Trailers`, `genre_type`,  `release`, `duration`, `description` FROM 
+          //            `movie` WHERE `movie_id`=(7)";
+          //  $data = mysqli_query($conn, $query);
           //  return $data;
       
-             while ($Show_Video = mysqli_fetch_array($data)){
+          //    while ($Show_Video = mysqli_fetch_array($data)){
                 
          ?>
           <video playsinline autoplay muted loop poster="Trailer.jpg">
@@ -153,12 +155,12 @@ include("./Pages/scripts.php");
                         </a>&nbsp;&nbsp;<a class="btn1" style="border-radius: 25px;">Thriller</a><br>
                       </div>
                       <h1 class="card-title text-bold" ><?php echo $Show_Video["movieTitle"] ?><span style="color: #a90101;">CREATION</span> </h1>
-                      <!-- <img src="./Assets/Images/moviecard/" class="card-img img-responsive mb-2" alt="">&nbsp; -->
-                      <!-- <h1 class="card-title text-bold"><?php echo $Show_Video["movieTitle"] ?></h1> -->
+                     
+                     
                        <ul class="text-small" style="font-size: 13px;">
                           <li style="float:left;"><?php echo $Show_Video["duration"] ?></li>
                           <li style="margin-left: 7.6rem;"><?php echo $Show_Video["release"] ?></li>
-                          <!-- <li></li> -->
+                          <li></li>
                         </ul>
                       <p class="card-text"><?php echo $Show_Video["description"] ?></p>
                       <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#annabelemodal">
@@ -172,8 +174,7 @@ include("./Pages/scripts.php");
               </div>
             </div>  
           </div>
-          <?php }  ?>
-        </div>
+        </div> -->
         <div class="carousel-item Citem1">
           <!-- <img src="..."  alt="..."> -->
           <?php

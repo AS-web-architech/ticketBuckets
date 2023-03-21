@@ -55,4 +55,80 @@ include("Config.php");
                 <!-- signout button ends   -->
         </nav>
     </div>
+    <div class="height-100 bg-light main-container">
+<hr>
+<div class="container">
+<div class="row">
+<div class="card">
+<div class="card-body d-flex">
+
+        <div class="user-l  mt-3">
+        <a
+            href="#" class="user-head"><i class="fa-solid fa-star"></i> <span class="nav_name">customer reviews</span> </a> 
+        <!-- action buttons -->
+
+    
+        </div>
+        
+        
+        <!-- Button trigger modal -->
+
+</div>
+</div>
+    <div class="table-responsive">
+    <form action="delete.php" method="POST"  >
+        <table class="table table-striped text-center table-hover align-middle">
+            
+            <thead class="text-center">
+                <tr>
+                 
+                <th>ID</th>
+                <th>customer name</th>
+                <th>message</th>
+                
+            </tr>
+            </thead>
+                <tbody class="table-dark">
+                <?php
+        
+                
+            $review_data= "SELECT * from reviews";
+                $data = mysqli_query($conn, $review_data);
+                if(mysqli_num_rows($data) > 0){
+                    foreach($data as $row){
+                        ?>
+                        <tr>
+                            
+                            <td >
+                            <?php echo $row["ID"] ?>
+                            </td>
+
+                            <td>
+                            <h6><?php echo $row["customer-name"] ?></h6>
+                            </td>
+                            <td  class="font-weight-bold"><?php echo $row["message"] ?></td>
+                            
+
+                                           
+                        </tr>
+                        
+                        <?php   
+                    }
+                }
+                else{
+                    ?>
+                        <tr>
+                            <td>no record found</td>
+                        </tr>
+                    <?php
+                        }
+                ?>
+                
+                        
+                
+                    </tbody>
+                </table>
+                </form>
+         </div>
+         </div>
     <!-- sidenavbar ends -->

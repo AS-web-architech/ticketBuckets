@@ -74,18 +74,11 @@ include("Config.php");
           <i class="fa-solid fa-arrow-left"></i> back</a>
       </div>
      
-       <!-- insert data form -->
-<<<<<<< Updated upstream
-       <form action="insert.php" method="POST">
-          <div class="row mb-4">
-                    <div class="col-12 col-md-6 col-xl-6 ">
-                        <input type="text" name="movie-id" >
-=======
+       <!-- insert movie data form -->
        <form action="insert.php" method="POST" enctype="multipart/form-data">
        <div class="row mb-4">
            <div class="col-12 col-md-6 col-xl-6 ">
                
->>>>>>> Stashed changes
                         <div class="form-outline">
                         <input type="text" id="form6Example1" name="movieTitle" class="form-control" />
                             <label class="form-label" for="form6Example1" >Movie title</label>
@@ -144,9 +137,77 @@ include("Config.php");
             
       </form>
 
-<!-- insert data form ends-->
+<!-- insert movie data form ends-->
 
+<div class="heading d-flex">
+        <h1 class="mb-3">Add theatre Data</h1>
+        <!-- goback button  -->
+        <a href="Theaters.php" class="btn btn-danger  ms-auto mb-3 w-22 text-center">
+          <i class="fa-solid fa-arrow-left"></i> back</a>
+      </div>
 
+       <!-- insert theatre data form -->
+       <form action="insert.php" method="POST" id="theatre" >
+       <div class="row mb-4">
+           <div class="col-12 col-md-6 col-xl-6 ">
+               
+                        <div class="form-outline">
+                        <input type="text" id="form6Example1" name="theater-title" class="form-control" />
+                            <label class="form-label" for="form6Example1" >theater title</label>
+                        </div>
+                    </div>
+                        <!-- Text input -->
+                     <div class="col-12 col-md-6 col-xl-6 ">
+                        <div class="form-outline mb-4">
+                            <input type="text"  class="form-control" name="country"   />
+                            <label class="form-label" >country</label>
+                        </div>
+                    </div>
+                    <!-- Text input -->
+                                
+                    <div class="col-12 col-md-6 col-xl-6 ">
+                    <div class="form-outline mb-4">
+                        <input type="text" id="form6Example4" class="form-control" name="Hall-1" />
+                        <label class="form-label" for="form6Example4">Hall-1</label>
+                    </div>
+                    </div>
+                                <!-- Email input -->
+                    <div class="col-12 col-md-6 col-xl-6 ">
+                        <div class="form-outline mb-4">
+                                                
+                        <input type="text" id="form6Example5" class="form-control" name="Hall-2"  />
+                        <label class="form-label" for="form6Example5">Hall-2</label>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-xl-6 ">
+                        <div class="form-outline mb-4">
+                                                
+                        <input type="text" id="form6Example5" class="form-control" name="Hall-3"  />
+                        <label class="form-label" for="form6Example5">Hall-3</label>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-xl-6 ">
+                        <div class="form-outline mb-4">
+                                                
+                        <input type="text" id="form6Example5" class="form-control" name="capacity"  />
+                        <br><label class="form-label" for="form6Example5">capacity</label>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-xl-6 ">
+                        <div class="form-outline mb-4">
+                                                
+                        <input type="text" id="form6Example5" class="form-control" name="Location"  />
+                        <label class="form-label" for="form6Example5">Location</label>
+                        </div>
+                    </div>
+                    </div>
+                    
+                            <!-- Submit button -->
+                    <button type="submit" class="btn btn-dark btn-block mb-4 w-25" name="th_insert" >insert</button>
+
+            </div>
+            
+      </form>
 
 
 
