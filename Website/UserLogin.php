@@ -4,11 +4,6 @@
 include("./Pages/configg.php");
 include("./Pages/scripts.php");
 session_start();
- // Check if the user is already logged in, if yes then redirect him to welcome page
-// if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
-//     header("location: index2.php");
-//     exit;
-// }
 if(isset($_POST['userlogin'])){
 if (isset($_POST['email']) && isset($_POST['password'])) {
 
@@ -36,10 +31,10 @@ if (isset($_POST['email']) && isset($_POST['password'])) {
 		if (mysqli_num_rows($result) === 1) {
 			$row = mysqli_fetch_assoc($result);
             if ($row['email'] === $uname && $row['Apassword'] === $pass) {
-            	// $_SESSION['email'] = $row['email'];
+            	$_SESSION['email'] = $row['email'];
             	$_SESSION['login_user'] = $row['full_name'];
-            	// $_SESSION['id'] = $row['id'];
-				echo "<script>window.location.href='index2.php';</script>";
+            	$_SESSION['id'] = $row['id'];
+				echo "<script>window.location.href='./Pages/header.php';</script>";
 		        exit();
             }else{
 				header("Location: UserLogin.php?error=Incorect User email or password");
@@ -105,8 +100,8 @@ if (isset($_POST['email']) && isset($_POST['password'])) {
 		    	                     <!-- <h2 class="title mb-4">SIGN IN</h2> -->
                	                    <div class="input-div one">
                	                       <div class="i">
-               	                       		<i class="fas fa-user"></i>
-               	                       </div>
+										  <i class="fa-solid fa-envelope fa-beat"></i>               	                       
+										</div>
                	                       <div class="div">
                	                       		<h5>Email Address</h5>
                	                       		<input type="email" class="input" name="email" >
@@ -114,15 +109,14 @@ if (isset($_POST['email']) && isset($_POST['password'])) {
                	                    </div>
                	                    <div class="input-div pass">
                	                       <div class="i"> 
-               	                        	<i class="fas fa-lock"></i>
-               	                       </div>
+										  <i class="fa-solid fa-lock fa-shake"></i>               	                       
+										</div>
                	                       <div class="div">
                	                        	<h5>Password</h5>
                	                        	<input type="password" class="input" name="password" >
                                        </div>
                                     </div>
-                                    <a href="#" class="fpass">Forgot Password?</a>
-									
+									<a href="./Pages/forgotpass.php" class="fpass">Forgot Password?</a>
                                     <button class="btn btn-primary text-white ms-5 mt-4" type="submit" name="userlogin">LOGIN</button>
 								    <p class="text-center mt-4">
                                           Don't have an account?
@@ -138,10 +132,8 @@ if (isset($_POST['email']) && isset($_POST['password'])) {
                 </div>
             </div>
 		</div>
-		
-		
-		
     </div>
+
     <script type="text/javascript" src="./Assets/js/main.js"></script>
 </body>
 </html>
