@@ -4,34 +4,30 @@ include("../Pages/scripts.php");
 session_start();
 if(isset($_POST['sendmail'])){
     $email = mysqli_real_escape_string($conn, $_POST['email']);
-    if(empty($email)){
-        $error="*Please Enter Your Email";
-    }else{
-        $emailquery = " SELECT * FROM registration WHERE email= '$email' ";
-        $query =mysqli_query($conn, $emailquery);
-    
-        $emailcount = mysqli_num_rows($query);
-        
-        if($emailcount){
-             $userdata = mysqli_fetch_array($query);
-             $usename = $userdata['full_name'];
-             $code = $userdata['code'];
-    
-            $subject = "Password Reset";
-            $body = "Hi, $usename. Click here too reset your password
-            http://localhost/ticketbuckets/reset_password.php?code=$code";
-    
-            $sender_email = "From: aqsaashfaq510@gmail.com";
-            if(mail($email, $subject, $body, $sender_email)){
-                $_SESSION['message'] = "Check your mail to reset your password $email";
-    
-                header('location:../UserLogin.php');
-            }else{
-                echo "<script>alert('Email Sending failed...')</script>";
-            }
+    $emailquery = " SELECT * FROM registration WHERE email= '$email' ";
+    $query =mysqli_query($conn, $emailquery);
+    $emailcount = mysqli_num_rows($query);
+ 
+    if($emailcount){
+         $userdata = mysqli_fetch_assoc($query);
+         $usename = $userdata['full_name'];
+         $code = $userdata['code'];
+
+        $subject = "Password Reset";
+        $body = "Hi, $usename. Click here too reset your password
+        http://localhost/ticketBuckets/website/Pages/reset_password.php?code=$code";
+
+        $sender_email = "From: aqsaashfaq510@gmail.com";
+        if(mail($email, $subject, $body, $sender_email)){
+            $_SESSION['message'] = "Check your mail to reset your password $email";
+
+            header('location:../UserLogin.php');
+        }else{
+            echo "<script>alert('Email Sending failed...!')</script>";
         }
-    }
-   
+    }else{
+        echo "<script>alert('No email found!')</script>";
+    } 
 }
 
 ?>
@@ -45,7 +41,7 @@ if(isset($_POST['sendmail'])){
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
-	<img class="wave" src="../Assets/images/icon/background.png">
+	<img class="wave" src="../Assets/images/icon/background3.png">
 	<div class="container-fluid" height="200vh">
 		<div class="container mt-5">
 		    <div class="card mt-1" style="max-width: 540%;background:transparent;border:none;">
@@ -57,8 +53,8 @@ if(isset($_POST['sendmail'])){
                     </div>
                     <div class="col-md-6 text-center" >
 					  <img src="../Assets/images/logo1 (2).jpeg" class="ms-" alt="" style="justify-content:middle;" width="70%" height="100px">
-                         <h2 class="card-title text-center">Recover Password</h2>
-                         <p class="small mt-3">Please Fill Email Address Correctly</p>
+                         <h2 class="card-title text-center">Forgot Password?</h2>
+                         <p class="small mt-3">Enter your email address to receive a reset link</p>
 						 <div style="font-size:16px; color:#cc0000; margin-top:10px">
                           <?php           
                             if(isset($error)){

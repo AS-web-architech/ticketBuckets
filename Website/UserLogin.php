@@ -1,9 +1,9 @@
 
-
 <?php
+session_start();
 include("./Pages/configg.php");
 include("./Pages/scripts.php");
-session_start();
+
 if(isset($_POST['userlogin'])){
 if (isset($_POST['email']) && isset($_POST['password'])) {
 
@@ -14,23 +14,23 @@ if (isset($_POST['email']) && isset($_POST['password'])) {
 	   return $data;
 	}
 
-	$uname = validate($_POST['email']);
+	$UserEmail = validate($_POST['email']);
 	$pass = validate($_POST['password']);
 
-	if (empty($uname)) {
+	if (empty($UserEmail)) {
 		header("Location: UserLogin.php?error=*Email is required");
 	    exit();
 	}else if(empty($pass)){
         header("Location: UserLogin.php?error=*Password is required");
 	    exit();
 	}else{
-		$sql = "SELECT * FROM registration WHERE email='$uname' AND Apassword='$pass'";
+		$sql = "SELECT * FROM registration WHERE email='$UserEmail' , Apassword='$pass' AND 'status'='active' " ;
 
 		$result = mysqli_query($conn, $sql);
 
 		if (mysqli_num_rows($result) === 1) {
 			$row = mysqli_fetch_assoc($result);
-            if ($row['email'] === $uname && $row['Apassword'] === $pass) {
+            if ($row['email'] === $UserEmail && $row['Apassword'] === $pass) {
             	$_SESSION['email'] = $row['email'];
             	$_SESSION['login_user'] = $row['full_name'];
             	$_SESSION['id'] = $row['id'];
@@ -64,7 +64,7 @@ if (isset($_POST['email']) && isset($_POST['password'])) {
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
-	<img class="wave" src="./Assets/images/icon/background.png">
+	<img class="wave" src="./Assets/images/icon/background3.png">
 	<div class="container-fluid" height="200vh">
 		<div class="container mt-5">
 		    <div class="card mt-1" style="max-width: 540%;background:transparent;border:none;">
@@ -75,27 +75,26 @@ if (isset($_POST['email']) && isset($_POST['password'])) {
 		                 </div>
                     </div>
                     <div class="col-md-6 text-center" >
-					  <img src="./Assets/images/logo1 (2).jpeg" class="ms-" alt="" style="justify-content:middle;" width="70%" height="100px">
+					  <img src="./Assets/images/logo1 (2).jpeg" class="" alt="" style="justify-content:middle;" width="70%" height="100px">
                          <h2 class="card-title text-center">SIGN IN</h2>
-						 
-                       <div class="card-body align-center pt-4">
-					     <div style="font-size:16px; color:#cc0000; margin-top:10px">
+						   <p class="bg-success text-white text-center px-1 py-1" style="font-size: 13px;">
+								<?php 
+								  if(isset($_SESSION['message'])){
+									echo $_SESSION['message']; 
+								  }else{
+									echo $_SESSION['message'] = "";
+								  }
+								   
+								?>
+							</p>
+                       <div class="card-body align-center ">
+					     <div style="font-size:16px; color:#cc0000;">
 						   <?php if (isset($_GET['error'])) { ?>
      		                <p class="error"><?php echo $_GET['error']; ?></p>
      	                        <?php } ?>					   
 						  </div>
-						    <div class="login-content mt-1">
-							   <?php
-                                 if(isset($_SESSION['message'])){
-                               ?>
-                               <div class="alert alert-warning" role="alert">
-                                  <strong><?php $_SESSION['message'];?></strong>
-                               </div>
-                               <?php
-                                  unset($_SESSION['message']);
-                                  }  
-                               ?> 
-							   
+						  
+						    <div class="login-content ">
 		    	               <form action="UserLogin.php" method="post" autocomplete="off">
 		    	                     <!-- <h2 class="title mb-4">SIGN IN</h2> -->
                	                    <div class="input-div one">
@@ -117,8 +116,8 @@ if (isset($_POST['email']) && isset($_POST['password'])) {
                                        </div>
                                     </div>
 									<a href="./Pages/forgotpass.php" class="fpass">Forgot Password?</a>
-                                    <button class="btn btn-primary text-white ms-5 mt-4" type="submit" name="userlogin">LOGIN</button>
-								    <p class="text-center mt-4">
+                                    <button class="btn btn-primary text-white ms-5 mt-2" type="submit" name="userlogin">LOGIN</button>
+								    <p class="text-center mt-2">
                                           Don't have an account?
                                           <a href="./UserRegister.php" name="register">Click here to register</a>
                                     </p>

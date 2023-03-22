@@ -3,16 +3,16 @@ include("configg.php");
 include("scripts.php");
 
 
-session_start();
-$user_check=$_SESSION['login_user'];
+// session_start();
+// $user_check=$_SESSION['login_user'];
 
-$query=mysqli_query($conn,"SELECT full_name FROM registration WHERE full_name='$user_check' ");
-$row=mysqli_fetch_array($query,MYSQLI_ASSOC);
-$login_session=$row['full_name'];
-if(!isset($login_session))
-{
- header("Location: ../UserLogin.php");
-}
+// $query=mysqli_query($conn,"SELECT full_name FROM registration WHERE full_name='$user_check' ");
+// $row=mysqli_fetch_array($query,MYSQLI_ASSOC);
+// $login_session=$row['full_name'];
+// if(!isset($login_session))
+// {
+//  header("Location: ../UserLogin.php");
+// }
 ?>
 
 <!DOCTYPE html>

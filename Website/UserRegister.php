@@ -16,6 +16,7 @@ if(isset($_POST["register"])){
     $role=$_POST['Role'];
 
     $code = bin2hex(random_bytes(15));
+    $status= "inactive"; 
     
      $emailquery = "SELECT * FROM registration where email ='$UserEmail' ";
      $query = mysqli_query($conn, $emailquery);
@@ -42,20 +43,34 @@ if(isset($_POST["register"])){
             $error="* Profile field is required";
         }else{
             
-            $insert = "INSERT INTO registration (`full_name`, `email`, `Apassword`, `picture`, `Urole`, `code`) 
-            VALUES ( '$UserName' , '$UserEmail','$UserPassword','$imageName','$role', '$code')";
+            $insert = "INSERT INTO registration (`full_name`, `email`, `Apassword`, `picture`, `Urole`, `code`, `status`) 
+            VALUES ( '$UserName' , '$UserEmail','$UserPassword','$imageName','$role', '$code', '$status')";
+
             $loginquery= mysqli_query($conn, $insert);
 
             if($loginquery){
+
+                $subject = "Email Activation";
+                $body = "Hi, $UserName. Click here too activate your account
+                http://localhost/ticketBuckets/website/pages/activate.php?code=$code";
+                
+                $sender_email = "From: aqsaashfaq510@gmail.com";
+                 if (mail($UserEmail, $subject, $body, $sender_email )) {
+                    $_SESSION['message'] = "Check your mail to activate your account $UserEmail";
+                    
+                 }else{
+                    echo "<script>alert('You have successfully Register')</script>";
+                    echo "<script>window.location.href = 'UserLogin.php';</script>";
+                 }
     
-                echo "<script>alert('You have successfully Register')</script>";
-                // echo "<script>alert('please login your account')</script>";
+                // echo "<script>alert('You have successfully Register')</script>";
+                // // echo "<script>alert('please login your account')</script>";
                
-                echo "<script>window.location.href = 'UserLogin.php';</script>"; 
+                // echo "<script>window.location.href = 'UserLogin.php';</script>"; 
             }else{
-    
+                echo "<script>alert('Registration failed..!')</script> ";
                 echo "<script>window.location.href = 'UserRegister.php';</script>"; 
-                echo "Registration failed !";
+                
             }
      }
     }
@@ -75,7 +90,7 @@ if(isset($_POST["register"])){
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
-	<img class="wave" src="./Assets/images/icon/background.png">
+	<img class="wave" src="./Assets/images/icon/background3.png">
 	<div class="container-fluid" height="200vh">
 		<div class="container mt-5">
 		    <div class="card mt-1" style="max-width: 540%;background:transparent;border:none;">

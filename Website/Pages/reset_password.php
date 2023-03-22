@@ -2,24 +2,37 @@
 include("../Pages/configg.php");
 include("../Pages/scripts.php");
 session_start();
-
+ob_start();
 if(isset($_POST["Update"])){
-    $NewPassword=mysqli_real_escape_string($conn,$_POST['Upassword']);
-    $confirmPassword=mysqli_real_escape_string($conn,$_POST['confirmPass']);
-    if(empty($NewPassword)){
-        $error= "* password  is required";
-    }elseif($NewPassword != $confirmPassword){
-        $error="*  password  does not match";
-    }elseif(strlen($NewPassword ) < 6 || strlen($NewPassword ) > 18){
-        $error="your password must be atleast 6  to 18 charachters ";
-    }else{
-        
-        // $insert = "INSERT INTO registration (`full_name`, `email`, `Apassword`, `picture`, `Urole`) 
-        // VALUES ( '$UserName' , '$UserEmail','$NewPassword','$imageName','$role')";
-        // $loginquery= mysqli_query($conn, $insert);
-        
- }
+    if (isset($_GET['code'])) {
+        $code = $_GET['code'];
+  
+       $NewPassword=mysqli_real_escape_string($conn,$_POST['Upassword']);
+       $confirmPassword=mysqli_real_escape_string($conn,$_POST['confirmPass']);
+       if(empty($NewPassword)){
+           $error= "*Password field is required";
+       }elseif($NewPassword != $confirmPassword){
+           $error="*Password does not match";
+       }elseif(strlen($NewPassword ) < 6 || strlen($NewPassword ) > 18){
+           $error="your password must be atleast 6  to 18 charachters ";
+       }
+       if($NewPassword === $confirmPassword){
+           $updatequery = "UPDATE registration set Apassword='$NewPassword' where code= '$code' ";
+           $query = mysqli_query($conn, $updatequery);
    
+           if($query){
+               $_SESSION['message'] = "Your password has been updated" ;
+               header("location:../UserLogin.php");
+           }else{
+               $_SESSION['passmsg'] = "Your password is not updated..!";
+               header("location:reset_password.php");
+           }
+       }else{
+        $_SESSION['passmsg'] = "Please try again";
+       }
+    }else{
+        echo "<script>alert('Code not found!')</script>";
+    } 
 }
 ?>
 <!DOCTYPE html>
@@ -32,7 +45,7 @@ if(isset($_POST["Update"])){
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
-	<img class="wave" src="../Assets/images/icon/background.png">
+	<img class="wave" src="../Assets/images/icon/background3.png">
 	<div class="container-fluid" height="200vh">
 		<div class="container mt-5">
 		    <div class="card mt-1" style="max-width: 540%;background:transparent;border:none;">
@@ -44,8 +57,18 @@ if(isset($_POST["Update"])){
                     </div>
                     <div class="col-md-6 text-center" >
 					  <img src="../Assets/images/logo1 (2).jpeg" class="ms-" alt="" style="justify-content:middle;" width="70%" height="100px">
-                         <h2 class="card-title text-center">Create New Password </h2>
+                         <h2 class="card-title text-center">Reset Your Password</h2>
                          <p class="small mt-3">Please Enter Your New Password</p>
+
+                         <p class="bg-danger text-dark">
+                            <?php
+                             if (isset($_SESSION['passmsg'])) {
+                                echo $_SESSION['passmsg'];
+                             }else{
+                                echo $_SESSION['passmsg'] = "" ;
+                             }
+                            ?>
+                         </p>
 						 <p style="color:red;font-size:small;" class="text-bold"  >
                           <?php           
                                if(isset($error)){
