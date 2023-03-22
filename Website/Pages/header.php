@@ -26,15 +26,15 @@ include("scripts.php");
     <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
     <link rel="stylesheet" href="../Assets/css/mode.css">
     <link rel="stylesheet" href="../Assets/css/header.css">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
     <title></title>
 </head>
 <body>
-<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
 <!-- Navigation -->
 <div class="fixed-top">
   <header class="topbar">
       <div class="container">
-        <div class="row">
+        <div class="row"> 
           <!-- social icon-->
           <div class="col-sm-12">
             <ul class="social-network">
@@ -69,20 +69,20 @@ include("scripts.php");
             </a>
           </li>
 
-          <li class="nav-item">
-            <a class="nav-link" href="../Pages/movies.php">MOVIES</a>
+          <li class="nav-item ">
+            <a class="nav-link active" href="../Pages/movies.php">MOVIES</a>
           </li>
 
          <li class="nav-item">
-            <a class="nav-link" href="#">THEATER</a>
+            <a class="nav-link active" href="../Pages/theatre.php">THEATER</a>
           </li>
 
           <li class="nav-item">
-            <a class="nav-link" href="#">CONTACT</a>
+            <a class="nav-link active" href="../Pages/contact.php">CONTACT</a>
           </li>
 
           <li class="nav-item dropdown ">
-            <a class="nav-link  dropdown-togler" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <a class="nav-link active dropdown-togler" href="../Pages/contact.php" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 ACCOUNT
             </a>
             <div class="dropdown-menu">
@@ -91,14 +91,10 @@ include("scripts.php");
             </div>
           </li>
 
-          <!-- <li class="nav-item">
-            <a class="nav-link" href="#">Blog</a>
-          </li>
+          
 
-          <li class="nav-item">
-            <a class="nav-link" href="#">Contact</a>
-          </li> -->
-        </ul>&nbsp;&nbsp;&nbsp;
+          
+         </ul>&nbsp;&nbsp;&nbsp;
         <div class="justify-content-center align-items-center">
             <div class="one-quarter" id="switch">
               <input type="checkbox" class="checkbox" id="chk" />
@@ -117,4 +113,4 @@ include("scripts.php");
 </div>
 <script src="../Assets/js/mode.js"></script>
 </body>
-</html>
+</html> 
