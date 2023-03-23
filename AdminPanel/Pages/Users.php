@@ -120,19 +120,13 @@ $start_from=($page - 1) * $page_per_record;
                             <thead>
                               <tr>
                                 
-                                <th>
-                                  <button type="submit"   name=""
-                                   class="btn btn-danger mx-2 "><i class="fa-solid fa-trash">
-
-                                  </i> </button>
-                                  
-                                </th>
+                                
                                 <th>ID</th>
                                 <th>Name</th>
                                <th>Email</th>
                                <th>Role</th>
                                <th>User_Pic</th> 
- 
+                                <th colspan=2 >status</th>
 
                         </tr>
                       </thead>
@@ -146,16 +140,19 @@ $start_from=($page - 1) * $page_per_record;
                       ?>
                       
                         <tr>
-                         <td>
-                         <input type="checkbox" name="delete_check[]" value="<?php echo $users_data['register_id']  ?>" >
-                          </td>
+                         
                           
                           <td><?php echo $users_data["register_id"] ?></td>
                           <td><?php echo $users_data["full_name"] ?></td>
                           <td><?php echo $users_data["email"] ?></td>
                           <td><?php echo $users_data["role"] ?></td>
                           <td class="py-1" ><img width="66px" height="66px" style="border-radius: 50px;" src="../assets/images/uploads/<?php echo $users_data["picture"] ?>" alt=""></td> 
-
+                           <td>
+                            <a href="" class="btn btn-info" >reject</a>
+                           </td>
+                           <td>
+                            <a href="" class="btn btn-success">accept</a>
+                           </td> 
                          
                          </tr>
                         <?php  } ?>      
@@ -165,7 +162,23 @@ $start_from=($page - 1) * $page_per_record;
       
   <!-- user data cards end -->
       
+<?php
+// if(isset($_POST('register'))){
+//   $UserName=mysqli_real_escape_string($conn,$_POST['Uname']);
+//     $UserEmail=mysqli_real_escape_string($conn,$_POST['Uemail']);
+//     $UserPassword=mysqli_real_escape_string($conn,$_POST['Upassword']);
+//     $confirmPassword=mysqli_real_escape_string($conn,$_POST['confirmPass']);
+//     $role=$_POST['Role'];
+//     $select="SELECT * FROM registration WHERE email=$UserEmail";
+//     $result=mysqli_num_rows($select);
+//     if($result>0){
+//       echo "<script>alert('You ')</script>;"
+//     }
+// }
 
+
+
+?>
 </div>
 </div>
 </div>

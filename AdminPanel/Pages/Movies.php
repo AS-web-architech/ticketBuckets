@@ -161,10 +161,12 @@ include("Config.php");
         
         $movie_data= "SELECT * from movie";
         $data = mysqli_query($conn, $movie_data);
-        
-        while($row= mysqli_fetch_assoc($data)){
-                        
-            ?>
+        if(mysqli_num_rows($data)>0){
+            foreach($data as $row){
+
+                
+                
+                ?>
                         <tr>
                             <td>
                                 
@@ -192,15 +194,17 @@ include("Config.php");
                             
                             
                             <td>
-
+                                
                                 <a href="form.php?id=<?php echo $row['movie_id'] ?>" class="btn btn-info"
                                 style="font-size:small;" ><i class="fa-solid fa-pen-to-square"></i></a>
                             </td>
-                
+                            
                         </tr>
+                        <?php        
+                    }
+                }
+                    ?>
                         
-                        <?php   } ?>
-                
                         
                         
                     </tbody>

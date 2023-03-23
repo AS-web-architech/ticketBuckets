@@ -48,10 +48,10 @@ if(isset($_POST["register"])){
 
             if($loginquery){
     
-                echo "<script>alert('You have successfully Register')</script>";
+                echo "<script>alert('You're registration is now for pending  ')</script>";
                 // echo "<script>alert('please login your account')</script>";
                
-                echo "<script>window.location.href = 'UserLogin.php';</script>"; 
+                echo "<script>window.location.href = 'UserRegister.php';</script>"; 
             }else{
     
                 echo "<script>window.location.href = 'UserRegister.php';</script>"; 

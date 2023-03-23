@@ -15,7 +15,7 @@ if(isset($_POST['sendmail'])){
         if($emailcount){
              $userdata = mysqli_fetch_array($query);
              $usename = $userdata['full_name'];
-             $code = $userdata['code'];
+            //  $code = $userdata['cod'];
     
             $subject = "Password Reset";
             $body = "Hi, $usename. Click here too reset your password
