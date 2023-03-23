@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 19, 2023 at 10:11 PM
+-- Generation Time: Mar 23, 2023 at 08:52 PM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.2.0
 
@@ -41,14 +41,6 @@ CREATE TABLE `booking` (
   `status` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
---
--- Dumping data for table `booking`
---
-
-INSERT INTO `booking` (`booking_id`, `customer-name`, `movieTitle`, `genre-type`, `theater-name`, `ticket-type`, `seat-type`, `Total-seat`, `show-time`, `show-date`, `status`) VALUES
-(1, 'Sana', 'Knives Out\r\n', 'Comedy', 'Atrium Cinemas', 'Platinum ', 'Adult', '4', '50:20:40', '2023-03-03', 'Pending'),
-(2, 'Ali', 'The Boss Baby', 'Kids Animation', 'Atrium Cinemas', 'Silver', 'Child', '3', '50:10:25', '2023-03-02', 'Confirmed');
-
 -- --------------------------------------------------------
 
 --
@@ -82,14 +74,6 @@ CREATE TABLE `customer` (
   `contact` varchar(12) NOT NULL,
   `Address` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `customer`
---
-
-INSERT INTO `customer` (`register-id`, `customer-id`, `customer_name`, `contact`, `Address`) VALUES
-(3, 1, 'Sana', '03434546457', 'north nazimabad karachi,sindh '),
-(4, 2, 'Ali', '0343423232', 'nazimabad no4. karchi, sindh');
 
 -- --------------------------------------------------------
 
@@ -141,14 +125,14 @@ INSERT INTO `movie` (`movie_id`, `theater-id`, `movieTitle`, `movie_pic`, `Movie
 (3, 3, 'KNIVES OUT\r\n', 'knivesOut.PNG', 'https://www.youtube.com/watch?v=qGqiHJTsRkQ', 'Mystry', '2019-09-07', '02:10:00', 'Harlan Thrombey, a reputable crime novelist, is found dead after his 85th birthday celebrations. However, as detective Benoit Blanc investigates the case, it unravels a ploy of sinister intentions.'),
 (4, 4, 'Now You See Me 2', 'NYSM.PNG', 'https://www.youtube.com/watch?v=kMrUHV0VJe4', 'Action', '2016-06-17', '02:10:00', 'Four street magicians, Daniel, Merritt, Henley and Jack, ransack a huge amount of money belonging to insurance baron Arthur Tressler while being chased by police officers.'),
 (5, 5, 'The Boss Baby', 'BossBaby.PNG', 'https://www.youtube.com/watch?v=3cw_-XXGMm0', 'Kids Animation', '2017-03-31', '01:37:00', 'Seven-year-old Tim gets jealous when his parents give all their attention to his little brother. Tim soon learns that the baby can talk and the two team up to foil the plans of the CEO of Puppy Co.'),
-(6, 1, 'Lights Out', 'LightOut.PNG', 'https://www.youtube.com/watch?app=desktop&v=6LiKKFZyhRU', 'Horror', '2016-06-08', '01:21:00', 'Rebecca and her boyfriend try to investigate the connection between her mother and her imaginary friend, Diana, after her stepfather is murdered by a supernatural entity.'),
+(6, 1, 'Lights Out', 'LightOut.PNG', 'https://www.youtube.com/watch?v=6LiKKFZyhRU', 'Horror', '2016-06-08', '01:21:00', 'Rebecca and her boyfriend try to investigate the connection between her mother and her imaginary friend, Diana, after her stepfather is murdered by a supernatural entity.'),
 (7, 2, 'ANNABELLE:\r\n', 'Annabelle.PNG', 'https://www.youtube.com/watch?v=KisPhy7T__Q', 'Horror', '2017-08-11', '01:49:00', 'Samuel and Elle embed their daughter\'s spirit into a doll, only to realise it is a demon. Years later, they open their home to a nun and six orphan girls, one of whom finds the doll.'),
 (8, 3, 'Resident Evil: Welcome to Raccoon City\r\n', 'ResidentEvil.PNG', 'https://www.youtube.com/watch?v=4q6UGCyHZCI', 'Horror', '2021-11-24', '01:47:00', 'Claire and her brother Chris get caught in a zombie outbreak in the dying Raccoon City. They must band together with others to survive and uncover the truth about the experiments held in the city.'),
 (9, 4, 'Spider-Man: Homecoming\r\n', 'spiderman.jpg', 'https://www.youtube.com/watch?v=rk-dF1lIbIg', 'Action', '2017-07-07', '02:13:00', 'Peter Parker tries to stop the Vulture from selling weapons made with advanced Chitauri technology while trying to balance his life as an ordinary high school student.'),
 (10, 5, 'Zombieland', 'zombieLand.PNG', 'https://www.youtube.com/watch?v=8m9EVP8X7N8', 'Horror', '2009-10-02', '01:28:00', 'Zombieland is a 2009 American post-apocalyptic zombie comedy film directed by Ruben Fleischer (in his theatrical debut) and written by Rhett Reese and Paul Wernick. It stars Woody Harrelson, Jesse Eisenberg, Emma Stone, Abigail Breslin, and Bill Murray.'),
 (11, 2, 'Pixels', 'pixels.PNG', 'https://www.youtube.com/watch?v=eIOcWZOQL5M', 'Comedy', '2015-08-24', '01:46:00', 'A special team of arcade gamers is put together to fight a mysterious alien race that watches classic games of the \'80s and presumes them to be a declaration of war.'),
 (12, 4, 'Free Guy', 'Free_Guy.PNG', 'https://www.youtube.com/watch?v=tK6jSOaoVDk', 'Action', '2021-08-13', '01:55:00', 'When Guy, a bank teller, learns that he is a non-player character in a bloodthirsty, open-world video game, he goes on to become the hero of the story and takes the responsibility of saving the world.'),
-(13, 1, 'Love And Monsters', 'L&M.PNG', 'https://www.youtube.com/watch?v=-19tBHrZwOM', 'Comedy', '2020-10-16', '01:48:00', 'Seven years after the Monsterpocalypse, Joel Dawson, along with the rest of humanity, has been living underground ever since giant creatures took control of the land. After reconnecting over the radio with his high school girlfriend, Aimee, who is now 80 miles away at a coastal colony, Joel begins to fall for her again.'),
+(13, 1, 'Love And Monsters', 'Love&Monster.jpeg', 'https://www.youtube.com/watch?v=-19tBHrZwOM', 'Comedy', '2020-10-16', '01:48:00', 'Seven years after the Monsterpocalypse, Joel Dawson, along with the rest of humanity, has been living underground ever since giant creatures took control of the land. After reconnecting over the radio with his high school girlfriend, Aimee, who is now 80 miles away at a coastal colony, Joel begins to fall for her again.'),
 (14, 5, 'Orphan', 'Orphan.PNG', 'https://www.youtube.com/watch?v=m5BSLNAKIZs', 'Horror', '2009-07-24', '02:03:00', 'After losing their baby, a couple adopt a nine-year-old girl. However, they soon make a troubling discovery about her mysterious past and uncover several traits of her disturbing personality.'),
 (15, 3, 'THE SUPER MARIO BROS.', 'Mario Bros.jpg', 'https://www.youtube.com/watch?v=TnGl01FkMMo', 'Kids Animation', '2023-04-05', '01:32:00', 'With help from Princess Peach, Mario gets ready to square off against the all-powerful Bowser to stop his plans from conquering the world.');
 
@@ -171,6 +155,41 @@ CREATE TABLE `payment` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `popularmovies`
+--
+
+CREATE TABLE `popularmovies` (
+  `MovieId` int(11) NOT NULL,
+  `MovieName` varchar(255) NOT NULL,
+  `MoviePic` varchar(255) NOT NULL,
+  `MovieGenre` varchar(255) NOT NULL,
+  `Release` date NOT NULL,
+  `Duration` time NOT NULL,
+  `Description` varchar(10000) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `popularmovies`
+--
+
+INSERT INTO `popularmovies` (`MovieId`, `MovieName`, `MoviePic`, `MovieGenre`, `Release`, `Duration`, `Description`) VALUES
+(1, 'Pathaan', 'Phatan.PNG', 'Action/Thriller', '2023-01-25', '02:40:00', 'An Indian spy battles against the leader of a gang of mercenaries who have a heinous plot for his homeland.'),
+(2, 'Teefa in Trouble', 'TeefaInTrouble.PNG', ' Romance/Comedy', '2018-07-20', '02:35:00', 'A gangster hires Teefa to kidnap a girl from Poland so that his son can marry her. However, Teefa starts to fall in love with the girl he is supposed to kidnap.'),
+(3, 'The Legend of Maula Jatt\r\n', 'MaulaJatt.PNG', 'Action/Drama', '2022-10-13', '02:33:00', 'From times untold where legends are written in soil with blood, a hero is born. Maula Jatt, a fierce prizefighter with a tortured past seeks vengeance against his arch nemesis Noori Natt, the most feared warrior in the land of Punjab.'),
+(4, 'Drifting Home', 'DriftingHome.PNG', 'Kids Animation/Fantasy', '2022-09-16', '01:59:00', 'During summer break, sixth graders Kosuke and Natsume play in an apartment building set to be demolished. They find themselves caught up in a strange phenomenon. All they can see around them is a vast sea.'),
+(5, 'The Smurfs', 'TheSmurfs.PNG', 'Family/Adventure', '2011-09-23', '01:43:00', 'While trying to escape the evil wizard Gargamel, the blue-skinned Smurfs get sucked into a vortex that teleports them to New York. Thereafter, they try their best to find a way back home.'),
+(6, 'Encanto', 'Encanto.PNG', 'Kid Animation/ Comedy/ Fantasy ', '2020-11-24', '01:49:00', 'The Madrigals are an extraordinary family who live hidden in the mountains of Colombia in a charmed place called the Encanto. The magic of the Encanto has blessed every child in the family with a unique gift -- every child except Mirabel.'),
+(7, 'Aladdin', 'Aladdin.jpeg', 'Musical/ Fantasy /Adventure', '2019-05-24', '02:08:00', 'Aladdin, a kind thief, woos Jasmine, the princess of Agrabah, with the help of Genie. When Jafar, the grand vizier, tries to usurp the king, Jasmine, Aladdin and Genie must stop him from succeeding.'),
+(8, 'A Quiet Place Part II\r\n', 'QuietPlace2.PNG', 'Horror/ Thriller', '2021-05-28', '01:37:00', 'Following the deadly events at home, the Abbott family must now face the terrors of the outside world as they continue their fight for survival in silence. '),
+(9, 'It Chapter Two', 'IT2.PNG', 'Horror/ Thriller', '2019-09-06', '02:49:00', 'After 27 years, the Losers Club receive a call from their friend Mike Hanlon that Pennywise is back. They decide to honour their promise and return to their old town to end the evil clown for good.'),
+(10, 'We Have a Ghost', 'WeHaveAGhost.PNG', 'Mystery/ Fantasy', '2023-02-24', '02:07:00', 'The discovery that their house is haunted by a ghost named Ernest makes Kevin\'s family a social media sensation. But when Kevin and Ernest get to the bottom of the mystery of Ernest\'s past, they become targets of the CIA.'),
+(11, 'The Secrets of Dumbledore', 'TheSecretofDumbledore.PNG', 'Fantasy/ Adventure ', '2022-04-08', '02:33:00', 'Professor Albus Dumbledore knows the powerful, dark wizard Gellert Grindelwald is moving to seize control of the wizarding world.'),
+(12, 'Doraemon: Nobita\'s Sky Utopia\r\n', 'DoremonSkyTopia.PNG', 'Kid Animation / Fantasy / Adventure', '2023-03-03', '01:47:00', 'The film will be set in a perfect world in the sky, where everyone lives happily. Doraemon and Nobita set out on an adventure to find the utopia with the help of a new gadget of Doraemon.'),
+(13, 'Frozen II', 'Frozen 2.jpeg', 'Kid Animation / Musical / Fantasy', '2019-11-22', '01:43:00', 'Queen Elsa begins to hear a mysterious melodic voice calling to her. Unsettled, she answers it, thus awakening the elemental spirits and setting into motion a quest to restore an old injustice.');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `registration`
 --
 
@@ -180,25 +199,17 @@ CREATE TABLE `registration` (
   `email` varchar(255) NOT NULL,
   `Apassword` varchar(255) NOT NULL,
   `picture` varchar(250) NOT NULL,
-  `Urole` varchar(50) NOT NULL
+  `Urole` varchar(50) NOT NULL,
+  `status` varchar(255) NOT NULL,
+  `code` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `registration`
 --
 
-INSERT INTO `registration` (`register_id`, `full_name`, `email`, `Apassword`, `picture`, `Urole`) VALUES
-(1, 'Aqsa Ashfaq', 'aqsa510@gmail.com', 'Ashfaq', 'jannat-mirza-intro-pic-2aa.jpg', 'Admin'),
-(2, 'Areeba Shafi', 'ariba2001.dev@gmail.com', 'Areeba', 'userdp.png', 'Admin'),
-(3, 'Sana Tariq', 'sanatariq@gmail.com', 'Sana', 'UserPic2.png', 'User'),
-(4, 'Ali Ahmed', 'aliahmed@gmail.com', 'AliAhmed', 'user3.png', 'User'),
-(5, 'Taha Ashraf ', 'taha10@gmail.com', 'Taha', 'user5.jpg', 'User'),
-(6, 'Ammar Khan', 'khan@gmail.com', 'Ammar', 'user4.png', 'User'),
-(7, 'Dua Khan', 'duakhan@gmail.com', 'duakhan', 'admin.png', 'admin'),
-(11, 'Hamza Ahmed', 'hamzaahmed@gmail.com', 'hamzaahmed', 'bg.jpg', 'admin'),
-(26, 'Maham Fareed', 'mahamkhan@gmail.com', 'maham20', 'Capture1.JPG', 'User'),
-(29, 'Alishba Faheem', 'alishba@gmail.com', 'alishba', 'My project-1 (7).png', 'User'),
-(31, 'Wania Malik', 'wania@gmail.com', 'waniamalik', 'Capture1.JPG', 'User');
+INSERT INTO `registration` (`register_id`, `full_name`, `email`, `Apassword`, `picture`, `Urole`, `status`, `code`) VALUES
+(85, 'Aqsa Ashfaq', 'aqsaashfaq510@gmail.com', 'aqsaashfaq', '10.jpg', 'user', 'active', '94de5b562e8812f05df1dae164f37a');
 
 -- --------------------------------------------------------
 
@@ -211,13 +222,6 @@ CREATE TABLE `reviews` (
   `customer-name` varchar(255) NOT NULL,
   `message` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `reviews`
---
-
-INSERT INTO `reviews` (`ID`, `customer-name`, `message`) VALUES
-(1, 'Sana', 'great Action Movie... ');
 
 -- --------------------------------------------------------
 
@@ -303,8 +307,7 @@ INSERT INTO `theatre` (`theater_id`, `theater-title`, `country`, `Hall-1`, `Hall
 (1, 'Atrium Cinemas', 'Pakistan', '27:12:00', '50:45:15', '30:20:05', '74 Seat', 'V24J+C24, MBL Panorama Karachi Cantonment.'),
 (2, 'Capri Cinema', 'Pakistan', '14:58:21', '41:58:21', '15:58:21', '74 seat', 'M.A Jinnah Rd, Central Jacob Lines Karachi.'),
 (3, 'The Arena Karachi', 'Pakistan', '01:20:15', '28:36:13', '10:40:00', '70 seat', 'Bahria Town Tower, Tariq Rd, P.E.C.H.S Block 2 Karachi.'),
-(4, 'Mega Multiplex Cinema\r\n', 'Pakistan', '05:07:54', '40:25:08', '46:20:13', '74 Seat', 'Millennium Mall, Rashid Minhas Rd, Gulistan-e-Johar, Karachi.'),
-(5, 'Universal Cinemas', 'Pakistan', '05:07:54', '01:20:08', '50:03:29', '80 Seat', ' Abdul Haque Rd، International Expo Centre, Trade Centre Commercial Area Phase 2 Johar Town, Lahore.');
+(4, 'Mega Multiplex Cinema\r\n', 'Pakistan', '05:07:54', '40:25:08', '46:20:13', '74 Seat', 'Millennium Mall, Rashid Minhas Rd, Gulistan-e-Johar, Karachi.');
 
 -- --------------------------------------------------------
 
@@ -318,15 +321,6 @@ CREATE TABLE `ticket` (
   `ticket-type` varchar(255) NOT NULL,
   `price` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `ticket`
---
-
-INSERT INTO `ticket` (`T-id`, `booking-id`, `ticket-type`, `price`) VALUES
-(1, 1, 'Gold', 'PKR 1000'),
-(2, 2, 'Silver', 'PKR 500'),
-(3, 2, 'Platinum ', 'PKR 250');
 
 --
 -- Indexes for dumped tables
@@ -380,6 +374,12 @@ ALTER TABLE `payment`
   ADD PRIMARY KEY (`id`),
   ADD KEY `book` (`booking-id`),
   ADD KEY `customer` (`custome-id`);
+
+--
+-- Indexes for table `popularmovies`
+--
+ALTER TABLE `popularmovies`
+  ADD PRIMARY KEY (`MovieId`);
 
 --
 -- Indexes for table `registration`
@@ -467,7 +467,7 @@ ALTER TABLE `genre`
 -- AUTO_INCREMENT for table `movie`
 --
 ALTER TABLE `movie`
-  MODIFY `movie_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
+  MODIFY `movie_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
 
 --
 -- AUTO_INCREMENT for table `payment`
@@ -476,10 +476,16 @@ ALTER TABLE `payment`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
+-- AUTO_INCREMENT for table `popularmovies`
+--
+ALTER TABLE `popularmovies`
+  MODIFY `MovieId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+
+--
 -- AUTO_INCREMENT for table `registration`
 --
 ALTER TABLE `registration`
-  MODIFY `register_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
+  MODIFY `register_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=86;
 
 --
 -- AUTO_INCREMENT for table `reviews`
