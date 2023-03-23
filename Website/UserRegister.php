@@ -2,6 +2,7 @@
 <?php
 include("./Pages/configg.php");
 include("./Pages/scripts.php");
+session_start();
 
 if(isset($_POST["register"])){
     $name= $_FILES['picture']; 
@@ -18,13 +19,13 @@ if(isset($_POST["register"])){
     $code = bin2hex(random_bytes(15));
     $status= "inactive"; 
     
-     $emailquery = "SELECT * FROM registration where email ='$UserEmail' ";
+     $emailquery = "SELECT * FROM registration WHERE email ='$UserEmail' AND full_name= '$UserName'";
      $query = mysqli_query($conn, $emailquery);
 
      $emailcount = mysqli_num_rows($query);
      if($emailcount>0){
         $error="Email Already Exists";
-    }else{
+    }else{ 
         if(empty($UserName)){
             $error="* Name field is required";
         }
@@ -49,30 +50,24 @@ if(isset($_POST["register"])){
             $loginquery= mysqli_query($conn, $insert);
 
             if($loginquery){
-
+                $to = $UserEmail;
                 $subject = "Email Activation";
                 $body = "Hi, $UserName. Click here too activate your account
                 http://localhost/ticketBuckets/website/pages/activate.php?code=$code";
                 
-                $sender_email = "From: aqsaashfaq510@gmail.com";
-                 if (mail($UserEmail, $subject, $body, $sender_email )) {
+                $sender_email = "From: ticketsbucket135@gmail.com";
+                 if (mail($to, $subject, $body, $sender_email )) {
                     $_SESSION['message'] = "Check your mail to activate your account $UserEmail";
-                    
-                 }else{
                     echo "<script>alert('You have successfully Register')</script>";
                     echo "<script>window.location.href = 'UserLogin.php';</script>";
+                 }else{
+                    echo "<script>alert('Registration failed..!')</script> ";
+                    // $_SESSION['message'];
                  }
-    
-                // echo "<script>alert('You have successfully Register')</script>";
-                // // echo "<script>alert('please login your account')</script>";
-               
-                // echo "<script>window.location.href = 'UserLogin.php';</script>"; 
             }else{
-                echo "<script>alert('Registration failed..!')</script> ";
                 echo "<script>window.location.href = 'UserRegister.php';</script>"; 
-                
             }
-     }
+        }
     }
     
    

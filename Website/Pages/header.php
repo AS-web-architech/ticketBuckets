@@ -51,9 +51,9 @@ include("scripts.php");
   </header>
   <nav class="navbar navbar-expand-lg navbar-dark mx-background-top-linear mb-5">
     <div class="container">
-      <a class="navbar-brand" rel="nofollow" target="_blank" href="#" style="text-transform: uppercase;">
-      <img src="../Assets/images/mylogo (2).png" alt="" width="100%" height="70px" class="d-inline-block align-text-top">
-    </a>
+      <a class="navbar-brand" rel="nofollow" target="_blank"  href="#" style="text-transform: uppercase;">
+      <img src="../Assets/images/mylogo (2).png" alt="" width="150%" height="60px" class="img-responsive d-block align-text-top">
+      </a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" 
       data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" 
       aria-expanded="false" aria-label="Toggle navigation">
@@ -86,8 +86,8 @@ include("scripts.php");
                 ACCOUNT
             </a>
             <div class="dropdown-menu">
-                <a class="dropdown-item" href="../UserLogin.php">Log In</a>
-                <a class="dropdown-item" href="../UserRegister.php">Register</a>
+                <a class="dropdown-item" href="../UserLogin.php"><i class="fa-sharp fa-solid fa-right-to-bracket fa-beat" style="color: #9b0303;"></i>&nbsp; Log In</a>
+                <a class="dropdown-item" href="../UserRegister.php"><i class="fa-solid fa-user-plus fa-beat" style="color: #9e1405;"></i>&nbsp; Register</a>
             </div>
           </li>
 
@@ -95,7 +95,7 @@ include("scripts.php");
 
           
          </ul>&nbsp;&nbsp;&nbsp;
-        <div class="justify-content-center align-items-center">
+        <div class="justify-content-center align-items-center pt-2">
             <div class="one-quarter" id="switch">
               <input type="checkbox" class="checkbox" id="chk" />
               <label class="label" for="chk">

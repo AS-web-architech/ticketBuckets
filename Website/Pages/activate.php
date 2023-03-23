@@ -4,7 +4,7 @@ include('configg.php');
 
 if(isset($_GET['code'])){
     $code = $_GET['code'];
-    $status = ['active'];
+    $status = 'active';
     $updatequery = "UPDATE registration SET `status`='$status' WHERE code= '$code' ";
 
     $query = mysqli_query($conn, $updatequery);

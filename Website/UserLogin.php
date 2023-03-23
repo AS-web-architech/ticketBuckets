@@ -1,6 +1,7 @@
 
 <?php
 session_start();
+ob_start();
 include("./Pages/configg.php");
 include("./Pages/scripts.php");
 
@@ -24,7 +25,7 @@ if (isset($_POST['email']) && isset($_POST['password'])) {
         header("Location: UserLogin.php?error=*Password is required");
 	    exit();
 	}else{
-		$sql = "SELECT * FROM registration WHERE email='$UserEmail' , Apassword='$pass' AND 'status'='active' " ;
+		$sql = "SELECT * FROM registration WHERE email='$UserEmail' and Apassword='$pass'" ;
 
 		$result = mysqli_query($conn, $sql);
 
@@ -82,7 +83,7 @@ if (isset($_POST['email']) && isset($_POST['password'])) {
 								  if(isset($_SESSION['message'])){
 									echo $_SESSION['message']; 
 								  }else{
-									echo $_SESSION['message'] = "";
+									echo $_SESSION['message'] = "You Already Logged Out..Please Login Again.";
 								  }
 								   
 								?>

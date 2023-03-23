@@ -15,9 +15,9 @@ if(isset($_POST['sendmail'])){
 
         $subject = "Password Reset";
         $body = "Hi, $usename. Click here too reset your password
-        http://localhost/ticketBuckets/website/Pages/reset_password.php?code=$code";
+        http://localhost/ticketBuckets/website/Pages/reset_password.php?code='$code'";
 
-        $sender_email = "From: aqsaashfaq510@gmail.com";
+        $sender_email = "From: ticketsbucket135@gmail.com";
         if(mail($email, $subject, $body, $sender_email)){
             $_SESSION['message'] = "Check your mail to reset your password $email";
 

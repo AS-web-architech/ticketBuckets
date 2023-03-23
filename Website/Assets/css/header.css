@@ -19,6 +19,7 @@ body {
     -ms-flex-pack: justify;
     justify-content: space-between;
     padding: 5px;
+    /* height: 0px; */
 }
 
 /*
@@ -142,6 +143,9 @@ ul.social-network {
     transition: .3s ease-out;
     color: #fff;
 }
+.waves-effect:hover{
+  color: #cc0c0c;
+}
 a {
   color: #0a0a0a;
   text-decoration: none;
@@ -177,7 +181,7 @@ li {
   text-align: left;
   background: #fff;
   z-index: 999;
-  min-width: 200px;
+  min-width: 140px;
   border-radius: 0;
   border: 0;
   margin: 0;
@@ -206,7 +210,7 @@ li {
 }
 .navbar .dropdown-menu .dropdown-item {
   display: block;
-  font-size: 14px;
+  font-size: 16px;
   padding: 8px 15px;
   border-bottom: 1px solid #e5e5e5;
   color: #1c1c1c;
@@ -217,6 +221,51 @@ li {
   border: none;
 }
 .navbar .dropdown-menu .dropdown-item:hover {
-  background: #8c0202;
+  background: #1b1313;
   color: #fff;
 }
+
+/* POPUP
+.popup-overlay {
+  Hides pop-up when there is no "active" class
+  visibility: hidden;
+  position: absolute;
+  background: #ffffff;
+  border: 3px solid #666666;
+  width: 50%;
+  height: 50%;
+  left: 25%;
+}
+
+.popup-overlay.active {
+  displays pop-up when "active" class is present
+  visibility: visible;
+  text-align: center;
+}
+
+.popup-content {
+  Hides pop-up content when there is no "active" class
+  visibility: hidden;
+}
+
+.popup-content.active {
+  Shows pop-up content when "active" class is present
+  visibility: visible;
+}
+
+button {
+  display: inline-block;
+  vertical-align: middle;
+  border-radius: 30px;
+  margin: .20rem;
+  font-size: 1rem;
+  color: #666666;
+  background: #ffffff;
+  border: 1px solid #666666;
+}
+
+button:hover {
+  border: 1px solid #666666;
+  background: #666666;
+  color: #ffffff;
+} */
