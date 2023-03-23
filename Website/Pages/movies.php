@@ -12,17 +12,13 @@ include('header.php');
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <!-- header link -->
-  <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-    <link rel="stylesheet" href="../Assets/css/mode.css">
-    <link rel="stylesheet" href="../Assets/css/header.css">
+  <!-- <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css"> -->
   <!-- header link end -->
   <title>Movies Collection</title>
   <link rel="stylesheet" href="../Assets/css/movies.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"> -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-  <script src="https://kit.fontawesome.com/a81368914c.js"></script>
+ 
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 </head>
 
@@ -33,7 +29,7 @@ include('header.php');
 <form action="" method="post">
 <div class="container-fluid moviecont">
 <div class="container  mt-5">
-  <h2 class="text-center mt-5"><b>MOVIES COLLECTION</b><i class="fa-solid fa-projector fa-beat"></i></h2>
+  <h2 class="text-center mt-5"><b>MOVIES COLLECTION</b></h2>
   <div class="row justify-content-center">
        <?php
         
@@ -92,24 +88,24 @@ include('header.php');
 </div>
 </div>
 
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-<script src="../Assets/js/popup.js"></script>
+<!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script> -->
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script> -->
+<!-- <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script> -->
+<!-- <script src="../Assets/js/popup.js"></script> -->
 
 <!-- <script>
   $(function() {
     $('[data-toggle="tooltip"]').tooltip()
   })
-</script> -->
-<!-- <script src="../Assets/js/mode.js"></script> -->
+</script>
+< <script src="../Assets/js/mode.js"></script> -->
 <!-- Button trigger modal -->
 <!-- <button type="button" class="btn btn-primary" >
   Launch demo modal
 </button> -->
 
 <!-- Modal -->
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+<script src="https://kit.fontawesome.com/a81368914c.js"></script>
+<!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script> -->
 </body>
 </html>

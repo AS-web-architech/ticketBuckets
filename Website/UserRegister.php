@@ -2,6 +2,7 @@
 <?php
 include("./Pages/configg.php");
 include("./Pages/scripts.php");
+session_start();
 
 if(isset($_POST["register"])){
     $name= $_FILES['picture']; 
@@ -16,14 +17,15 @@ if(isset($_POST["register"])){
     $role=$_POST['Role'];
 
     $code = bin2hex(random_bytes(15));
+    $status= "inactive"; 
     
-     $emailquery = "SELECT * FROM registration where email ='$UserEmail' ";
+     $emailquery = "SELECT * FROM registration WHERE email ='$UserEmail' AND full_name= '$UserName'";
      $query = mysqli_query($conn, $emailquery);
 
      $emailcount = mysqli_num_rows($query);
      if($emailcount>0){
         $error="Email Already Exists";
-    }else{
+    }else{ 
         if(empty($UserName)){
             $error="* Name field is required";
         }
@@ -42,22 +44,30 @@ if(isset($_POST["register"])){
             $error="* set your profile ";
         }else{
             
-            $insert = "INSERT INTO registration (`full_name`, `email`, `Apassword`, `picture`, `role`, `code`) 
-            VALUES ( '$UserName' , '$UserEmail','$UserPassword','$imageName','$role', '$code')";
+            $insert = "INSERT INTO registration (`full_name`, `email`, `Apassword`, `picture`, `Urole`, `code`, `status`) 
+            VALUES ( '$UserName' , '$UserEmail','$UserPassword','$imageName','$role', '$code', '$status')";
+
             $loginquery= mysqli_query($conn, $insert);
 
             if($loginquery){
-    
-                echo "<script>alert('You're registration is now for pending  ')</script>";
-                // echo "<script>alert('please login your account')</script>";
-               
-                echo "<script>window.location.href = 'UserRegister.php';</script>"; 
+                $to = $UserEmail;
+                $subject = "Email Activation";
+                $body = "Hi, $UserName. Click here too activate your account
+                http://localhost/ticketBuckets/website/pages/activate.php?code=$code";
+                
+                $sender_email = "From: ticketsbucket135@gmail.com";
+                 if (mail($to, $subject, $body, $sender_email )) {
+                    $_SESSION['message'] = "Check your mail to activate your account $UserEmail";
+                    echo "<script>alert('You have successfully Register')</script>";
+                    echo "<script>window.location.href = 'UserLogin.php';</script>";
+                 }else{
+                    echo "<script>alert('Registration failed..!')</script> ";
+                    // $_SESSION['message'];
+                 }
             }else{
-    
                 echo "<script>window.location.href = 'UserRegister.php';</script>"; 
-                echo "Registration failed !";
             }
-     }
+        }
     }
     
    
@@ -75,7 +85,7 @@ if(isset($_POST["register"])){
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
-	<img class="wave" src="./Assets/images/icon/background.png">
+	<img class="wave" src="./Assets/images/icon/background3.png">
 	<div class="container-fluid" height="200vh">
 		<div class="container mt-5">
 		    <div class="card mt-1" style="max-width: 540%;background:transparent;border:none;">
