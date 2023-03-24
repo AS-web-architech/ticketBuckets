@@ -1,9 +1,9 @@
 <?php
+$title = 'MOVIE | TICKET BUCKET';
 include('configg.php');
 include('scripts.php');
 include('header.php');
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,7 +11,7 @@ include('header.php');
   <!-- header link -->
   <!-- <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css"> -->
   <!-- header link end -->
-  <title>Movies Collection</title>
+  <title></title>
   <link rel="stylesheet" href="../Assets/css/movies.css">
   <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"> -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
@@ -20,8 +20,7 @@ include('header.php');
 </head>
 
 <body>
-<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
-
+<!-- <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet"> -->
 </div>   
 <form action="" method="post">
 <div class="container-fluid moviecont">
@@ -57,21 +56,17 @@ include('header.php');
                       <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
-                    <iframe width="100%" height="400" src="<?php echo $show?>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                    <iframe width="100%" height="400" src="<?php echo $show ?>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                     </div>
-                    <!-- <div class="modal-footer">
-                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                      <button type="button" class="btn btn-primary">Save changes</button>
-                    </div> -->
                   </div>
                 </div>
               </div>
          
               <!-- MODALEND -->
             <h5 class="card-title text-dark"><?php echo $movie_data['movieTitle']; ?></h5>
-            <!-- <small><?php echo $movie_data['description']; ?></small> -->
+            <span class="movie_info"><?php echo $movie_data['genre_type']; ?> /</span>  
             <span class="movie_info"><?php echo $movie_data['release']; ?></span>
-            <span class="movie_info float-right"><i class="fas fa-star"></i> 9 / 10</span>
+            <span class="movie_info float-right"><i class="fas fa-star fa-beat" style="color: #fad905;"></i> 9 / 10</span>
             
           </div>
         </div>
@@ -83,8 +78,10 @@ include('header.php');
 
 
 </div>
-</div>
-
+</div><br><br><br><br>
+<?php
+include("footer.php");
+?>
 <!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script> -->
 <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script> -->
 <!-- <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script> -->
@@ -102,7 +99,7 @@ include('header.php');
 </button> -->
 
 <!-- Modal -->
-<script src="https://kit.fontawesome.com/a81368914c.js"></script>
+<!-- <script src="https://kit.fontawesome.com/a81368914c.js"></script> -->
 <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script> -->
 </body>
 </html>

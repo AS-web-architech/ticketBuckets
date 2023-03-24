@@ -1,5 +1,7 @@
 
 <?php
+$title = 'LOGIN FORM | TICKETS BUCKET';
+
 session_start();
 ob_start();
 include("./Pages/configg.php");
@@ -58,7 +60,7 @@ if (isset($_POST['email']) && isset($_POST['password'])) {
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Login Form</title>
+	<title></title>
 	<link rel="stylesheet" type="text/css" href="./Assets/css/style.css">
 	<link href="https://fonts.googleapis.com/css?family=Poppins:600&display=swap" rel="stylesheet">
 	<script src="https://kit.fontawesome.com/a81368914c.js"></script>

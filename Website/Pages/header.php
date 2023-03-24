@@ -1,8 +1,6 @@
 <?php
 include("configg.php");
 include("scripts.php");
-
-
 // session_start();
 // $user_check=$_SESSION['login_user'];
 
@@ -27,7 +25,7 @@ include("scripts.php");
     <link rel="stylesheet" href="../Assets/css/mode.css">
     <link rel="stylesheet" href="../Assets/css/header.css">
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
-    <title></title>
+    <title>  </title>
 </head>
 <body>
 <!-- Navigation -->
@@ -64,7 +62,7 @@ include("scripts.php");
         <ul class="navbar-nav ml-auto">
 
           <li class="nav-item active">
-            <a class="nav-link" href="../Pages/header.php">HOME
+            <a class="nav-link" href="../Pages/index.php">HOME
               <span class="sr-only">(current)</span>
             </a>
           </li>
@@ -78,7 +76,7 @@ include("scripts.php");
           </li>
 
           <li class="nav-item">
-            <a class="nav-link active" href="../Pages/contact.php">CONTACT</a>
+            <a class="nav-link active" href="../Pages/ContactUs.php">CONTACT</a>
           </li>
 
           <li class="nav-item dropdown ">
@@ -86,8 +84,8 @@ include("scripts.php");
                 ACCOUNT
             </a>
             <div class="dropdown-menu">
-                <a class="dropdown-item" href="../UserLogin.php"><i class="fa-sharp fa-solid fa-right-to-bracket fa-beat" style="color: #9b0303;"></i>&nbsp; Log In</a>
-                <a class="dropdown-item" href="../UserRegister.php"><i class="fa-solid fa-user-plus fa-beat" style="color: #9e1405;"></i>&nbsp; Register</a>
+                <a class="dropdown-item" href="../UserLogin.php"><i class="fa-sharp fa-solid fa-right-to-bracket" style="color: #9b0303;"></i>&nbsp; Log In</a>
+                <a class="dropdown-item" href="../UserRegister.php"><i class="fa-solid fa-user-plus" style="color: #9e1405;"></i>&nbsp; Register</a>
             </div>
           </li>
 

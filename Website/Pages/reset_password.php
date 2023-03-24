@@ -1,4 +1,6 @@
 <?php
+$title = 'RESET PASSWORD | TICKETS BUCKET';
+
 include("configg.php");
 include("scripts.php");
 session_start();
@@ -37,7 +39,7 @@ if(isset($_POST["UpdatePass"])){
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Login Form</title>
+	<title></title>
 	<link rel="stylesheet" type="text/css" href="../Assets/css/style.css">
 	<link href="https://fonts.googleapis.com/css?family=Poppins:600&display=swap" rel="stylesheet">
 	<script src="https://kit.fontawesome.com/a81368914c.js"></script>

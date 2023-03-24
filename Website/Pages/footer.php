@@ -1,282 +1,99 @@
 <?php
 include('configg.php');
-include('scripts.php');
+// include('scripts.php');
 
 ?>
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../Assets/css/footer.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-alpha1/dist/css/bootstrap.min.css">
-    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
-    <title>Document</title>
-</head>
-<body>
-<footer>
-       <div class="container-fluid mt-5 mb-5">
-           
-       
-       <div class="card">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- <link href="https://fonts.googleapis.com/css?family=Roboto:300,400&display=swap" rel="stylesheet"> -->
 
-            <div class="row g-0">
-        
-            <div class="col-md-8 border-right">
-                <div class="border-bottom">
-                    
-               
-                <div class="row p-4">
+    <!-- <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500&display=swap" rel="stylesheet"> -->
 
-                    <div class="col-md-3">
+    <!-- <link href="https://fonts.googleapis.com/css?family=Source+Serif+Pro:400,600&display=swap" rel="stylesheet"> -->
 
-                        <ul class="item-list">
-                            
-                            <li><a href="#">Desktop app</a></li>
-                            <li><a href="#">Mobile app</a></li>
-                            <li><a href="#">Plan</a></li>
-                            <li><a href="#">Security</a></li>
-                            <li><a href="#">Features</a></li>
+    <!-- <link rel="stylesheet" href="../Assets/css/footerfont.css"> -->
 
-                        </ul>
-                        
-                    </div>
-
-
-
-                    <div class="col-md-3">
-
-                        <ul class="item-list">
-                            
-                            <li><a href="#">About</a></li>
-                            <li><a href="#">FAQS</a></li>
-                            <li><a href="#">Press Releases</a></li>
-                            <li><a href="#">Media Kit</a></li>
-                            <li><a href="#">Events</a></li>
-                            
-
-                        </ul>
-                        
-                    </div>
-
-
-
-                    <div class="col-md-3">
-
-                        <ul class="item-list">
-                            
-                            <li><a href="#">Desktop app</a></li>
-                            <li><a href="#">Mobile app</a></li>
-                            <li><a href="#">Plan</a></li>
-                            <li><a href="#">Security</a></li>
-                            <li><a href="#">Features</a></li>
-
-                        </ul>
-                        
-                    </div>
-
-
-
-                    <div class="col-md-3">
-
-                        <ul class="item-list">
-                            
-                            <li><a href="#">Developers</a></li>
-                            <li><a href="#">Referals</a></li>
-                            <li><a href="#">Forum</a></li>
-                            
-
-                        </ul>
-                        
-                    </div>
-                    
-                </div>
-
-                </div>
-
-                <div class="border-bottom">
-                    
-
-                
-                <div class="row p-4">
-
-
-                    <div class="col-md-3">
-
-                        <div class="d-flex flex-column align-items-center mr-46">
-
-                            <img src="https://i.imgur.com/phiO1J4.jpg" class="rounded-circle" width="50" />
-                            <span class="text-white mt-2">USA</span>
-                            
-                        </div>
-                        
-                    </div>
-
-
-
-                     <div class="col-md-3">
-
-                        <div class="d-flex flex-column align-items-center mr-46">
-
-                            <img src="https://i.imgur.com/KXDKPvt.jpg" class="rounded-circle" width="50" />
-                            <span class="text-white mt-2">RUSSIA</span>
-                            
-                        </div>
-                        
-                    </div>
-
-
-
-                     <div class="col-md-3">
-
-                        <div class="d-flex flex-column align-items-center mr-46">
-
-                            <img src="https://i.imgur.com/D4pUdsf.jpg" class="rounded-circle" width="50" />
-                            <span class="text-white mt-2">GERMANY</span>
-                            
-                        </div>
-                        
-                    </div>
-
-
-
-
-                     <div class="col-md-3">
-
-                        <div class="d-flex flex-column align-items-center mr-46">
-
-                            <img src="https://i.imgur.com/Tm9cEMT.png" class="rounded-circle" width="50" />
-                            <span class="text-white mt-2">JAPAN</span>
-                            
-                        </div>
-                        
-                    </div>
-                    
-
-
-
-                </div>
-
-                </div>
-
-
-                <div class="d-flex justify-content-between p-4">
-
-                    <span class="text-white">2021 Copyright</span>
-                    <span class="text-white">Terms and conditions</span>
-                    
-                </div>
-                
-
-
-            </div>
-
-
-            <div class="col-md-4">
-
-
-               <div class="border-bottom"> 
-
-               <div class="bg-danger p-3">
-
-                 <div class="d-flex justify-content-between align-items-center">
-
-                    <span class="dots"><i class="fa fa-phone"></i></span>
-                    <span class="text-content">Let's Talk</span>
-                     
-                 </div>
-                   
-               </div>
-
-
-               <div class="mt-3 text-center p-2">
-
-
-                    <div class="text-center d-flex flex-row align-items-center">
-
-                        <img src="https://i.imgur.com/QpQpT3e.png" width="60">
-
-                        <div class="ml-3">
-                            <span class="text-white d-block text-left">Business Enquiry</span>
-                            <span class="text-white">contact@bbbootstrap.com</span>
-                        </div>
-                        
-                    </div>
-
-                   
-               </div>
-
-
-               <div class="mt-0 text-center p-2">
-
-
-                    <div class="text-center d-flex flex-row align-items-center">
-
-                        <img src="https://i.imgur.com/KtUwFEK.png" width="60">
-
-                        <div class="ml-3">
-                            <span class="text-white d-block text-left">PR or Media</span>
-                            <span class="text-white">marketing@bbbootstrap.com</span>
-                        </div>
-                        
-                    </div>
-
-                   
-               </div>
-
-               </div>
-
-
-
-
-
-               <div class="border-bottom"> 
-
-               <div class="p-3 px-3 py-2">
-
-
-            <div class="search d-flex align-items-center"> <input class="search_input" type="text" name="" placeholder="Enter your email"> <a href="#" class="search_icon"><i class="fa fa-envelope"></i></a> </div>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="../Assets/css/bootstrap.min.css">
     
+    <!-- Style CSS -->
+    <link rel="stylesheet" href="../Assets/css/footer.css">
 
+    <title></title>
+  </head>
+  <body>
+    
+    <!-- <div class="container-fluid mt-5"> -->
+    <footer class="footer-20192  footer">
+      <div class="site-section">
+        <div class="container cont" style="margin-top: 6rem;">
 
-
-               </div>
-
-               </div>
-
-
-               <div class="social p-4 text-center">
-
-                    
-                    <ul class="social-icons">
-                        
-                        <li><i class="fa fa-facebook fa-2x text-white"></i></li>
-
-                        <li><i class="fa fa-linkedin fa-2x text-white"></i></li>
-
-                        <li><i class="fa fa-google fa-2x text-white"></i></li>
-                    </ul>                   
-
-               </div>
-                
-
-
+          <div class="cta d-block d-md-flex align-items-center px-">
+            <div>
+              <h2 class="mb-0">More Than 20000+ Customers Trusted Us</h2>
+              <h3 class="text-white">Let's get started!</h3>
             </div>
-
-
+            <div class="ml-auto">
+              <a href="contact.php" class="btn btn-dark rounded-0 py-3 px-5" style="background: #000;">Contact us</a>
             </div>
+          </div>
+          <div class="row mb-5">
 
+            <div class="col-sm">
+              <a href="index.php" class="footer-logo"><img src="../Assets/images/mylogo (2).png" width="100%" height="auto" alt="" class="im-responsive"></a>
+              <p class="copyright">
+                <small>&copy; 2023</small>
+              </p>
+            </div>
+            <div class="col-sm">
+              <h3>Customers</h3>
+              <ul class="list-unstyled links">
+                <li><a href="#">Buyer</a></li>
+                <li><a href="ContactUs.php">Contact us</a></li>
+              </ul>
+            </div>
+            <div class="col-sm">
+              <h3>Quick Link</h3>
+              <ul class="list-unstyled links">
+                <li><a href="#">About us</a></li>
+                <li><a href="movies.php">Movies</a></li>
+                <li><a href="theatre.php">Theater</a></li>
+              </ul>
+            </div>
+            <div class="col-sm">
+              <h3>Further Information</h3>
+              <ul class="list-unstyled links">
+                <li><a href="#">Terms &amp; Conditions</a></li>
+                <li><a href="#">Privacy Policy</a></li>
+              </ul>
+            </div>
+            <div class="col-md-3">
+              <h3>Follow us</h3>
+              <ul class="list-unstyled social">
+                <li><a href="#"><span class="icon-facebook"><i class="fa fa-facebook"></i></span></a></li>
+                <li><a href="#"><span class="icon-twitter"><i class="fa fa-twitter"></i></span></a></li>
+                <li><a href="#"><span class="icon-linkedin"><i class="fa fa-linkedin"></i></span></a></li>
+                <li><a href="#"><span class="icon-medium"><i class="fa-brands fa-whatsapp fa-lg"></i></span></a></li>
+                <li><a href="#"><span class="icon-paper-plane"><i class="fa-sharp fa-solid fa-paper-plane"></i></span></a></li>
+              </ul>
+            </div>
             
+          </div>
+        </div>
+      </div>
+    </footer>
 
+    <!-- </div> -->
 
-       </div>
-
-   </div>
-
-   </footer>
-   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-</body>
+    
+    
+    <script src="../Assets/js/bootstrap.min.js"></script>
+    <script src="../Assets/js/popper.min.js"></script>
+    <script src="../Assets/js/bootstrap.min.js"></script>
+  </body>
 </html>
