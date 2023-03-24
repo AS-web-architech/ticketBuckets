@@ -1,13 +1,31 @@
 <?php
-include('configg');
-if(issset('insert')){
-   $customerName=$_POST[''];
+include('configg.php');
+if(isset($_POST['sentdata'])){
+   $customerName=$_POST['Cname'];
    $customerEmail=$_POST['email'];
    $movieName=$_POST['movietitle'];
    $theaterName=$_POST['theatreTitle'];
    $showdate=$_POST['show-date'];
    $showtime=$_POST['show-time'];
-   $customerName=$_POST['ticket-type'];
+   $ticketType=$_POST['ticket-type'];
+   $adultData=$_POST['adultdata'];
+   $childData=$_POST['childdata'];
+   $insert="INSERT INTO `booking`( `customer-name`, `movieTitle`,
+    `theater-name`, `showtime`, `showdate`, `adult-seats`, `child-seats`,
+     `email`, `ticket-type`) VALUES 
+     ('$customerName','$movieName','$theaterName','$showtime','$showdate',
+   '$adultData','$childData','$customerEmail','$ticketType')";
+   $run=mysqli_query($conn,$insert);
+   
+   if(mysqli_query($conn,$insert)){
+      echo "<script>alert('your booking is now on pending when it's confirm a mail will recieve to confirm payments')</script>";
+      echo "<script>window.location.href='index.php'</script>";
+
+   }else{
+      echo "booking failed due to invalid information" ;
+   }
+      
+   
 }
 
 
