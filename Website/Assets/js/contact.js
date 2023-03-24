@@ -33,7 +33,7 @@
 
 					$.ajax({   	
 				      type: "POST",
-				      url: "php/sendEmail.php",
+				      url: "http://localhost/ticketBuckets/website/Pages/sendmail.php",
 				      data: $(form).serialize(),
 
 				      beforeSend: function() { 

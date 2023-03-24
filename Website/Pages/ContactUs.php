@@ -83,40 +83,56 @@ include('header.php');
 							<div class="col-md-7">
 								<div class="contact-wrap w-100 p-md-5 p-4">
 									<h3 class="mb-4"><b>Contact Us</b> </h3>
-									<div id="form-message-warning" class="mb-4"></div> 
+									<!-- <div id="form-message-warning" class="mb-4"></div> 
 				      		<div id="form-message-success" class="mb-4">
 				            Your message was sent, thank you!
-				      		</div>
+				      		</div> -->
+							       <p style="color:red;font-size:small;" class="text-bold"  >
+                                    <?php           
+                                         if(isset($error)){
+                                            echo $error;
+                                         }           
+                                    
+                                    ?>
+                                    </p>
 									<form method="POST" action="sendmail.php" id="contactForm" name="contactForm" class="contactForm">
 										<div class="row">
 											<div class="col-md-6">
 												<div class="form-group">
 													<label class="label" for="name">Full Name</label>
-													<input type="text" class="form-control" name="name" id="name" placeholder="Name">
+													<input type="text" class="form-control" name="name" id="name" placeholder="Name" value="<?php if(isset($error)){
+                                                     echo $name ;
+                                                     } ?>">
 												</div>
 											</div>
 											<div class="col-md-6"> 
 												<div class="form-group">
 													<label class="label" for="email">Email Address</label>
-													<input type="email" class="form-control" name="email" id="email" placeholder="Email">
+													<input type="email" class="form-control" name="email" id="email" placeholder="Email" value="<?php if(isset($error)){
+                                                      echo $email ;
+                                                     } ?>">
 												</div>
 											</div>
 											<div class="col-md-12">
 												<div class="form-group">
 													<label class="label" for="subject">Subject</label>
-													<input type="text" class="form-control" name="subject" id="subject" placeholder="Subject">
+													<input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" value="<?php if(isset($error)){
+                                                       echo $subject ;
+                                                    } ?>">
 												</div>
 											</div>
 											<div class="col-md-12">
 												<div class="form-group">
 													<label class="label" for="#">Message</label>
-													<textarea name="message" class="form-control" id="message" cols="30" rows="4" placeholder="Message"></textarea>
+													<textarea name="message" class="form-control" id="message" cols="30" rows="4" placeholder="Message" value="<?php if(isset($error)){
+                                                      echo $message ;
+                                                     } ?>"></textarea>
 												</div>
 											</div>
 											<div class="col-md-12">
 												<div class="form-group">
-													<button type="submit" name="sendmsg" value="Send Message" class="btn btn-primary">Send Message</button>
-													<div class="submitting"></div>
+													<button type="submit" name="sendmail"  class="btn btn-primary">Send Message</button>
+													<!-- <div class="submitting"></div> -->
 												</div>
 											</div>
 										</div>
@@ -222,7 +238,7 @@ include('header.php');
   <script src="../Assets/js/popper.js"></script>
   <script src="../Assets/js/bootstrap.min.js"></script>
   <script src="../Assets/js/jquery.validate.min.js"></script>
-  <script src="../Assets/js/contact.js"></script>
+  <!-- <script src="../Assets/js/contact.js"></script> -->
 
   <?php
   include('footer.php');

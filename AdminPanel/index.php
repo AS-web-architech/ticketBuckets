@@ -52,7 +52,7 @@ include("./Pages/Config.php");
             </div>
             
             <!-- signout button action   -->
-            <a href="#" class="nav_link"> 
+                <a href="#" class="nav_link"> 
                 <form action="./Pages/logout.php" method="POST">
                 <button class="btn btn-transparent m-0 p-0" type="submit" name="Signout">
                     <i class='bx bx-log-out nav_icon'></i> <span class="nav_name">SignOut</span>

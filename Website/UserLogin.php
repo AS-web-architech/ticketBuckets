@@ -63,6 +63,7 @@ if (isset($_POST['email']) && isset($_POST['password'])) {
 <head>
 	<title></title>
 	<link rel="stylesheet" type="text/css" href="./Assets/css/style.css">
+	<link rel="icon" type="images/x-icon" href="./Assets/images/icon/logo (3).png" />
 	<link href="https://fonts.googleapis.com/css?family=Poppins:600&display=swap" rel="stylesheet">
 	<script src="https://kit.fontawesome.com/a81368914c.js"></script>
 	<meta name="viewport" content="width=device-width, initial-scale=1">

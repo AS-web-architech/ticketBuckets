@@ -1,4 +1,5 @@
 <?php
+$title = 'BOOKING FORM | TICKET BUCKETS';
 include('header.php');
 include('configg.php');
 
@@ -69,7 +70,7 @@ include('configg.php');
                             </div>
                             <div class="col-md-6">
                             <div class="form-group">
-                            <input class="form-control" type="text" name="show-time" placeholder="show time" value="<?php echo $arr['showtime'] ?>" required>
+                            <input class="form-control" type="time" name="show-time" placeholder="show time" value="<?php echo $arr['showtime'] ?>" required>
                                     <span class="form-label">show time</span>
                                 </div>
                             </div>

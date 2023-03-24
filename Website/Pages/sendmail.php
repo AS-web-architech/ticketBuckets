@@ -1,28 +1,63 @@
 <?php
 
 // Replace this with your own email address
-$to = $email;
+// $to = $email;
 
-function url(){
-  return sprintf(
-    "%s://%s",
-    isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] != 'off' ? 'https' : 'http',
-    $_SERVER['SERVER_NAME']
-  );
-}
+// function url(){
+//   return sprintf(
+//     "%s://%s",
+//     isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] != 'off' ? 'https' : 'http',
+//     $_SERVER['SERVER_NAME']
+//   );
+// }
 
-if(isset($_POST['sendmsg'])) {
+if(isset($_POST['sendmail'])) {
 
    $name = trim(stripslashes($_POST['name']));
    $email = trim(stripslashes($_POST['email']));
    $subject = trim(stripslashes($_POST['subject']));
    $message = trim(stripslashes($_POST['message']));
 
-   $to = "$email";
-   $subject = $message;
+   if(empty($name)){
+      $error="* Please enter your name";
+   }elseif(empty($email)){
+      $error="* Please enter a valid email address";
+   }elseif(empty($subject)){
+      $error="* Please enter your subject";
+   }elseif(empty($message)){
+      $error="* Please enter a message";
+   }else{
 
-   $message = "Name: {$name} Email: {$email} Subject: {$subject}" . $message;
+  
+   $to = "ticketsbucket135@gmail.com";
+   $subject = $subject;
 
+   $message .= "<br/>" . "Email from: " . $name . "<br/>";
+	$message .= "Email address: " . $email . "<br/>";
+   // $message .= "Subject: " .$subject . "<br/>";
+   $message .= "Message: " .$message. "<br/>";
+   // $message .= nl2br($message);
+   $message .= "<br /> ----- <br /> This email was sent from your site " . "url('http://localhost/ticketBuckets/website/Pages/index.php')" . " contact form. <br />";
+
+   // $from =  $name . " <" . $email . ">";
+
+   // $headers = "From: " . $from . "\r\n";
+   $headers .= "Reply-To: ". $email . "\r\n";
+   $headers = "MIME-Version: 1.0" . "\r\n";
+   $headers .= 'Content-type:text/html;charset-UTF-8' . "\r\n";
+
+   $headers .= "From: '$email'";
+
+   $mail = mail($to, $subject, $message, $headers);
+  
+   if($mail){
+      echo "<script>alert('Mail Send Successfully.')</script>";
+      echo "<script>window.location.href = 'ContactUs.php';</script>"; 
+   }else{
+      echo "<script>alert('Mail Not Send..!')</script>";
+      echo "<script>window.location.href = 'ContactUs.php';</script>"; 
+   }
+  }
 
 	// if ($subject == $subject) { $subject = "Contact Form Submission"; }
 
