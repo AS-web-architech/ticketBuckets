@@ -1,9 +1,8 @@
 <?php
 include("configg.php");
 include("scripts.php");
-
-
-// session_start();
+session_start();
+ob_start();
 // $user_check=$_SESSION['login_user'];
 
 // $query=mysqli_query($conn,"SELECT full_name FROM registration WHERE full_name='$user_check' ");
@@ -23,11 +22,11 @@ include("scripts.php");
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script> 
     <link rel="stylesheet" href="../Assets/css/mode.css">
     <link rel="stylesheet" href="../Assets/css/header.css">
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
-    <title></title>
+    <title>  </title>
 </head>
 <body>
 <!-- Navigation -->
@@ -64,7 +63,7 @@ include("scripts.php");
         <ul class="navbar-nav ml-auto">
 
           <li class="nav-item active">
-            <a class="nav-link" href="../Pages/header.php">HOME
+            <a class="nav-link" href="../Pages/index.php">HOME
               <span class="sr-only">(current)</span>
             </a>
           </li>
@@ -78,7 +77,7 @@ include("scripts.php");
           </li>
 
           <li class="nav-item">
-            <a class="nav-link active" href="../Pages/contact.php">CONTACT</a>
+            <a class="nav-link active" href="../Pages/ContactUs.php">CONTACT</a>
           </li>
 
           <li class="nav-item dropdown ">
@@ -86,8 +85,8 @@ include("scripts.php");
                 ACCOUNT
             </a>
             <div class="dropdown-menu">
-                <a class="dropdown-item" href="../UserLogin.php"><i class="fa-sharp fa-solid fa-right-to-bracket fa-beat" style="color: #9b0303;"></i>&nbsp; Log In</a>
-                <a class="dropdown-item" href="../UserRegister.php"><i class="fa-solid fa-user-plus fa-beat" style="color: #9e1405;"></i>&nbsp; Register</a>
+                <a class="dropdown-item Ditem" href="../UserLogin.php"><i class="fa-sharp fa-solid fa-right-to-bracket" style="color: #9b0303;"></i>&nbsp; Log In</a>
+                <a class="dropdown-item Ditem" href="../UserRegister.php"><i class="fa-solid fa-user-plus" style="color: #9e1405;"></i>&nbsp; Register</a>
             </div>
           </li>
 
@@ -98,7 +97,7 @@ include("scripts.php");
         <div class="justify-content-center align-items-center pt-2">
             <div class="one-quarter" id="switch">
               <input type="checkbox" class="checkbox" id="chk" />
-              <label class="label" for="chk">
+              <label class="label Modelab" for="chk">
                  <i class="fas fa-sun"></i>
                   <i class="fas fa-moon"></i>
                   <div class="ball"></div>
@@ -107,8 +106,38 @@ include("scripts.php");
         </div>
       </div>
        
+     
     </div>
-    
+    <?php
+      if(isset($_SESSION['picture'])){
+               
+    ?>
+    <li class="nav-item dropdown d-flex">
+      <a class="nav-link active dropdown-togler" href="../Pages/contact.php" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            
+        <div class="header_img ms-auto mx-4"> <img class="img-fluid" src="./AdminPanel/assets/images/uploads/<?php echo $_SESSION['picture'] ?>"  
+          style="width:40px;height:40px;border:1px solid black;border-radius:50px;"  alt=""> </div>    
+          <?php } ?>
+      </a>
+      <div class="dropdown-menu">
+          <?php
+           if(isset($_SESSION['login_user'], $_SESSION['email'])){
+            
+           ?>
+          <a class="dropdown-item disabled" href="../UserLogin.php"><?php echo $_SESSION['login_user'] ;?><br>
+          <small style="font-size: 8.4px;"><?php echo $_SESSION['email'] ;?></small>
+          </a>
+          <?php } ?>
+          <form action="logout.php" method="POST">
+          <a class="dropdown-item" href="#">
+          <button class="btn btn-transparent text- m-0 p-0" style="font-size: 14px;" type="submit" name="logout">
+            Sign Out
+          </button>
+          </a>
+          </form>
+          
+      </div>
+    </li>
   </nav>
 </div>
 <script src="../Assets/js/mode.js"></script>

@@ -1,13 +1,9 @@
 <?php
+$title = 'THEATER | TICKET BUCKET';
 include('scripts.php');
 include('configg.php');
 
 include('header.php');
-
-
-
-
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -15,8 +11,8 @@ include('header.php');
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>theatre.php</title>
-    <link rel="stylesheet" href="../Assets/css/theatre.css">    
+    <title></title>
+    <!-- <link rel="stylesheet" href="../Assets/css/theatre.css">     -->
   
 </head>
 <body>
@@ -133,9 +129,11 @@ include('header.php');
                     </div>
             </div>
 
+    </div><br><br><br>
 
-
-    </div>
+<?php
+include("footer.php");
+?>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
     <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>

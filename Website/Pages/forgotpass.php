@@ -1,4 +1,6 @@
 <?php
+$title = 'FORGOT PASSWORD | TICKETS BUCKET';
+
 include("../Pages/configg.php");
 include("../Pages/scripts.php");
 session_start();
@@ -34,7 +36,7 @@ if(isset($_POST['sendmail'])){
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Login Form</title>
+	<title></title>
 	<link rel="stylesheet" type="text/css" href="../Assets/css/style.css">
 	<link href="https://fonts.googleapis.com/css?family=Poppins:600&display=swap" rel="stylesheet">
 	<script src="https://kit.fontawesome.com/a81368914c.js"></script>

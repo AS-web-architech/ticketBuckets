@@ -86,7 +86,7 @@ mark{
     overflow: hidden;
 }
 .full-height {
-	height: 90vh;
+	height: 95vh;
 }
 .hero-center-section{
 	position: absolute;
@@ -121,10 +121,11 @@ mark{
 	border-radius: 4px;
 	box-shadow: 0 8px 25px 0 rgba(0, 0, 0, 0.25);
 	display: block;
+	margin-top: 2rem;
 }
 .img-wrap img {
 	width: 100%;
-	height: auto;
+	height: 24rem;
 	display: block;
 }
 
@@ -182,13 +183,13 @@ mark{
 	background-image: url('../images/moviecard/kickass2.jpg');;
 }
 .slide-buttons li:nth-child(2){
-	background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/1462889/2.jpg');;
+	background-image: url('../images/moviecard//beauty_and_the_beastcard.PNG');;
 }
 .slide-buttons li:nth-child(3){
-	background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/1462889/3.jpg');;
+	background-image: url('../images/moviecard/Annabelle.png');;
 }
 .slide-buttons li:nth-child(4){
-	background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/1462889/4.jpg');;
+	background-image: url('../images/moviecard/Mario\ Bros.jpg');;
 }
 /* #Cursor
 ================================================== */

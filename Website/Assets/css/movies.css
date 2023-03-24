@@ -13,7 +13,7 @@
     user-drag: none;
   }
 .moviecont{
-    margin-top: 10rem;
+    margin-top: 3.5rem;
 }
 /* .fa-projector{
     height: 20rem;
@@ -89,3 +89,17 @@ i{
   .credits .card-body i {
     color: #8e24aa;
   }
+
+  /* page header */
+  .page-header {
+    /* margin-bottom: rem; */
+    background: linear-gradient(rgba(0, 0, 0,0.6 ), rgba(0, 0, 0,0.5)), url(../images/MovieBg/movies_background.webp) center center no-repeat;
+    background-size: cover;
+    height: 50vh;
+    
+}
+
+.breadcrumb-item+.breadcrumb-item::before {
+    color: #ff3d49;
+    background: none;
+}
