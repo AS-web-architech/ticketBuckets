@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 24, 2023 at 02:01 AM
+-- Generation Time: Mar 24, 2023 at 04:41 PM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.2.0
 
@@ -36,9 +36,9 @@ CREATE TABLE `booking` (
   `ticket-type` varchar(255) NOT NULL,
   `seat-type` varchar(50) NOT NULL,
   `Total-seat` varchar(255) NOT NULL,
-  `show-time` time NOT NULL,
-  `show-date` date NOT NULL,
-  `status` varchar(255) NOT NULL
+  `showtime` time NOT NULL,
+  `showdate` date NOT NULL,
+  `email` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -163,6 +163,7 @@ CREATE TABLE `popularmovies` (
   `MovieName` varchar(255) NOT NULL,
   `MoviePic` varchar(255) NOT NULL,
   `MovieGenre` varchar(255) NOT NULL,
+  `MovieTrailers` varchar(255) NOT NULL,
   `Release` date NOT NULL,
   `Duration` time NOT NULL,
   `Description` varchar(10000) NOT NULL
@@ -172,20 +173,20 @@ CREATE TABLE `popularmovies` (
 -- Dumping data for table `popularmovies`
 --
 
-INSERT INTO `popularmovies` (`MovieId`, `MovieName`, `MoviePic`, `MovieGenre`, `Release`, `Duration`, `Description`) VALUES
-(1, 'Pathaan', 'Phatan.PNG', 'Action/Thriller', '2023-01-25', '02:40:00', 'An Indian spy battles against the leader of a gang of mercenaries who have a heinous plot for his homeland.'),
-(2, 'Teefa in Trouble', 'TeefaInTrouble.PNG', ' Romance/Comedy', '2018-07-20', '02:35:00', 'A gangster hires Teefa to kidnap a girl from Poland so that his son can marry her. However, Teefa starts to fall in love with the girl he is supposed to kidnap.'),
-(3, 'The Legend of Maula Jatt\r\n', 'MaulaJatt.PNG', 'Action/Drama', '2022-10-13', '02:33:00', 'From times untold where legends are written in soil with blood, a hero is born. Maula Jatt, a fierce prizefighter with a tortured past seeks vengeance against his arch nemesis Noori Natt, the most feared warrior in the land of Punjab.'),
-(4, 'Drifting Home', 'DriftingHome.PNG', 'Kids Animation/Fantasy', '2022-09-16', '01:59:00', 'During summer break, sixth graders Kosuke and Natsume play in an apartment building set to be demolished. They find themselves caught up in a strange phenomenon. All they can see around them is a vast sea.'),
-(5, 'The Smurfs', 'TheSmurfs.PNG', 'Family/Adventure', '2011-09-23', '01:43:00', 'While trying to escape the evil wizard Gargamel, the blue-skinned Smurfs get sucked into a vortex that teleports them to New York. Thereafter, they try their best to find a way back home.'),
-(6, 'Encanto', 'Encanto.PNG', 'Kid Animation/ Comedy/ Fantasy ', '2020-11-24', '01:49:00', 'The Madrigals are an extraordinary family who live hidden in the mountains of Colombia in a charmed place called the Encanto. The magic of the Encanto has blessed every child in the family with a unique gift -- every child except Mirabel.'),
-(7, 'Aladdin', 'Aladdin.jpeg', 'Musical/ Fantasy /Adventure', '2019-05-24', '02:08:00', 'Aladdin, a kind thief, woos Jasmine, the princess of Agrabah, with the help of Genie. When Jafar, the grand vizier, tries to usurp the king, Jasmine, Aladdin and Genie must stop him from succeeding.'),
-(8, 'A Quiet Place Part II\r\n', 'QuietPlace2.PNG', 'Horror/ Thriller', '2021-05-28', '01:37:00', 'Following the deadly events at home, the Abbott family must now face the terrors of the outside world as they continue their fight for survival in silence. '),
-(9, 'It Chapter Two', 'IT2.PNG', 'Horror/ Thriller', '2019-09-06', '02:49:00', 'After 27 years, the Losers Club receive a call from their friend Mike Hanlon that Pennywise is back. They decide to honour their promise and return to their old town to end the evil clown for good.'),
-(10, 'We Have a Ghost', 'WeHaveAGhost.PNG', 'Mystery/ Fantasy', '2023-02-24', '02:07:00', 'The discovery that their house is haunted by a ghost named Ernest makes Kevin\'s family a social media sensation. But when Kevin and Ernest get to the bottom of the mystery of Ernest\'s past, they become targets of the CIA.'),
-(11, 'The Secrets of Dumbledore', 'TheSecretofDumbledore.PNG', 'Fantasy/ Adventure ', '2022-04-08', '02:33:00', 'Professor Albus Dumbledore knows the powerful, dark wizard Gellert Grindelwald is moving to seize control of the wizarding world.'),
-(12, 'Doraemon: Nobita\'s Sky Utopia\r\n', 'DoremonSkyTopia.PNG', 'Kid Animation / Fantasy / Adventure', '2023-03-03', '01:47:00', 'The film will be set in a perfect world in the sky, where everyone lives happily. Doraemon and Nobita set out on an adventure to find the utopia with the help of a new gadget of Doraemon.'),
-(13, 'Frozen II', 'Frozen 2.jpeg', 'Kid Animation / Musical / Fantasy', '2019-11-22', '01:43:00', 'Queen Elsa begins to hear a mysterious melodic voice calling to her. Unsettled, she answers it, thus awakening the elemental spirits and setting into motion a quest to restore an old injustice.');
+INSERT INTO `popularmovies` (`MovieId`, `MovieName`, `MoviePic`, `MovieGenre`, `MovieTrailers`, `Release`, `Duration`, `Description`) VALUES
+(1, 'Pathaan', 'Phatan.PNG', 'Action/Thriller', 'https://www.youtube.com/watch?v=nDHsBUbivz8', '2023-01-25', '02:40:00', 'An Indian spy battles against the leader of a gang of mercenaries who have a heinous plot for his homeland.'),
+(2, 'Teefa in Trouble', 'TeefaInTrouble.PNG', ' Action', 'https://www.youtube.com/watch?v=jw5dTVTX9zo', '2018-07-20', '02:35:00', 'A gangster hires Teefa to kidnap a girl from Poland so that his son can marry her. However, Teefa starts to fall in love with the girl he is supposed to kidnap.'),
+(3, 'The Legend of Maula Jatt\r\n', 'MaulaJatt.PNG', 'Action/Drama', 'https://www.youtube.com/watch?v=pEWqOAcYgpQ', '2022-10-13', '02:33:00', 'From times untold where legends are written in soil with blood, a hero is born. Maula Jatt, a fierce prizefighter with a tortured past seeks vengeance against his arch nemesis Noori Natt, the most feared warrior in the land of Punjab.'),
+(4, 'Drifting Home', 'DriftingHome.PNG', 'Kids Animation', 'https://www.youtube.com/watch?v=BSE2KGU5png', '2022-09-16', '01:59:00', 'During summer break, sixth graders Kosuke and Natsume play in an apartment building set to be demolished. They find themselves caught up in a strange phenomenon. All they can see around them is a vast sea.'),
+(5, 'The Smurfs', 'TheSmurfs.PNG', 'Adventure', 'https://www.youtube.com/watch?v=yhBpgqXwrt8', '2011-09-23', '01:43:00', 'While trying to escape the evil wizard Gargamel, the blue-skinned Smurfs get sucked into a vortex that teleports them to New York. Thereafter, they try their best to find a way back home.'),
+(6, 'Encanto', 'Encanto.PNG', 'Kid Animation ', 'https://www.youtube.com/watch?v=CaimKeDcudo', '2020-11-24', '01:49:00', 'The Madrigals are an extraordinary family who live hidden in the mountains of Colombia in a charmed place called the Encanto. The magic of the Encanto has blessed every child in the family with a unique gift -- every child except Mirabel.'),
+(7, 'Aladdin', 'Aladdin.jpeg', 'Adventure', 'https://www.youtube.com/watch?v=7hHECMVOq7g', '2019-05-24', '02:08:00', 'Aladdin, a kind thief, woos Jasmine, the princess of Agrabah, with the help of Genie. When Jafar, the grand vizier, tries to usurp the king, Jasmine, Aladdin and Genie must stop him from succeeding.'),
+(8, 'A Quiet Place Part II\r\n', 'QuietPlace2.PNG', 'Horror/ Thriller', 'https://www.youtube.com/watch?v=BpdDN9d9Jio', '2021-05-28', '01:37:00', 'Following the deadly events at home, the Abbott family must now face the terrors of the outside world as they continue their fight for survival in silence. '),
+(9, 'It Chapter Two', 'IT2.PNG', 'Horror/ Thriller', 'https://www.youtube.com/watch?v=xhJ5P7Up3jA', '2019-09-06', '02:49:00', 'After 27 years, the Losers Club receive a call from their friend Mike Hanlon that Pennywise is back. They decide to honour their promise and return to their old town to end the evil clown for good.'),
+(10, 'We Have a Ghost', 'WeHaveAGhost.PNG', 'Mystery', 'https://www.youtube.com/watch?v=82I1ErFD63U', '2023-02-24', '02:07:00', 'The discovery that their house is haunted by a ghost named Ernest makes Kevin\'s family a social media sensation. But when Kevin and Ernest get to the bottom of the mystery of Ernest\'s past, they become targets of the CIA.'),
+(11, 'The Secrets of Dumbledore', 'TheSecretofDumbledore.PNG', 'Fantasy', 'https://www.youtube.com/watch?v=Y9dr2zw-TXQ', '2022-04-08', '02:33:00', 'Professor Albus Dumbledore knows the powerful, dark wizard Gellert Grindelwald is moving to seize control of the wizarding world.'),
+(12, 'Doraemon: Nobita\'s Sky Utopia\r\n', 'DoremonSkyTopia.PNG', 'Kid Animation', 'https://www.youtube.com/watch?v=_gmKcfXG2es', '2023-03-03', '01:47:00', 'The film will be set in a perfect world in the sky, where everyone lives happily. Doraemon and Nobita set out on an adventure to find the utopia with the help of a new gadget of Doraemon.'),
+(13, 'Frozen II', 'Frozen 2.jpeg', 'Kid Animation', 'https://www.youtube.com/watch?v=Zi4LMpSDccc', '2019-11-22', '01:43:00', 'Queen Elsa begins to hear a mysterious melodic voice calling to her. Unsettled, she answers it, thus awakening the elemental spirits and setting into motion a quest to restore an old injustice.');
 
 -- --------------------------------------------------------
 
@@ -209,7 +210,7 @@ CREATE TABLE `registration` (
 --
 
 INSERT INTO `registration` (`register_id`, `full_name`, `email`, `Apassword`, `picture`, `Urole`, `status`, `code`) VALUES
-(85, 'Aqsa Ashfaq', 'aqsaashfaq510@gmail.com', 'aqsaashfaq', '10.jpg', 'user', 'active', '94de5b562e8812f05df1dae164f37a');
+(85, 'Aqsa Ashfaq', 'aqsaashfaq510@gmail.com', 'aqsaashfaq', 'jannat_mirza_12aa-819x1024.jpg', 'user', 'active', '94de5b562e8812f05df1dae164f37a');
 
 -- --------------------------------------------------------
 
@@ -292,22 +293,24 @@ CREATE TABLE `theatre` (
   `theater_id` int(11) NOT NULL,
   `theater-title` varchar(255) NOT NULL,
   `country` varchar(255) NOT NULL,
-  `Hall-1` time NOT NULL,
-  `Hall-2` time NOT NULL,
-  `Hall-3` time NOT NULL,
   `capacity` varchar(74) NOT NULL,
-  `Location` varchar(255) NOT NULL
+  `Location` varchar(255) NOT NULL,
+  `showdate` date DEFAULT NULL,
+  `MovieName` varchar(255) NOT NULL,
+  `showtime` time NOT NULL,
+  `Movie-pic` varchar(255) NOT NULL,
+  `description` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `theatre`
 --
 
-INSERT INTO `theatre` (`theater_id`, `theater-title`, `country`, `Hall-1`, `Hall-2`, `Hall-3`, `capacity`, `Location`) VALUES
-(1, 'Atrium Cinemas', 'Pakistan', '27:12:00', '50:45:15', '30:20:05', '74 Seat', 'V24J+C24, MBL Panorama Karachi Cantonment.'),
-(2, 'Capri Cinema', 'Pakistan', '14:58:21', '41:58:21', '15:58:21', '74 seat', 'M.A Jinnah Rd, Central Jacob Lines Karachi.'),
-(3, 'The Arena Karachi', 'Pakistan', '01:20:15', '28:36:13', '10:40:00', '70 seat', 'Bahria Town Tower, Tariq Rd, P.E.C.H.S Block 2 Karachi.'),
-(4, 'Mega Multiplex Cinema\r\n', 'Pakistan', '05:07:54', '40:25:08', '46:20:13', '74 Seat', 'Millennium Mall, Rashid Minhas Rd, Gulistan-e-Johar, Karachi.');
+INSERT INTO `theatre` (`theater_id`, `theater-title`, `country`, `capacity`, `Location`, `showdate`, `MovieName`, `showtime`, `Movie-pic`, `description`) VALUES
+(1, 'Atrium Cinemas', 'Pakistan', '74 Seat', 'V24J+C24, MBL Panorama Karachi Cantonment.', NULL, '', '00:00:00', '', ''),
+(2, 'Capri Cinema', 'Pakistan', '74 seat', 'M.A Jinnah Rd, Central Jacob Lines Karachi.', NULL, '', '00:00:00', '', ''),
+(3, 'The Arena Karachi', 'Pakistan', '70 seat', 'Bahria Town Tower, Tariq Rd, P.E.C.H.S Block 2 Karachi.', NULL, '', '00:00:00', '', ''),
+(4, 'Mega Multiplex Cinema\r\n', 'Pakistan', '74 Seat', 'Millennium Mall, Rashid Minhas Rd, Gulistan-e-Johar, Karachi.', NULL, '', '00:00:00', '', '');
 
 -- --------------------------------------------------------
 
@@ -335,8 +338,8 @@ ALTER TABLE `booking`
   ADD KEY `c-id` (`customer-name`),
   ADD KEY `genre-id` (`genre-type`),
   ADD KEY `seat` (`seat-type`),
-  ADD KEY `status` (`status`),
-  ADD KEY `Ttitle` (`theater-name`);
+  ADD KEY `Ttitle` (`theater-name`),
+  ADD KEY `email` (`email`);
 
 --
 -- Indexes for table `book_status`
@@ -533,9 +536,8 @@ ALTER TABLE `ticket`
 ALTER TABLE `booking`
   ADD CONSTRAINT `Cname` FOREIGN KEY (`customer-name`) REFERENCES `customer` (`customer_name`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `Ttitle` FOREIGN KEY (`theater-name`) REFERENCES `theatre` (`theater-title`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `gener` FOREIGN KEY (`genre-type`) REFERENCES `genre` (`type`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `seat` FOREIGN KEY (`seat-type`) REFERENCES `seat` (`seat-type`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `status` FOREIGN KEY (`status`) REFERENCES `book_status` (`status`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `email` FOREIGN KEY (`email`) REFERENCES `registration` (`email`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `gener` FOREIGN KEY (`genre-type`) REFERENCES `genre` (`type`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `customer`

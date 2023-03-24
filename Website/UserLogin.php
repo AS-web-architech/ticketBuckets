@@ -37,7 +37,8 @@ if (isset($_POST['email']) && isset($_POST['password'])) {
             	$_SESSION['email'] = $row['email'];
             	$_SESSION['login_user'] = $row['full_name'];
             	$_SESSION['id'] = $row['id'];
-				echo "<script>window.location.href='./Pages/header.php';</script>";
+				$_SESSION['picture'] = $row['picture'];
+				echo "<script>window.location.href='./Pages/index.php';</script>";
 		        exit();
             }else{
 				header("Location: UserLogin.php?error=Incorect User email or password");

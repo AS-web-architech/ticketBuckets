@@ -35,11 +35,11 @@ include('configg.php');
 
           <div class="cta d-block d-md-flex align-items-center px-">
             <div>
-              <h2 class="mb-0">More Than 20000+ Customers Trusted Us</h2>
+              <h2 class="mb-0 contacthd text-white"> More Than 20000+ Customers Trusted Us</h2>
               <h3 class="text-white">Let's get started!</h3>
             </div>
             <div class="ml-auto">
-              <a href="contact.php" class="btn btn-dark rounded-0 py-3 px-5" style="background: #000;">Contact us</a>
+              <a href="ContactUs.php" class="btn btn-dark rounded-0 py-3 px-5" style="background: #000;">Contact us</a>
             </div>
           </div>
           <div class="row mb-5">
@@ -51,29 +51,29 @@ include('configg.php');
               </p>
             </div>
             <div class="col-sm">
-              <h3>Customers</h3>
+              <h3 class="text-white">Customers</h3>
               <ul class="list-unstyled links">
                 <li><a href="#">Buyer</a></li>
                 <li><a href="ContactUs.php">Contact us</a></li>
               </ul>
             </div>
             <div class="col-sm">
-              <h3>Quick Link</h3>
+              <h3 class="text-white">Quick Link</h3>
               <ul class="list-unstyled links">
-                <li><a href="#">About us</a></li>
+                <li><a href="index.php">Home</a></li>
                 <li><a href="movies.php">Movies</a></li>
                 <li><a href="theatre.php">Theater</a></li>
               </ul>
             </div>
             <div class="col-sm">
-              <h3>Further Information</h3>
+              <h3 class="text-white">Further Information</h3>
               <ul class="list-unstyled links">
                 <li><a href="#">Terms &amp; Conditions</a></li>
                 <li><a href="#">Privacy Policy</a></li>
               </ul>
             </div>
             <div class="col-md-3">
-              <h3>Follow us</h3>
+              <h3 class="text-white">Follow us</h3>
               <ul class="list-unstyled social">
                 <li><a href="#"><span class="icon-facebook"><i class="fa fa-facebook"></i></span></a></li>
                 <li><a href="#"><span class="icon-twitter"><i class="fa fa-twitter"></i></span></a></li>

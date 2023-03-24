@@ -1,11 +1,12 @@
 <?php
-session_start();
 include('configg.php');
-session_destroy();
-// echo "<script>window.location.href='./adminlogin';</script>;"
+if(isset($_POST['logout'])){
+  session_start();
+ session_unset();
+ session_destroy();
 
-header('location:../UserLogin.php');
+ echo "<script>window.location.href ='index.php';</script>"; 
 
-
-
+}
 ?>
+

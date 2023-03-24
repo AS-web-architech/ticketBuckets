@@ -1,5 +1,6 @@
 <?php
 $title = 'HOME | TICKETS BUCKET';
+ob_start();
 include('configg.php');
 include('scripts.php');
 include('header.php');
@@ -51,7 +52,7 @@ include('header.php');
               <span class="color-yellow opacity-40"><i class='uil uil-star'></i></span>
               <span class="ml-1 ml-sm-3 size-18 color-yellow">8.5/10</span>
             </p>
-            <p class="mt-1 pt-2 mb-0 d-none d-sm-block">Two brothers follow their father's footsteps as hunters, fighting evil supernatural beings of many kinds, including monsters, demons, and gods that roam the earth.</p>
+            <p class="mt-1 pt-2 mb-0 d-none d-sm-block">Kick-Ass, a superhero in high school, is forced to join new heroes and old allies in order to fight his old nemesis, Red Mist, when he forms a team of supervillains to get revenge against him.</p>
           </div>
         </div>
       </div>
@@ -80,7 +81,7 @@ include('header.php');
               <span class="color-yellow opacity-40"><i class='uil uil-star'></i></span>
               <span class="ml-1 ml-sm-3 size-18 color-yellow">7.7/10</span>
             </p>
-            <p class="mt-1 pt-2 mb-0 d-none d-sm-block">Spoiled billionaire playboy Oliver Queen is missing and presumed dead when his yacht is lost at sea. He returns five years later a changed man, determined to...</p>
+            <p class="mt-1 pt-2 mb-0 d-none d-sm-block">Belle, a village girl, embarks on a journey to save her father from a creature that has locked him in his dungeon. Eventually, she learns that the creature is an enchanted prince who has been cursed...</p>
           </div>
         </div>
       </div>
@@ -109,7 +110,7 @@ include('header.php');
               <span class="color-yellow opacity-40"><i class='uil uil-star'></i></span>
               <span class="ml-1 ml-sm-3 size-18 color-yellow">7.9/10</span>
             </p>
-            <p class="mt-1 pt-2 mb-0 d-none d-sm-block">The story behind Detective James Gordon's rise to prominence in Gotham City in the years before Batman's arrival.</p>
+            <p class="mt-1 pt-2 mb-0 d-none d-sm-block">Samuel and Elle embed their daughter's spirit into a doll, only to realise it is a demon. Years later, they open their home to a nun and six orphan girls, one of whom finds the doll.</p>
           </div>
         </div>
       </div>
@@ -138,7 +139,7 @@ include('header.php');
               <span class="color-yellow opacity-40"><i class='uil uil-star'></i></span>
               <span class="ml-1 ml-sm-3 size-18 color-yellow">7.9/10</span>
             </p>
-            <p class="mt-1 pt-2 mb-0 d-none d-sm-block">After being struck by lightning, Barry Allen wakes up from his coma to discover he's been given the power of super speed, becoming the Flash, fighting crime in Central City.</p>
+            <p class="mt-1 pt-2 mb-0 d-none d-sm-block">With help from Princess Peach, Mario gets ready to square off against the all-powerful Bowser to stop his plans from conquering the world..</p>
           </div>
         </div>
       </div>
@@ -229,7 +230,7 @@ include('header.php');
 				<!-- Text Layer -->
 				<div class="testimonial_095_slide">
 					<a href="#"><img src="../Assets/images/icon/jannat-mirza-intro-pic-2aa.jpg" class="img-responsive" style="object-fit: cover;border-radius:100%;" width="50px" height="50px" alt=""></span></a>
-					<p>Lorem ipsum dolor sit amet <a href="#">@consectetuer</a> adipiscing elit am nibh unc varius facilisis eros ed erat in in velit quis arcu ornare laoreet urabitur.</p>
+					<p>Amazing Service <a href="#">@consectetuer</a> They have kept lowest prices of tickets and services are quite good providing an immersive and unforgettable viewing experience. </p>
 					<h5><a href="#">Bisma Khalid</a></h5>
 				</div> <!-- /Text Layer -->
 			</div> <!-- /item -->
@@ -240,7 +241,7 @@ include('header.php');
 				<!-- Text Layer -->
 				<div class="testimonial_095_slide">
 					<a href="#"><img src="../Assets/images/icon/profile.jpg" alt="" style="object-fit: cover;border-radius:100%;" width="50px" height="50px" alt=""></span></a>
-					<p>Lorem ipsum dolor sit amet <a href="#">@consectetuer</a> adipiscing elit am nibh unc varius facilisis eros ed erat in in velit quis arcu ornare laoreet urabitur.</p>
+					<p>I booked plethora of movies ticket <a href="#">@consectetuer</a> and still satisfy with their amazing service. One of the best website for online movie ticket booking.</p>
 					<h5><a href="#">Mr.Hadi</a></h5>
 				</div> <!-- /Text Layer -->
 			</div> <!-- /item -->
@@ -251,7 +252,7 @@ include('header.php');
 				<!-- Text Layer -->
 				<div class="testimonial_095_slide">
 					<a href="#"><img src="../Assets/images/icon/jannat_mirza_12aa-819x1024.jpg" alt="" style="object-fit: cover;border-radius:100%;" width="50px" height="50px" alt=""></span></a>
-					<p>Lorem ipsum dolor sit amet <a href="#">@consectetuer</a> adipiscing elit am nibh unc varius facilisis eros ed erat in in velit quis arcu ornare laoreet urabitur.</p>
+					<p>Service here at TicketBucket.pk is always good <a href="#">@consectetuer</a>.  My first choice for purchase of  movies tickets.</p>
 					<h5><a href="#">Ayesha Fatima</a></h5>
 				</div> <!-- /Text Layer -->
 			</div> <!-- /item -->
