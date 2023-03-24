@@ -10,7 +10,7 @@ if(isset($_POST["register"])){
     $name= $_FILES['picture']; 
     $imageName=$_FILES['picture']['name'];
     $tempName=$_FILES['picture']['tmp_name'];
-    $destination="../AdminPanel/assets/images/uploads/".$imageName;
+    $destination="./Assets/images/useruploads/".$imageName;
     move_uploaded_file($tempName,$destination);
     $UserName=mysqli_real_escape_string($conn,$_POST['Uname']);
     $UserEmail=mysqli_real_escape_string($conn,$_POST['Uemail']);

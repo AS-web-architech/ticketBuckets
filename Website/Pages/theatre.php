@@ -5,16 +5,7 @@ include('configg.php');
 
 include('header.php');
 
-if(isset($_POST['booknow'])){
-    if(!isset($_SESSION['login_user'])){
-        echo "<script>alert('To booked your ticket first you have to login.')</script>";
-        echo "<script>window.location.href='../UserLogin.php'</script>";
-        
 
-    }else{
-      echo "<script>window.location.href='bookingForm.php'</script>";
-    }
-}
 
 
 
@@ -119,11 +110,10 @@ if(isset($_POST['booknow'])){
              <h6>Show Day:</h6>
              <small class="text-danger"><?php echo $movie_data['showtime'] ?> </small><br>
           <br>
-          <a  href="bookingForm.php?id=<?php echo $movie_data['theater_id'] ?> " class="text-white" style="font-size: 14px;">
-          <button type="submit" name="booknow" class="mt-auto btn btn-danger ">Book Now
-          </a>
-          </button> 
-         
+          <button type="submit" name="booknow" class="mt-auto btn btn-danger  ">
+            <a  href="bookingForm.php?id=<?php echo $movie_data['theater_id'] ?> "  >Book Now</a>
+
+          </button>
         </div>
       </div>
       <!-- Carousel start -->
@@ -136,7 +126,7 @@ if(isset($_POST['booknow'])){
 </form>
 <?php }?>
 
-<section><br><br>
+<section>
 <?php
 include('footer.php');
 

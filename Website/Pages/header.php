@@ -115,7 +115,7 @@ ob_start();
     <li class="nav-item dropdown d-flex">
       <a class="nav-link active dropdown-togler" href="../Pages/contact.php" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             
-        <div class="header_img ms-auto mx-4"> <img class="img-fluid" src="./AdminPanel/assets/images/uploads/<?php echo $_SESSION['picture'] ?>"  
+        <div class="header_img ms-auto mx-4"> <img class="img-fluid" src="../Assets/images/useruploads<?php echo $_SESSION['picture'] ?>"  
           style="width:40px;height:40px;border:1px solid black;border-radius:50px;"  alt=""> </div>    
           <?php } ?>
       </a>

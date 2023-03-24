@@ -103,7 +103,7 @@ include("Config.php");
                       <tbody class="table table-dark table-striped">
                       <?php
                       
-                $data = mysqli_query($conn,"SELECT * from booking");
+                $data = mysqli_query($conn,"SELECT * from booking WHERE `status` = 'pending'");
 
                 while ($users_data = mysqli_fetch_array($data)){
                       
@@ -120,17 +120,16 @@ include("Config.php");
                           <td><?php echo $users_data["Total-seat"] ?></td>
                           <td><?php echo $users_data["show-time"] ?></td>
                           <td><?php echo $users_data["show-date"] ?></td>
-                          <td>
                           <form action="adminAccept.php" method="post">
-                            <input  type="hidden" name="bookid" value="">
+                          <td>
+                            <input  type="hidden" name="bookid" value=<?php echo $users_data["booking_id"] ?>>
                             <input class="btn btn-success" type="submit" name="book" value="book">
-                           </form>                         
                           </td>
                           <td>
-                           <form action="adminAccept.php" method="post">
-                            <input  type="hidden" name="bookid" value="">
+                            <input  type="hidden" name="bookid" value=<?php echo $users_data["booking_id"] ?>>
                             <input class="btn btn-info" type="submit" name="cancel" value="cancel" >
-                           </form>                          
+ 
+                          </form>                          
 
                           </td>
 

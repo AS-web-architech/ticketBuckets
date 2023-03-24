@@ -18,7 +18,11 @@ include('configg.php');
     <br><br><br><br><br><br>
     <br><br><br><br>
     <section class="mt-5px"><br>
+    <?php
     
+   
+    
+    ?>
 <div id="booking" class="section mt-5px">
     <div class="section-center">
         <div class="container">
