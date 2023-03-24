@@ -11,7 +11,7 @@ if(isset($_POST["register"])){
     $adminEmail=mysqli_real_escape_string($conn,$_POST['Aemail']);
     $adminPassword=mysqli_real_escape_string($conn,$_POST['Apassword']);
     $confirmPassword=mysqli_real_escape_string($conn,$_POST['confirmPass']);
-    $role=$_POST['Role'];
+    $role=mysqli_real_escape_string($conn,$_POST['Role']);
     if(empty($adminName)){
         $error="* Name field is required";
     }
@@ -28,7 +28,7 @@ if(isset($_POST["register"])){
         $error="your password must be atleast 6  to 18 charachters ";
     }else{
         
-        $insert = "INSERT INTO registration (`full_name`, `email`, `Apassword`, `picture`, `role`) 
+        $insert = "INSERT INTO registration (`full_name`, `email`, `Apassword`, `picture`, `Urole`) 
         VALUES ( '$adminName' , '$adminEmail','$adminPassword','$imageName','$role')";
         $loginquery= mysqli_query($conn, $insert);
         if($loginquery){
@@ -138,9 +138,9 @@ if(isset($_POST["register"])){
                 </div> -->
 
                 <div class="mt-5 m-auto">
-                    <button name="register" type="submit" class="btn btn-sm btn-danger col  ">
+                    <a href="adminlogin.php?value=<?php echo $role="admin"?>"> <button name="register" type="submit" class="btn btn-sm btn-danger col  ">
                         Login
-                    </button>
+                    </button></a>
   
   
                 </div>

@@ -20,39 +20,7 @@ $start_from=($page - 1) * $page_per_record;
     <title>Document</title>
     <link rel="stylesheet" href="../assets/css/movie.css">
     <link rel="stylesheet" href="../assets/css/instyle.css">
-    <style>   
-    table {  
-        border-collapse: collapse;  
-    }  
-        .inline{   
-            display: inline-block;   
-            float: right;   
-            margin: 20px 0px;   
-        }   
-         
-        input, button{   
-            height: 34px;   
-        }   
-  
-    .pagination {   
-        display: inline-block;   
-    }   
-    .pagination a {   
-        font-weight:bold;   
-        font-size:18px;   
-        color: black;   
-        float: left;   
-        padding: 8px 16px;   
-        text-decoration: none;   
-        border:1px solid black;   
-    }   
-    .pagination a.active {   
-            background-color: pink;   
-    }   
-    .pagination a:hover:not(.active) {   
-        background-color: skyblue;   
-    }   
-        </style>
+
 </head>
   
 <body id="body-pd" >
@@ -162,23 +130,7 @@ $start_from=($page - 1) * $page_per_record;
       
   <!-- user data cards end -->
       
-<?php
-// if(isset($_POST('register'))){
-//   $UserName=mysqli_real_escape_string($conn,$_POST['Uname']);
-//     $UserEmail=mysqli_real_escape_string($conn,$_POST['Uemail']);
-//     $UserPassword=mysqli_real_escape_string($conn,$_POST['Upassword']);
-//     $confirmPassword=mysqli_real_escape_string($conn,$_POST['confirmPass']);
-//     $role=$_POST['Role'];
-//     $select="SELECT * FROM registration WHERE email=$UserEmail";
-//     $result=mysqli_num_rows($select);
-//     if($result>0){
-//       echo "<script>alert('You ')</script>;"
-//     }
-// }
 
-
-
-?>
 </div>
 </div>
 </div>
@@ -189,55 +141,6 @@ $start_from=($page - 1) * $page_per_record;
 
 
 </div>
-
-<center>
-<div class="pagination">    
-      <?php  
-        $query = "SELECT COUNT(*) FROM movie";     
-        $rs_result = mysqli_query($conn, $query);     
-        $row = mysqli_fetch_row($rs_result);  
-        // print_r($row);   
-        $total_records = $row[0];     
-
-//   $sql="SELECT * FROM `movie` ";
-//   $rs_result=mysqli_query($conn,$sql);
-//   $total_records=mysqli_num_rows($rs_result);
-//   echo $total_records;
-// $total_pages=ceil($total_records/$limit);
-// for($i=1;$i<$total_pages;$i++){
-//     echo "<a href='Movies.php?page=''".$i." >".$i."</a>";
-// }
-$total_pages = ceil($total_records / $page_per_record);     
-$pagLink = "";       
-
-if($page>=2){   
-    echo "<a href='Movies.php?page=".($page-1)."'>  Prev </a>";   
-}       
-           
-for ($i=1; $i<=$total_pages; $i++) {   
-  if ($i == $page) {   
-      $pagLink .= "<a class = 'active' href='Movies.php?page="  
-                                        .$i."'>".$i." </a>";   
-  }               
-  else  {   
-      $pagLink .= "<a href='Movies.php?page=".$i."'>   
-                                        ".$i." </a>";     
-  }   
-};     
-echo $pagLink;   
-
-if($page<$total_pages){   
-    echo "<a href='Movies.php?page=".($page+1)."'>  Next </a>";   
-}   
-
-?>
-
-<div class="inline m-auto">   
-      <input id="page" type="number" min="1" max="<?php echo $total_pages?>"   
-      placeholder="<?php echo $page."/".$total_pages; ?>" required>   
-      <button onClick="go2Page();">Go</button>   
-     </div>   
-     </center>
 
 
 
@@ -245,14 +148,7 @@ if($page<$total_pages){
 
 
 <!-- pagination js  -->
-<script>   
-  function go2Page()   
-  {   
-    var page = document.getElementById("page").value;   
-    page = ((page><?php echo $total_pages; ?>)?<?php echo $total_pages; ?>:((page<1)?1:page));   
-    // window.location.href = 'index1.php?page='+page;   
-  }   
-  </script>
+
   <!-- pagination js ends -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
    <script src="../assets/js/index.js"></script>

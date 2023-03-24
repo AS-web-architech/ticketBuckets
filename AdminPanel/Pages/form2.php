@@ -138,7 +138,7 @@ include("Config.php");
       </form>
 
 <!-- insert movie data form ends-->
-
+<br><br><br>
 <div class="heading d-flex">
         <h1 class="mb-3">Add theatre Data</h1>
         <!-- goback button  -->
@@ -165,41 +165,58 @@ include("Config.php");
                     </div>
                     <!-- Text input -->
                                 
-                    <div class="col-12 col-md-6 col-xl-6 ">
-                    <div class="form-outline mb-4">
-                        <input type="text" id="form6Example4" class="form-control" name="Hall-1" />
-                        <label class="form-label" for="form6Example4">Hall-1</label>
-                    </div>
-                    </div>
+                    
                                 <!-- Email input -->
                     <div class="col-12 col-md-6 col-xl-6 ">
                         <div class="form-outline mb-4">
                                                 
-                        <input type="text" id="form6Example5" class="form-control" name="Hall-2"  />
-                        <label class="form-label" for="form6Example5">Hall-2</label>
+                        <input type="text" id="form6Example5" class="form-control" name="showdate"  />
+                        <label class="form-label" for="form6Example5">show date</label>
                         </div>
                     </div>
                     <div class="col-12 col-md-6 col-xl-6 ">
                         <div class="form-outline mb-4">
                                                 
-                        <input type="text" id="form6Example5" class="form-control" name="Hall-3"  />
-                        <label class="form-label" for="form6Example5">Hall-3</label>
+                        <input type="text" id="form6Example5" class="form-control" name="showtime"  />
+                        <label class="form-label" for="form6Example5">show time</label>
                         </div>
                     </div>
                     <div class="col-12 col-md-6 col-xl-6 ">
                         <div class="form-outline mb-4">
                                                 
-                        <input type="text" id="form6Example5" class="form-control" name="capacity"  />
-                        <br><label class="form-label" for="form6Example5">capacity</label>
+                        <input type="text" id="form6Example5" class="form-control" name="movieTitle"  />
+                        <br><label class="form-label" for="form6Example5">movieTitle</label>
                         </div>
                     </div>
                     <div class="col-12 col-md-6 col-xl-6 ">
                         <div class="form-outline mb-4">
-                                                
-                        <input type="text" id="form6Example5" class="form-control" name="Location"  />
-                        <label class="form-label" for="form6Example5">Location</label>
+                        
+                        <input type="file"  class="form-control" name="movieimage"  />
+                        <br><label class="form-label" >movie image</label>
                         </div>
                     </div>
+                            <div class="col-12 col-md-6 col-xl-6 ">
+                                <div class="form-outline mb-4">
+                                                        
+                                <input type="text" id="form6Example5" class="form-control" name="description"  />
+                                <br><label class="form-label" for="form6Example5">description</label>
+                                </div>
+                            </div>
+
+                            <div class="col-12 col-md-6 col-xl-6 ">
+                                <div class="form-outline mb-4">                          
+                                <input type="text" id="form6Example5" class="form-control" name="capacity"  />
+                                <br><label class="form-label" for="form6Example5">capacity</label>
+                                </div>
+                            </div>
+                            
+                        <div class="col-12 col-md-6 col-xl-6 ">
+                            <div class="form-outline mb-4">
+                                                    
+                            <input type="text" id="form6Example5" class="form-control" name="Location"  />
+                            <label class="form-label" for="form6Example5">Location</label>
+                            </div>
+                        </div>
                     </div>
                     
                             <!-- Submit button -->

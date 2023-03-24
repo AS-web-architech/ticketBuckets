@@ -2,16 +2,6 @@
 session_start();
 include("scripts.php");
 include("Config.php");
-// include('delete.php');
-$page_per_record=03;
-if(isset($_GET['page'])){
-    $page=$_GET['page'];
-}else{
-    $page=1;
-}
-// $page=1;
-$start_from=($page - 1) * $page_per_record;
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -21,39 +11,7 @@ $start_from=($page - 1) * $page_per_record;
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="../assets/css/instyle.css">
-    <style>   
-    table {  
-        border-collapse: collapse;  
-    }  
-        .inline{   
-            display: inline-block;   
-            float: right;   
-            margin: 20px 0px;   
-        }   
-         
-        input, button{   
-            height: 34px;   
-        }   
-  
-        .pagination {   
-            display: inline-block;   
-        }   
-        .pagination a {   
-        font-weight:bold;   
-        font-size:18px;   
-        color: black;   
-        float: left;   
-        padding: 8px 16px;   
-        text-decoration: none;   
-        border:1px solid black;   
-    }   
-    .pagination a.active {   
-        background-color: pink;   
-    }   
-    .pagination a:hover:not(.active) {   
-        background-color: skyblue;   
-    }   
-    </style>   
+       
 </head>
 
 <body id="body-pd">
@@ -219,31 +177,6 @@ $start_from=($page - 1) * $page_per_record;
 
 
          <!-- movie data ends  -->
-
-<?php
-$select="SELECT * FROM movie ";
-$rs_result=mysqli_query($conn,$select);
-$total_records=mysqli_num_rows($rs_result);
-$per_page_record=5;
-// echo $total_records;
-$total_pages=ceil($total_records/$per_page_record);
-// echo $total_pages;
-for($i=1;$i<=$total_pages;$i++){
-    echo "<a href='Movies.php?page=".$i.">".$i."</a>";
-};
-
-if(isset($_GET['page'])){
-    $page=$_GET['page'];
-}else{
-    $page=1;
-}
-
-$start_from=($page-1) * $per_page_record ;
-$select="SELECT * FROM movie LIMIT $start_from,$per_page_record=5";
-$rs_result=mysqli_query($conn,$select);
-
-
-?>
 
 
     </div> 
