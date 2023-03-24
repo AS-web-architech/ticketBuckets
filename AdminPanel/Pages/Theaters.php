@@ -98,7 +98,7 @@ include("Config.php");
 
     </p>
     <div class="page-content page-container" id="page-content">
-    <div class="padding">
+    <!-- <div class="padding"> -->
         <div class="row container d-flex justify-content-center">
    <div class="col-lg-12 grid-margin stretch-card">
               <div class="card">
@@ -111,14 +111,19 @@ include("Config.php");
                         <tr>
                           <th>
                           <button type="submit" name="del_theatre_data" class="btn btn-danger "><i class="fa-solid fa-trash"></i> </button>
-
                           </th>    
                           <th>ID</th>
                           <th>Theatre Name</th>
+                          <th>movie</th>
+                          <th>title</th>
+                          <th colspan="2" >description</th>
                           <th>country</th>
-                          <th  class="text-center">Halls</th>
                           <th>capacity</th>
                           <th>Location</th>
+                          <th  class="text-center">showdate</th>
+                          <th  class="text-center">showtime</th>
+                          <th>edit</th>
+
                         </tr>
                       </thead>
                       <tbody class="table table-dark table-striped">
@@ -136,12 +141,22 @@ include("Config.php");
               </td>
               <th><?php echo $theater_data["theater_id"] ?></th>
               <td><?php echo $theater_data["theater-title"] ?></td>
+              <td>
+              <div class="d-flex align-items-center">
+                 <img src="../assets/images/<?php echo $theater_data['movie-pic']?>" style="height:100px;width:80px" alt="">
+              </div>
+
+
+              </td>
+              <td><?php echo $theater_data["movieTitle"] ?></td>
+              <td colspan=2><?php echo $theater_data["description"] ?></td>
               <td><?php echo $theater_data["country"] ?></td>
-              <td><?php echo $theater_data["Hall-1"] ?></td>
-              <td><?php echo $theater_data["Hall-2"] ?></td>
-              <td><?php echo $theater_data["Hall-3"] ?></td>
               <td><?php echo $theater_data["capacity"] ?></td>
               <td><?php echo $theater_data["Location"] ?></td>
+              <td><?php echo $theater_data["showdate"] ?></td>
+        
+        
+              <td><?php echo $theater_data["showtime"] ?></td>
               <td  rowspan=1>
                  <a href="form.php?Tid=<?php echo  $theater_data["theater_id"] ?>"
                class="text-white text-decoration-none btn btn-info"> <i class="fa-solid fa-pen-to-square"></i>
@@ -159,5 +174,5 @@ include("Config.php");
             </div>
             </div>
               </div>
-            </div>
+            <!-- </div> -->
      </div>   

@@ -3,7 +3,14 @@ session_start();
 include("scripts.php");
 include("Config.php");
 // include('delete.php');
-
+$page_per_record=03;
+if(isset($_GET['page'])){
+    $page=$_GET['page'];
+}else{
+    $page=1;
+}
+// $page=1;
+$start_from=($page - 1) * $page_per_record;
 
 ?>
 <!DOCTYPE html>
@@ -146,13 +153,13 @@ include("Config.php");
                     </th>
                     <th>ID</th>
                     <th>MOVIE</th>
-                    <th>MOVIE TITLE</th>
-                    <th>MOVIE TRAILER</th>
+                    <th>MOVIETITLE</th>
+                    <th>TRAILER</th>
                     <th>GENRE</th>
                     <th>RELEASE</th>
                     <th>DURATION</th>
-                    <!-- <th>DESCRIPTION</th> -->
-                    <th>edit</th>
+                    
+                    <th>EDIT</th>
                 </tr>
             </thead>
             <tbody class="table-dark">
@@ -178,21 +185,19 @@ include("Config.php");
                             </td>
                             <td>
                                 <div class="d-flex align-items-center">
-                                <img src="../assets/images/uploads/movies/<?php echo $row['movie_pic']?>" style="height:100px;width:100px" alt="">
+                                <img src="../assets/images/uploads/movies/<?php echo $row['movie_pic']?>" style="height:100px;width:80px" alt="">
                                 </div>
                             </td>
                             <td>
                                 <h6><?php echo $row["movieTitle"] ?></h6>
                             </td>
-                            <td  class="font-weight-bold"><?php echo $row["Movie_Trailers"] ?></td>
+                            <td  class="font-weight-bold text-wrap"><?php echo $row["Movie_Trailers"] ?></td>
                             <td>
                                 <?php echo $row['genre_type'];?>     
                             </td>
                             
                             <td  class="font-weight-bold"><?php echo $row["release"] ?></td>
-                            <td colspan="2" class="text-warning"><?php echo $row["duration"] ?></td>
-                            
-                            
+                            <td colspan="2" class="text-warning"><?php echo $row["duration"] ?></td>      
                             <td>
                                 
                                 <a href="form.php?id=<?php echo $row['movie_id'] ?>" class="btn btn-info"

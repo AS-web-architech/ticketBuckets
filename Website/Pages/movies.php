@@ -164,7 +164,7 @@ include("footer.php");
     $('[data-toggle="tooltip"]').tooltip()
   })
 </script>
-< <script src="../Assets/js/mode.js"></script> -->
+<!-- <script src="../Assets/js/mode.js"></script> -->
 <!-- Button trigger modal -->
 <!-- <button type="button" class="btn btn-primary" >
   Launch demo modal

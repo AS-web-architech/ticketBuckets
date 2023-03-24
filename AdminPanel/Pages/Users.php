@@ -145,14 +145,14 @@ $start_from=($page - 1) * $page_per_record;
                           <td><?php echo $users_data["register_id"] ?></td>
                           <td><?php echo $users_data["full_name"] ?></td>
                           <td><?php echo $users_data["email"] ?></td>
-                          <td><?php echo $users_data["role"] ?></td>
+                          <td><?php echo $users_data["Urole"] ?></td>
                           <td class="py-1" ><img width="66px" height="66px" style="border-radius: 50px;" src="../assets/images/uploads/<?php echo $users_data["picture"] ?>" alt=""></td> 
                            <td>
-                            <a href="" class="btn btn-info" >reject</a>
+                            <a href="" class="btn btn-info bg-info" ><?Php echo $users_data["status"] ?></a>
                            </td>
-                           <td>
+                           <!-- <td>
                             <a href="" class="btn btn-success">accept</a>
-                           </td> 
+                           </td>  -->
                          
                          </tr>
                         <?php  } ?>      

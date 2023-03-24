@@ -165,6 +165,12 @@ if(isset($_GET['Tid'] )){
                             <label class="form-label" for="form6Example1" >theater title</label>
                         </div>
                     </div>
+                    <div class="col-12 col-md-6 col-xl-6 ">
+                        <div class="form-outline mb-4">
+                            <input type="text"  class="form-control" name="movieTitle" value="<?php echo $arr['movieTitle']?>"   />
+                            <label class="form-label"  >movie name</label>
+                        </div>
+                    </div>
                         <!-- Text input -->
                      <div class="col-12 col-md-6 col-xl-6 ">
                         <div class="form-outline mb-4">
@@ -176,29 +182,23 @@ if(isset($_GET['Tid'] )){
                                 
                     <div class="col-12 col-md-6 col-xl-6 ">
                     <div class="form-outline mb-4">
-                        <input type="text" id="form6Example4" class="form-control" name="Hall-1" value="<?php echo $arr['Hall-1']?>" />
-                        <label class="form-label" for="form6Example4">Hall-1</label>
+                        <input type="text" id="form6Example4" class="form-control" name="showdate" value="<?php echo $arr['showdate']?>" />
+                        <label class="form-label" for="form6Example4">showdate</label>
                     </div>
                     </div>
                                 <!-- Email input -->
                     <div class="col-12 col-md-6 col-xl-6 ">
                         <div class="form-outline mb-4">
                                                 
-                        <input type="text" id="form6Example5" class="form-control" name="Hall-2" value="<?php echo $arr['Hall-2']?>"  />
-                        <label class="form-label" for="form6Example5">Hall-2</label>
+                        <input type="text" id="form6Example5" class="form-control" name="showtime" value="<?php echo $arr['showtime']?>"  />
+                        <label class="form-label" for="form6Example5">showtime</label>
                         </div>
                     </div>
+                    
                     <div class="col-12 col-md-6 col-xl-6 ">
                         <div class="form-outline mb-4">
                                                 
-                        <input type="text" id="form6Example5" class="form-control" name="Hall-3" value="<?php echo $arr['Hall-3']?>" />
-                        <label class="form-label" for="form6Example5">Hall-3</label>
-                        </div>
-                    </div>
-                    <div class="col-12 col-md-6 col-xl-6 ">
-                        <div class="form-outline mb-4">
-                                                
-                        <input type="file" id="form6Example5" class="form-control" name="capacity" value="<?php echo $arr['capacity']?>" />
+                        <input type="text" id="form6Example5" class="form-control" name="capacity" value="<?php echo $arr['capacity']?>" />
                         <br><label class="form-label" for="form6Example5">capacity</label>
                         </div>
                     </div>

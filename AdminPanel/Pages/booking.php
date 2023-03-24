@@ -86,14 +86,14 @@ include("Config.php");
                                 
                                 <!-- <th>booking ID</th> -->
                                 <th>Customer Name</th>
+                                <th >email</th> 
                                <th>Movie</th>
-                               <!-- <th>Genre</th> -->
-                               <th>Theatre </th> 
-                               <th>Ticket </th>
-                                <th>Seat </th>
-                               <th>Total Seats</th>
+                               <th>Theatre Name </th> 
+                               <th>Ticket type </th>
+                                <th>adultsSeat </th>
+                               <th>childsSeats</th>
                                <th>Show time</th>
-                               <th >Show Date</th> 
+                               <th >Show Date</th>
                                <th colspan=2 >status</th>
                                
  
