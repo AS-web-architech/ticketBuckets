@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 24, 2023 at 04:41 PM
+-- Generation Time: Mar 24, 2023 at 11:05 PM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.2.0
 
@@ -31,15 +31,22 @@ CREATE TABLE `booking` (
   `booking_id` int(11) NOT NULL,
   `customer-name` varchar(255) NOT NULL,
   `movieTitle` varchar(255) NOT NULL,
-  `genre-type` varchar(255) NOT NULL,
   `theater-name` varchar(255) NOT NULL,
   `ticket-type` varchar(255) NOT NULL,
-  `seat-type` varchar(50) NOT NULL,
-  `Total-seat` varchar(255) NOT NULL,
+  `child-seats` int(11) NOT NULL,
   `showtime` time NOT NULL,
   `showdate` date NOT NULL,
-  `email` varchar(255) NOT NULL
+  `email` varchar(255) NOT NULL,
+  `adult-seats` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `booking`
+--
+
+INSERT INTO `booking` (`booking_id`, `customer-name`, `movieTitle`, `theater-name`, `ticket-type`, `child-seats`, `showtime`, `showdate`, `email`, `adult-seats`) VALUES
+(9, 'aqsa ashfaq', '<br /><b>Warning</b>:  Undefined array key ', 'Atrium Cinemas', 'platinum', 4, '03:03:00', '2023-03-23', 'aqsaashfaq510@gmail.com', 2),
+(10, 'aqsa ashfaq', '<br /><b>Warning</b>:  Undefined array key ', 'Atrium Cinemas', 'platinum', 4, '03:03:00', '2023-03-23', 'aqsaashfaq510@gmail.com', 2);
 
 -- --------------------------------------------------------
 
@@ -296,9 +303,9 @@ CREATE TABLE `theatre` (
   `capacity` varchar(74) NOT NULL,
   `Location` varchar(255) NOT NULL,
   `showdate` date DEFAULT NULL,
-  `MovieName` varchar(255) NOT NULL,
-  `showtime` time NOT NULL,
-  `Movie-pic` varchar(255) NOT NULL,
+  `movieTitle` varchar(255) NOT NULL,
+  `showtime` varchar(255) NOT NULL,
+  `movie-pic` varchar(255) NOT NULL,
   `description` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -306,11 +313,11 @@ CREATE TABLE `theatre` (
 -- Dumping data for table `theatre`
 --
 
-INSERT INTO `theatre` (`theater_id`, `theater-title`, `country`, `capacity`, `Location`, `showdate`, `MovieName`, `showtime`, `Movie-pic`, `description`) VALUES
-(1, 'Atrium Cinemas', 'Pakistan', '74 Seat', 'V24J+C24, MBL Panorama Karachi Cantonment.', NULL, '', '00:00:00', '', ''),
-(2, 'Capri Cinema', 'Pakistan', '74 seat', 'M.A Jinnah Rd, Central Jacob Lines Karachi.', NULL, '', '00:00:00', '', ''),
-(3, 'The Arena Karachi', 'Pakistan', '70 seat', 'Bahria Town Tower, Tariq Rd, P.E.C.H.S Block 2 Karachi.', NULL, '', '00:00:00', '', ''),
-(4, 'Mega Multiplex Cinema\r\n', 'Pakistan', '74 Seat', 'Millennium Mall, Rashid Minhas Rd, Gulistan-e-Johar, Karachi.', NULL, '', '00:00:00', '', '');
+INSERT INTO `theatre` (`theater_id`, `theater-title`, `country`, `capacity`, `Location`, `showdate`, `movieTitle`, `showtime`, `movie-pic`, `description`) VALUES
+(1, 'Atrium Cinemas', 'Pakistan', '74 Seat', 'V24J+C24, MBL Panorama Karachi Cantonment.', '2023-03-28', 'Boss Baby', '06:00pm', 'BossBaby.PNG', 'Seven-year-old Tim gets jealous when his parents give all their attention to his little brother. Tim soon learns that the baby can talk and the two team up to foil the plans of the CEO of Puppy Co.'),
+(2, 'Capri Cinema', 'Pakistan', '74 seat', 'M.A Jinnah Rd, Central Jacob Lines Karachi.', '2023-03-27', 'Cruella Devil', '07:00pm', 'cruella.jpg', 'Estella is a young and clever grifter who\'s determined to make a name for herself in the fashion world. She soon meets a pair of thieves who appreciate her appetite for mischief, and together they build a life for themselves on the streets of London.'),
+(3, 'The Arena Karachi', 'Pakistan', '70 seat', 'Bahria Town Tower, Tariq Rd, P.E.C.H.S Block 2 Karachi.', '2023-03-28', 'Mario Bros', '06:00pm', 'Mario Bros.jpg', 'With help from Princess Peach, Mario gets ready to square off against the all-powerful Bowser to stop his plans from conquering the world.'),
+(4, 'Mega Multiplex Cinema\r\n', 'Pakistan', '74 Seat', 'Millennium Mall, Rashid Minhas Rd, Gulistan-e-Johar, Karachi.', '2023-03-26', 'Enola Holmes', '07:00pm', 'EnolaHolmes.PNG', 'While searching for her missing mother, intrepid teen Enola Holmes uses her sleuthing skills to outsmart big brother Sherlock and help a runaway lord.');
 
 -- --------------------------------------------------------
 
@@ -336,8 +343,6 @@ ALTER TABLE `booking`
   ADD PRIMARY KEY (`booking_id`),
   ADD KEY `moviet` (`movieTitle`),
   ADD KEY `c-id` (`customer-name`),
-  ADD KEY `genre-id` (`genre-type`),
-  ADD KEY `seat` (`seat-type`),
   ADD KEY `Ttitle` (`theater-name`),
   ADD KEY `email` (`email`);
 
@@ -446,7 +451,7 @@ ALTER TABLE `ticket`
 -- AUTO_INCREMENT for table `booking`
 --
 ALTER TABLE `booking`
-  MODIFY `booking_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `booking_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `book_status`
@@ -534,10 +539,8 @@ ALTER TABLE `ticket`
 -- Constraints for table `booking`
 --
 ALTER TABLE `booking`
-  ADD CONSTRAINT `Cname` FOREIGN KEY (`customer-name`) REFERENCES `customer` (`customer_name`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `Ttitle` FOREIGN KEY (`theater-name`) REFERENCES `theatre` (`theater-title`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `email` FOREIGN KEY (`email`) REFERENCES `registration` (`email`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `gener` FOREIGN KEY (`genre-type`) REFERENCES `genre` (`type`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `email` FOREIGN KEY (`email`) REFERENCES `registration` (`email`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `customer`
