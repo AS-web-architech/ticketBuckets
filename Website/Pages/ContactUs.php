@@ -83,10 +83,10 @@ include('header.php');
 							<div class="col-md-7">
 								<div class="contact-wrap w-100 p-md-5 p-4">
 									<h3 class="mb-4"><b>Contact Us</b> </h3>
-									<!-- <div id="form-message-warning" class="mb-4"></div> 
-				      		<div id="form-message-success" class="mb-4">
-				            Your message was sent, thank you!
-				      		</div> -->
+									<div id="form-message-warning" class="mb-4"></div> 
+				      		        <div id="form-message-success" class="mb-4">
+				                   Your message was sent, thank you!
+				      		       </div>
 							       <p style="color:red;font-size:small;" class="text-bold"  >
                                     <?php           
                                          if(isset($error)){
@@ -238,7 +238,7 @@ include('header.php');
   <script src="../Assets/js/popper.js"></script>
   <script src="../Assets/js/bootstrap.min.js"></script>
   <script src="../Assets/js/jquery.validate.min.js"></script>
-  <!-- <script src="../Assets/js/contact.js"></script> -->
+  <script src="../Assets/js/contact.js"></script>
 
   <?php
   include('footer.php');
