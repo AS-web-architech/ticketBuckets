@@ -110,9 +110,10 @@ include('header.php');
              <h6>Show Day:</h6>
              <small class="text-danger"><?php echo $movie_data['showtime'] ?> </small><br>
           <br>
-          <button type="submit" name="booknow" class="mt-auto btn btn-danger  ">
-            <a  href="bookingForm.php?id=<?php echo $movie_data['theater_id'] ?> "  >Book Now</a>
-
+          <a  href="bookingForm.php?id=<?php echo $movie_data['theater_id'] ?> "  class="text-white">
+          <button type="submit" name="booknow" class="mt-auto btn btn-danger">
+            Book Now
+            </a>
           </button>
         </div>
       </div>

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 24, 2023 at 11:05 PM
+-- Generation Time: Mar 25, 2023 at 02:37 AM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.2.0
 
@@ -37,16 +37,17 @@ CREATE TABLE `booking` (
   `showtime` time NOT NULL,
   `showdate` date NOT NULL,
   `email` varchar(255) NOT NULL,
-  `adult-seats` int(11) NOT NULL
+  `adult-seats` int(11) NOT NULL,
+  `status` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `booking`
 --
 
-INSERT INTO `booking` (`booking_id`, `customer-name`, `movieTitle`, `theater-name`, `ticket-type`, `child-seats`, `showtime`, `showdate`, `email`, `adult-seats`) VALUES
-(9, 'aqsa ashfaq', '<br /><b>Warning</b>:  Undefined array key ', 'Atrium Cinemas', 'platinum', 4, '03:03:00', '2023-03-23', 'aqsaashfaq510@gmail.com', 2),
-(10, 'aqsa ashfaq', '<br /><b>Warning</b>:  Undefined array key ', 'Atrium Cinemas', 'platinum', 4, '03:03:00', '2023-03-23', 'aqsaashfaq510@gmail.com', 2);
+INSERT INTO `booking` (`booking_id`, `customer-name`, `movieTitle`, `theater-name`, `ticket-type`, `child-seats`, `showtime`, `showdate`, `email`, `adult-seats`, `status`) VALUES
+(9, 'aqsa ashfaq', '<br /><b>Warning</b>:  Undefined array key ', 'Atrium Cinemas', 'platinum', 4, '03:03:00', '2023-03-23', 'aqsaashfaq510@gmail.com', 2, ''),
+(10, 'aqsa ashfaq', '<br /><b>Warning</b>:  Undefined array key ', 'Atrium Cinemas', 'platinum', 4, '03:03:00', '2023-03-23', 'aqsaashfaq510@gmail.com', 2, '');
 
 -- --------------------------------------------------------
 
@@ -475,7 +476,7 @@ ALTER TABLE `genre`
 -- AUTO_INCREMENT for table `movie`
 --
 ALTER TABLE `movie`
-  MODIFY `movie_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
+  MODIFY `movie_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
 
 --
 -- AUTO_INCREMENT for table `payment`
@@ -523,7 +524,7 @@ ALTER TABLE `seat_categories`
 -- AUTO_INCREMENT for table `theatre`
 --
 ALTER TABLE `theatre`
-  MODIFY `theater_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `theater_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `ticket`

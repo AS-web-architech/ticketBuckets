@@ -30,12 +30,12 @@ if(isset($_POST['insert'])){
     }
 }
 if(isset($_POST['th_insert'] )){
-    // $movieimage=$_FILES['movieimage'];
-    // $movieimage=$_FILES['movieimage']['name'];
-    // $movieimage_tempname=$_FILES['movieimage']['tmp_name'];
-    // $path="../assets/images/uploads/theatre".$movieimage;
-    // move_uploaded_file($movieimage_tempname,$path);
-    // print_r($movieimage);
+    $Tmovieimage=$_FILES['movieimage'];
+    $Tmovieimage=$_FILES['movieimage']['name'];
+    $Tmovieimage_tempname=$_FILES['movieimage']['tmp_name'];
+    $path="../assets/images/uploads/theatre".$Tmovieimage;
+    move_uploaded_file($Tmovieimage_tempname,$path);
+    print_r($Tmovieimage);
     $theatreName =$_POST['theater-title'];
     $country =$_POST['country'];
     $showdate =$_POST['showdate'];
@@ -45,10 +45,10 @@ if(isset($_POST['th_insert'] )){
     $description =$_POST['description'];
     $moviename =$_POST['movieTitle'];
     
-    $insert="INSERT INTO `INSERT INTO `theatre`( `theater-title`, `country`, `capacity`, `Location`, `showdate`, 
+    $insert="INSERT INTO `theatre`( `theater-title`, `country`, `capacity`, `Location`, `showdate`, 
     `showtime`, `movieTitle`, `movie-pic`, `description`) VALUES
      (' $theatreName ','$country','$capacity ','$location','$showdate',
-    '$showtime','$moviename','$description') ";
+    '$showtime','$moviename','$Tmovieimage','$description') ";
      $query= mysqli_query($conn,$insert);
     
      if($query){

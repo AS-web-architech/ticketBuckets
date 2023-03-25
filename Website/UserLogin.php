@@ -36,7 +36,7 @@ if (isset($_POST['email']) && isset($_POST['password'])) {
             if ($row['email'] === $UserEmail && $row['Apassword'] === $pass) {
             	$_SESSION['email'] = $row['email'];
             	$_SESSION['login_user'] = $row['full_name'];
-            	$_SESSION['id'] = $row['id'];
+            	// $_SESSION['id'] = $row['id'];
 				$_SESSION['picture'] = $row['picture'];
 				echo "<script>window.location.href='./Pages/index.php';</script>";
 		        exit();
